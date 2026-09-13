@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets / local config
+.env.*
+*.key
+*.pem
+
+# Large/model artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Temporary files
+tmp/
+temp/
