@@ -1,5 +1,7 @@
 ## Q: I need to code random lunch menu recsys then publish this into github page. Let's first write the description readme.
 
+For the implementation, use the project's exact Font Awesome Free 6.4.0 stylesheet and only icon classes verified to exist in it. Do not infer or invent class names from food names; when no precise icon is available, use a verified generic alternative. Before finalizing, verify that every menu item renders an icon.
+
 Of course! This is a great project. A well-written README is crucial for any GitHub repository.
 
 Here is a comprehensive and professional README.md template you can use. It's structured to explain your project clearly to anyone who visits your GitHub page.
