@@ -1,32 +1,24 @@
 # macOS
 .DS_Store
 
+# Local OpenCode configuration
+opencode.json
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+
 # Python
 __pycache__/
 *.py[cod]
 .venv/
 venv/
-.env
 
 # Jupyter
 .ipynb_checkpoints/
 
-# IDE
+# Editors
 .vscode/
 .idea/
-
-# Secrets / local config
-.env.*
-*.key
-*.pem
-
-# Large/model artifacts
-*.pt
-*.pth
-*.ckpt
-*.safetensors
-*.bin
-
-# Temporary files
-tmp/
-temp/
