@@ -167,6 +167,28 @@
                 { name: "Soup", icon: "fas fa-bowl-food" },
                 { name: "BBQ", icon: "fas fa-fire" }
             ];
+            const RECENCY_PENALTY = 0.25;
+            let previousLunchIndex = null;
+
+            function selectLunchIndex() {
+                if (previousLunchIndex === null) {
+                    return Math.floor(Math.random() * lunchMenu.length);
+                }
+
+                const totalWeight = lunchMenu.length - 1 + RECENCY_PENALTY;
+                let randomValue = Math.random() * totalWeight;
+
+                for (let i = 0; i < lunchMenu.length; i++) {
+                    // Give the previous item a lower weight to reduce repeats without excluding it.
+                    const weight = i === previousLunchIndex ? RECENCY_PENALTY : 1;
+                    if (randomValue < weight) {
+                        return i;
+                    }
+                    randomValue -= weight;
+                }
+
+                return lunchMenu.length - 1;
+            }
             
             // Function to generate random lunch
             function generateRandomLunch() {
@@ -174,8 +196,9 @@
                 lunchDisplay.classList.remove('fade-in');
                 
                 // Get a random lunch option
-                const randomIndex = Math.floor(Math.random() * lunchMenu.length);
+                const randomIndex = selectLunchIndex();
                 const selectedLunch = lunchMenu[randomIndex];
+                previousLunchIndex = randomIndex;
                 
                 // Briefly show loading state
                 foodIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
