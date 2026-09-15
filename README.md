@@ -2,15 +2,14 @@
 
 Course workspace for **Recommender Systems / LLM4Rec**.
 
-This repository is organized week by week so that coursework, experiments,
-visualizations, pull requests, and the final capstone remain reproducible and easy to review.
+This repository is organized week by week so that coursework, experiments, reports, pull requests, and the final capstone remain reproducible and easy to review.
 
 ## Course roadmap
 
 | Week | Topic | Status |
 |---|---|---|
-| 01 | Fundamentals of Recommender Systems | In progress |
-| 02 | Content-Based Filtering | Not started |
+| 01 | Random Lunch Generator / RecSys Fundamentals | ✅ Completed |
+| 02 | Content-Based Filtering | 🚧 In progress |
 | 03 | Collaborative Filtering | Not started |
 | 04 | Association Rules | Not started |
 | 05 | Matrix Factorization | Not started |
@@ -22,15 +21,58 @@ visualizations, pull requests, and the final capstone remain reproducible and ea
 | 11 | Personalized Context | Not started |
 | 12 | Capstone Project / Seminar | Not started |
 
-## Week 01
+## Week 01 — Random Lunch Generator
 
-- [x] Review introductory RecSys concepts
-- [x] Prepare a local OpenCode visualization workflow
-- [ ] Add the visualization demo to this repository
-- [ ] Build the Random Lunch Generator
-- [ ] Fix image-generation / image-display issues through prompt iteration
-- [ ] Deploy the Random Lunch Generator with GitHub Pages
-- [ ] Prepare a 3–5 minute visualization demo
+### Completed
+
+- [x] Run and inspect the provided Random Lunch Generator baseline
+- [x] Deploy the application with GitHub Pages
+- [x] Reproduce the missing-icon issue for Ramen, Pasta, and Soup
+- [x] Identify the root cause in Font Awesome Free 6.4.0
+- [x] Replace invalid icon classes with verified alternatives
+- [x] Improve the prompt to require dependency/version verification
+- [x] Add a minimal recency-aware weighted-random extension
+- [x] Verify the repeat probability mathematically
+- [x] Run a seeded 100,000-draw simulation
+- [x] Manually verify the final webpage behavior
+- [x] Preserve the tool-native Codex `session.json`
+- [x] Prepare the A01 report and 3–5 minute presentation
+
+### Main result
+
+The original uniform selector has an immediate-repeat probability of:
+
+`1 / 12 = 8.33%`
+
+Using a recency penalty of `0.25` reduces the theoretical repeat probability to:
+
+`0.25 / 11.25 = 2.22%`
+
+A 100,000-draw simulation produced:
+
+- Uniform random: `8.2941%`
+- Recency-aware random: `2.2480%`
+
+All 12 foods remained represented with approximately uniform long-run frequency.
+
+### Week 1 takeaway
+
+AI suggestions should be treated as hypotheses rather than accepted automatically.
+The most useful parts of the workflow were checking the real dependency,
+verifying the mathematics, reproducing the result, and keeping code changes minimal.
+
+## Week 02 — Content-Based Filtering
+
+Status: 🚧 In progress
+
+### Goals
+
+- [ ] Understand the basic idea of content-based recommendation
+- [ ] Learn how items are represented as feature vectors
+- [ ] Understand similarity measures, especially cosine similarity
+- [ ] Build and run the provided Week 2 baseline
+- [ ] Inspect and verify recommendation results
+- [ ] Complete A02 using the course 5-Loop
 
 ## Repository structure
 
@@ -39,9 +81,7 @@ LLM4Rec-Course/
 ├── README.md
 ├── AGENTS.md
 ├── week01/
-│   ├── random-lunch-generator/
-│   ├── visualization-demo/
-│   └── notes.md
+│   └── random-lunch-generator/
 ├── week02/
 ├── ...
 ├── week12/
@@ -54,11 +94,17 @@ LLM4Rec-Course/
 └── assets/
 ```
 
-## Working convention
+## Weekly working convention
 
-Each substantial weekly task should ideally follow:
+Each assignment follows the course Top-Down 5-Loop:
 
-**Question → Experiment → Evidence → Claim → Review**
+**BUILD → ASK WHY → TEST → EXPLAIN → IMPROVE**
+
+1. **BUILD** — run a working baseline
+2. **ASK WHY** — question assumptions and consider alternatives
+3. **TEST** — verify important AI outputs against code, theory, or data
+4. **EXPLAIN** — describe the result in my own words
+5. **IMPROVE** — change one meaningful variable and test again
 
 Use a separate branch for meaningful weekly work, for example:
 
