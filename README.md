@@ -9,7 +9,7 @@ This repository is organized week by week so that coursework, experiments, repor
 | Week | Topic | Status |
 |---|---|---|
 | 01 | Random Lunch Generator / RecSys Fundamentals | ✅ Completed |
-| 02 | Content-Based Filtering | 🚧 In progress |
+| 02 | Content-Based Filtering | ✅ Completed |
 | 03 | Collaborative Filtering | Not started |
 | 04 | Association Rules | Not started |
 | 05 | Matrix Factorization | Not started |
@@ -63,17 +63,47 @@ verifying the mathematics, reproducing the result, and keeping code changes mini
 
 ## Week 02 — Content-Based Filtering
 
-Status: 🚧 In progress
+Status: ✅ Completed
 
-### Goals
+### Completed
 
-- [ ] Understand the basic idea of content-based recommendation
-- [ ] Learn how items are represented as feature vectors
-- [ ] Understand similarity measures, especially cosine similarity
-- [ ] Build and run the provided Week 2 baseline
-- [ ] Inspect and verify recommendation results
-- [ ] Complete A02 using the course 5-Loop
+- [x] Run and preserve the instructor baseline
+- [x] Correct the MovieLens 19-genre parser
+- [x] Implement cosine item-to-item Top-5 recommendation
+- [x] Build a three-movie averaged user profile
+- [x] Implement profile-based Top-5 recommendation
+- [x] Exclude all previously rated movies from recommendation candidates
+- [x] Verify zero watched-item leakage after correction
+- [x] Compare popularity, long-tail exposure, and catalog coverage
+- [x] Diagnose minority-taste dilution from profile averaging
+- [x] Test IDF-weighted genre features
+- [x] Run deterministic and paired-random tie diagnostics
+- [x] Preserve the final report and Codex session audit trail
 
+### Main results
+
+- Jaccard to cosine changed only `1 / 1682` catalog Top-5 lists (`0.059%`).
+- Item-to-item vs profile retrieval changed the ordered Top-5 for
+  `833 / 942` eligible users (`88.43%`).
+- The two methods shared only `0.926 / 5` recommendations on average.
+- The original user-level evaluation leaked already-rated movies for
+  `598 / 942` users; after full-history exclusion, leakage was `0`.
+- Item-to-item catalog coverage was `35.43%`, compared with `31.03%`
+  for profile retrieval.
+- IDF weighting increased mean distinct profile similarity scores from
+  `18.47` to `137.68` and reduced membership-sensitive cutoff ties from
+  `92.68%` to `75.58%`.
+
+These results characterize recommendation behavior and representation
+discriminability; they do not establish improved recommendation relevance.
+
+### Key files
+
+- `week02/teacher-baseline/` — original instructor baseline
+- `week02/content-based-movie-recommender/` — completed Week 2 implementation
+- `week02/content-based-movie-recommender/analysis/` — evaluation and audit scripts
+- `week02/content-based-movie-recommender/report.pdf` — final A02 report
+- `week02/content-based-movie-recommender/session.json` — Codex audit trail
 ## Repository structure
 
 ```text
