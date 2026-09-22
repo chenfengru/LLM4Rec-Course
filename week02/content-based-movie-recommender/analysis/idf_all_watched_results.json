@@ -1,0 +1,312 @@
+{
+  "protocol": {
+    "movie_count": 1682,
+    "rating_count": 100000,
+    "eligible_user_count": 942,
+    "eligible_user_definition": "at least 3 ratings >= 4",
+    "profile_selection": "three most recent ratings >= 4, timestamp descending",
+    "active_item": "most recent selected positive movie",
+    "candidate_exclusion": "all movie IDs appearing in u.data for the user, regardless of rating",
+    "score_tolerance": 1e-12,
+    "random_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "paired_priority_policy": "one fixed random priority per movie ID per seed, shared by all four methods",
+    "idf_formula": "log((N + 1) / (df + 1)) + 1",
+    "u_item_sha256": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701",
+    "u_data_sha256": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490"
+  },
+  "corrected_tie_statistics": {
+    "binary_item": {
+      "user_count": 942,
+      "mean_distinct_similarity_scores": 9.666666666666666,
+      "top5_tie_count": 942,
+      "top5_tie_percent": 100.0,
+      "cutoff_tie_count": 937,
+      "cutoff_tie_percent": 99.4692144373673,
+      "membership_sensitive_count": 890,
+      "membership_sensitive_percent": 94.47983014861995,
+      "mean_cutoff_tie_group_size": 94.13874066168623
+    },
+    "idf_item": {
+      "user_count": 942,
+      "mean_distinct_similarity_scores": 79.49575371549894,
+      "top5_tie_count": 910,
+      "top5_tie_percent": 96.60297239915074,
+      "cutoff_tie_count": 907,
+      "cutoff_tie_percent": 96.28450106157112,
+      "membership_sensitive_count": 844,
+      "membership_sensitive_percent": 89.59660297239915,
+      "mean_cutoff_tie_group_size": 88.87761852260198
+    },
+    "binary_profile": {
+      "user_count": 942,
+      "mean_distinct_similarity_scores": 18.469214437367302,
+      "top5_tie_count": 941,
+      "top5_tie_percent": 99.89384288747345,
+      "cutoff_tie_count": 931,
+      "cutoff_tie_percent": 98.83227176220807,
+      "membership_sensitive_count": 873,
+      "membership_sensitive_percent": 92.67515923566879,
+      "mean_cutoff_tie_group_size": 61.06552094522019
+    },
+    "idf_profile": {
+      "user_count": 942,
+      "mean_distinct_similarity_scores": 137.6772823779193,
+      "top5_tie_count": 856,
+      "top5_tie_percent": 90.87048832271762,
+      "cutoff_tie_count": 810,
+      "cutoff_tie_percent": 85.98726114649682,
+      "membership_sensitive_count": 712,
+      "membership_sensitive_percent": 75.58386411889596,
+      "mean_cutoff_tie_group_size": 31.348148148148148
+    }
+  },
+  "corrected_source_order_membership_change": {
+    "item_changed_count": 263,
+    "item_changed_percent": 27.91932059447983,
+    "profile_changed_count": 704,
+    "profile_changed_percent": 74.73460721868365
+  },
+  "corrected_paired_random_membership_change": {
+    "summary": {
+      "item_changed_percent": {
+        "mean": 27.74946921443737,
+        "standard_deviation": 0.37139820986275807,
+        "minimum": 26.963906581740975,
+        "maximum": 28.556263269639064
+      },
+      "profile_changed_percent": {
+        "mean": 74.14012738853503,
+        "standard_deviation": 0.5971278603152959,
+        "minimum": 72.61146496815287,
+        "maximum": 75.05307855626327
+      }
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "item_changed_count": 262,
+        "item_changed_percent": 27.81316348195329,
+        "profile_changed_count": 699,
+        "profile_changed_percent": 74.20382165605096
+      },
+      {
+        "seed": 1,
+        "item_changed_count": 265,
+        "item_changed_percent": 28.13163481953291,
+        "profile_changed_count": 696,
+        "profile_changed_percent": 73.88535031847134
+      },
+      {
+        "seed": 2,
+        "item_changed_count": 261,
+        "item_changed_percent": 27.70700636942675,
+        "profile_changed_count": 700,
+        "profile_changed_percent": 74.3099787685775
+      },
+      {
+        "seed": 3,
+        "item_changed_count": 269,
+        "item_changed_percent": 28.556263269639064,
+        "profile_changed_count": 702,
+        "profile_changed_percent": 74.52229299363057
+      },
+      {
+        "seed": 4,
+        "item_changed_count": 258,
+        "item_changed_percent": 27.388535031847134,
+        "profile_changed_count": 701,
+        "profile_changed_percent": 74.41613588110404
+      },
+      {
+        "seed": 5,
+        "item_changed_count": 266,
+        "item_changed_percent": 28.237791932059448,
+        "profile_changed_count": 695,
+        "profile_changed_percent": 73.7791932059448
+      },
+      {
+        "seed": 6,
+        "item_changed_count": 258,
+        "item_changed_percent": 27.388535031847134,
+        "profile_changed_count": 697,
+        "profile_changed_percent": 73.99150743099787
+      },
+      {
+        "seed": 7,
+        "item_changed_count": 254,
+        "item_changed_percent": 26.963906581740975,
+        "profile_changed_count": 706,
+        "profile_changed_percent": 74.94692144373673
+      },
+      {
+        "seed": 8,
+        "item_changed_count": 265,
+        "item_changed_percent": 28.13163481953291,
+        "profile_changed_count": 694,
+        "profile_changed_percent": 73.67303609341826
+      },
+      {
+        "seed": 9,
+        "item_changed_count": 267,
+        "item_changed_percent": 28.343949044585987,
+        "profile_changed_count": 695,
+        "profile_changed_percent": 73.7791932059448
+      },
+      {
+        "seed": 10,
+        "item_changed_count": 260,
+        "item_changed_percent": 27.60084925690021,
+        "profile_changed_count": 700,
+        "profile_changed_percent": 74.3099787685775
+      },
+      {
+        "seed": 11,
+        "item_changed_count": 260,
+        "item_changed_percent": 27.60084925690021,
+        "profile_changed_count": 684,
+        "profile_changed_percent": 72.61146496815287
+      },
+      {
+        "seed": 12,
+        "item_changed_count": 258,
+        "item_changed_percent": 27.388535031847134,
+        "profile_changed_count": 704,
+        "profile_changed_percent": 74.73460721868365
+      },
+      {
+        "seed": 13,
+        "item_changed_count": 260,
+        "item_changed_percent": 27.60084925690021,
+        "profile_changed_count": 688,
+        "profile_changed_percent": 73.03609341825903
+      },
+      {
+        "seed": 14,
+        "item_changed_count": 260,
+        "item_changed_percent": 27.60084925690021,
+        "profile_changed_count": 705,
+        "profile_changed_percent": 74.8407643312102
+      },
+      {
+        "seed": 15,
+        "item_changed_count": 263,
+        "item_changed_percent": 27.91932059447983,
+        "profile_changed_count": 707,
+        "profile_changed_percent": 75.05307855626327
+      },
+      {
+        "seed": 16,
+        "item_changed_count": 261,
+        "item_changed_percent": 27.70700636942675,
+        "profile_changed_count": 696,
+        "profile_changed_percent": 73.88535031847134
+      },
+      {
+        "seed": 17,
+        "item_changed_count": 259,
+        "item_changed_percent": 27.494692144373673,
+        "profile_changed_count": 700,
+        "profile_changed_percent": 74.3099787685775
+      },
+      {
+        "seed": 18,
+        "item_changed_count": 260,
+        "item_changed_percent": 27.60084925690021,
+        "profile_changed_count": 696,
+        "profile_changed_percent": 73.88535031847134
+      },
+      {
+        "seed": 19,
+        "item_changed_count": 262,
+        "item_changed_percent": 27.81316348195329,
+        "profile_changed_count": 703,
+        "profile_changed_percent": 74.62845010615712
+      }
+    ]
+  },
+  "leakage_assertions": {
+    "source_order_checks": 3768,
+    "source_order_leaked_slots": 0,
+    "paired_random_checks": 75360,
+    "paired_random_leaked_slots": 0,
+    "assertion": "Top5 intersect watched_set is empty for all four methods"
+  },
+  "historical_defective_results": {
+    "source_file": "analysis/idf_results.json",
+    "tie_statistics": {
+      "binary_item": {
+        "top5_tie_percent": 100,
+        "cutoff_tie_percent": 99.57537154989384,
+        "membership_sensitive_percent": 93.84288747346072,
+        "mean_cutoff_tie_group_size": 95.11727078891258,
+        "maximum_cutoff_tie_group_size": 420,
+        "mean_distinct_scores": 10.011677282377919
+      },
+      "idf_item": {
+        "top5_tie_percent": 96.28450106157112,
+        "cutoff_tie_percent": 95.64755838641189,
+        "membership_sensitive_percent": 89.27813163481953,
+        "mean_cutoff_tie_group_size": 94.17758046614873,
+        "maximum_cutoff_tie_group_size": 375,
+        "mean_distinct_scores": 85.87685774946921
+      },
+      "binary_profile": {
+        "top5_tie_percent": 100,
+        "cutoff_tie_percent": 99.04458598726114,
+        "membership_sensitive_percent": 92.25053078556263,
+        "mean_cutoff_tie_group_size": 63.20471596998928,
+        "maximum_cutoff_tie_group_size": 378,
+        "mean_distinct_scores": 19.10084925690021
+      },
+      "idf_profile": {
+        "top5_tie_percent": 90.97664543524417,
+        "cutoff_tie_percent": 83.97027600849258,
+        "membership_sensitive_percent": 73.03609341825903,
+        "mean_cutoff_tie_group_size": 32.53350189633375,
+        "maximum_cutoff_tie_group_size": 375,
+        "mean_distinct_scores": 147.9936305732484
+      }
+    },
+    "source_order_binary_vs_idf": {
+      "item_top5_membership_changed_count": 241,
+      "item_top5_membership_changed_percent": 25.583864118895967,
+      "profile_top5_membership_changed_count": 699,
+      "profile_top5_membership_changed_percent": 74.20382165605096
+    },
+    "random_binary_vs_idf_percent": {
+      "item": {
+        "mean": 25.75371549893843,
+        "standard_deviation": 0.4644297845908141,
+        "minimum": 24.628450106157114,
+        "maximum": 26.64543524416136
+      },
+      "profile": {
+        "mean": 73.43949044585987,
+        "standard_deviation": 0.5800881567861672,
+        "minimum": 72.1868365180467,
+        "maximum": 74.52229299363057
+      }
+    }
+  }
+}

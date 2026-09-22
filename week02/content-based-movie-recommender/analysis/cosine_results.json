@@ -1,0 +1,82 @@
+{
+  "experiment": {
+    "data_sha256": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701",
+    "movie_count": 1682,
+    "top_k": 5,
+    "tie_behavior": "stable u.item source order"
+  },
+  "manual_verification": {
+    "movie_a": {
+      "id": 1,
+      "title": "Toy Story (1995)",
+      "genres": ["Animation", "Children's", "Comedy"],
+      "vector": [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "movie_b": {
+      "id": 95,
+      "title": "Aladdin (1992)",
+      "genres": ["Animation", "Children's", "Comedy", "Musical"],
+      "vector": [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+    },
+    "dot_product": 3,
+    "norm_a": 1.7320508075688772,
+    "norm_b": 2.0,
+    "manual_cosine": 0.8660254037844387,
+    "python_implementation_cosine": 0.8660254037844387,
+    "javascript_implementation_cosine": 0.8660254037844387,
+    "absolute_difference": 0.0,
+    "zero_norm_result": 0.0
+  },
+  "jaccard_vs_cosine": {
+    "changed_top5_ordered_count": 1,
+    "changed_top5_ordered_percent": 0.059453032104637336,
+    "changed_top5_membership_count": 1,
+    "changed_top5_membership_percent": 0.059453032104637336,
+    "average_top5_set_overlap_fraction": 0.9998810939357907,
+    "average_shared_items_out_of_5": 4.999405469678954,
+    "only_changed_seed": {
+      "id": 1110,
+      "title": "Tank Girl (1995)",
+      "genres": ["Action", "Comedy", "Musical", "Sci-Fi"],
+      "jaccard_top5": [
+        {"id": 186, "title": "Blues Brothers, The (1980)", "genres": ["Action", "Comedy", "Musical"], "score": 0.75},
+        {"id": 362, "title": "Blues Brothers 2000 (1998)", "genres": ["Action", "Comedy", "Musical"], "score": 0.75},
+        {"id": 235, "title": "Mars Attacks! (1996)", "genres": ["Action", "Comedy", "Sci-Fi", "War"], "score": 0.6},
+        {"id": 257, "title": "Men in Black (1997)", "genres": ["Action", "Adventure", "Comedy", "Sci-Fi"], "score": 0.6},
+        {"id": 21, "title": "Muppet Treasure Island (1996)", "genres": ["Action", "Adventure", "Comedy", "Musical", "Thriller"], "score": 0.5}
+      ],
+      "cosine_top5": [
+        {"id": 186, "title": "Blues Brothers, The (1980)", "genres": ["Action", "Comedy", "Musical"], "score": 0.8660254037844387},
+        {"id": 362, "title": "Blues Brothers 2000 (1998)", "genres": ["Action", "Comedy", "Musical"], "score": 0.8660254037844387},
+        {"id": 235, "title": "Mars Attacks! (1996)", "genres": ["Action", "Comedy", "Sci-Fi", "War"], "score": 0.75},
+        {"id": 257, "title": "Men in Black (1997)", "genres": ["Action", "Adventure", "Comedy", "Sci-Fi"], "score": 0.75},
+        {"id": 109, "title": "Mystery Science Theater 3000: The Movie (1996)", "genres": ["Comedy", "Sci-Fi"], "score": 0.7071067811865475}
+      ]
+    }
+  },
+  "dot_product_vs_cosine": {
+    "recommendation_slots_per_method": 8410,
+    "many_genres_threshold": 4,
+    "dot_product": {
+      "mean_genre_count": 2.8386444708680143,
+      "median_genre_count": 3.0,
+      "many_genres_count": 1658,
+      "many_genres_proportion": 0.1971462544589774
+    },
+    "cosine": {
+      "mean_genre_count": 1.6953626634958383,
+      "median_genre_count": 2.0,
+      "many_genres_count": 275,
+      "many_genres_proportion": 0.032699167657550536
+    },
+    "broad_candidate_case": {
+      "seed": "Toy Story (1995)",
+      "candidate": "Aladdin (1992)",
+      "candidate_genre_count": 4,
+      "dot_rank": 1,
+      "dot_score": 3,
+      "cosine_rank": 2,
+      "cosine_score": 0.8660254037844387
+    }
+  }
+}

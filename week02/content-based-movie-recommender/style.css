@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 760px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+}
+
+.feature-mode {
+    margin-top: 20px;
+    padding: 16px;
+    background-color: #fff8e6;
+    border: 1px solid #f0c36d;
+    border-radius: 5px;
+}
+
+.feature-mode label,
+.feature-mode select {
+    display: block;
+    width: 100%;
+}
+
+.feature-mode label {
+    margin-bottom: 8px;
+}
+
+.feature-mode p {
+    margin: 8px 0 0;
+    text-align: left;
+    font-size: 14px;
+}
+
+.recommendation-mode {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e1e5e8;
+}
+
+h2 {
+    margin-bottom: 12px;
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.controls label {
+    margin-bottom: -10px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.comparison-note {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.result-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+}
+
+#result,
+#profile-result {
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+    margin: 0;
+}
+
+.loading {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+.success {
+    color: #27ae60;
+}

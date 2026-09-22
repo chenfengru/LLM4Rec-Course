@@ -1,0 +1,74 @@
+{
+  "experiment": {
+    "data_file": "week02/content-based-movie-recommender/u.item",
+    "data_sha256": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701",
+    "similarity": "Jaccard over parsed genre-label sets",
+    "tie_behavior": "stable u.item source order",
+    "baseline_label_count": 18,
+    "corrected_label_count": 19
+  },
+  "catalog": {
+    "seed_count": 1682,
+    "top2_changed_count": 83,
+    "top2_changed_percent": 4.934601664684899,
+    "top5_changed_count": 106,
+    "top5_changed_percent": 6.302021403091557
+  },
+  "raw_western_seeds": {
+    "seed_count": 27,
+    "top2_changed_count": 22,
+    "top2_changed_percent": 81.48148148148148,
+    "top5_changed_count": 25,
+    "top5_changed_percent": 92.5925925925926
+  },
+  "changed_examples": [
+    {
+      "seed_id": 27,
+      "seed_title": "Bad Boys (1995)",
+      "raw_western": false,
+      "top2_changed": true,
+      "top5_changed": true,
+      "baseline_top5_ids": [177, 233, 263, 363, 397],
+      "corrected_top5_ids": [233, 263, 363, 397, 455]
+    },
+    {
+      "seed_id": 35,
+      "seed_title": "Free Willy 2: The Adventure Home (1995)",
+      "raw_western": false,
+      "top2_changed": false,
+      "top5_changed": true,
+      "baseline_top5_ids": [78, 457, 1608, 132, 97],
+      "corrected_top5_ids": [78, 457, 1608, 132, 112]
+    },
+    {
+      "seed_id": 73,
+      "seed_title": "Maverick (1994)",
+      "raw_western": true,
+      "top2_changed": true,
+      "top5_changed": true,
+      "baseline_top5_ids": [232, 388, 391, 435, 456],
+      "corrected_top5_ids": [232, 435, 1188, 177, 388]
+    }
+  ],
+  "western_only_case": {
+    "seed_id": 203,
+    "seed_title": "Unforgiven (1992)",
+    "raw_flags": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "baseline_genres": [],
+    "corrected_genres": ["Western"],
+    "baseline_top5": [
+      {"id": 1, "title": "Toy Story (1995)", "score": 0.0},
+      {"id": 2, "title": "GoldenEye (1995)", "score": 0.0},
+      {"id": 3, "title": "Four Rooms (1995)", "score": 0.0},
+      {"id": 4, "title": "Get Shorty (1995)", "score": 0.0},
+      {"id": 5, "title": "Copycat (1995)", "score": 0.0}
+    ],
+    "corrected_top5": [
+      {"id": 470, "title": "Tombstone (1993)", "score": 1.0},
+      {"id": 556, "title": "Wild Bill (1995)", "score": 1.0},
+      {"id": 570, "title": "Wyatt Earp (1994)", "score": 1.0},
+      {"id": 589, "title": "Wild Bunch, The (1969)", "score": 1.0},
+      {"id": 621, "title": "Davy Crockett, King of the Wild Frontier (1955)", "score": 1.0}
+    ]
+  }
+}

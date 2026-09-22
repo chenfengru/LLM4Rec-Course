@@ -1,0 +1,1377 @@
+{
+  "protocol": {
+    "movie_count": 1682,
+    "rating_count": 100000,
+    "eligible_user_definition": "at least 3 ratings >= 4",
+    "eligible_user_count": 942,
+    "profile_selection": "three most recent ratings >= 4, timestamp descending",
+    "active_item": "most recent of the three selected positive movies",
+    "corrected_exclusion": "all movie IDs appearing in u.data for the user, regardless of rating",
+    "top_k": 5,
+    "score_tolerance": 1e-12,
+    "head_definition": "top ceil(20% of u.item movies by u.data rating count, movie ID tie-break)",
+    "head_size": 337,
+    "long_tail_size": 1345,
+    "coverage_denominator": 1682,
+    "random_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "paired_random_policy": "one fixed random priority per movie ID per seed, shared by item/profile"
+  },
+  "current_harness_inspection": {
+    "verify_profile_and_compare_py": "excludes only the three selected positive movie IDs for both methods",
+    "audit_tie_sensitivity_py": "excludes only the three selected positive movie IDs for both methods",
+    "audit_idf_weighting_py": "excludes only the three selected positive movie IDs for all methods"
+  },
+  "leakage_before_correction": {
+    "eligible_user_count": 942,
+    "users_with_item_leakage": 457,
+    "users_with_profile_leakage": 464,
+    "users_with_any_leakage": 598,
+    "item_leaked_slots": 775,
+    "profile_leaked_slots": 846,
+    "total_leaked_slots": 1621,
+    "examples": [
+      {
+        "user_id": 1,
+        "selected_movies_most_recent_first": [
+          {
+            "id": 256,
+            "title": "When the Cats Away (Chacun cherche son chat) (1996)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 171,
+            "title": "Delicatessen (1991)",
+            "genres": [
+              "Comedy",
+              "Sci-Fi"
+            ]
+          },
+          {
+            "id": 111,
+            "title": "Truth About Cats & Dogs, The (1996)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          }
+        ],
+        "item_top5": [
+          {
+            "id": 16,
+            "title": "French Twist (Gazon maudit) (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 49,
+            "title": "I.Q. (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 66,
+            "title": "While You Were Sleeping (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 70,
+            "title": "Four Weddings and a Funeral (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 81,
+            "title": "Hudsucker Proxy, The (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          }
+        ],
+        "profile_top5": [
+          {
+            "id": 16,
+            "title": "French Twist (Gazon maudit) (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 49,
+            "title": "I.Q. (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 66,
+            "title": "While You Were Sleeping (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 70,
+            "title": "Four Weddings and a Funeral (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          },
+          {
+            "id": 81,
+            "title": "Hudsucker Proxy, The (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ]
+          }
+        ],
+        "item_leakage": [
+          {
+            "id": 16,
+            "title": "French Twist (Gazon maudit) (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 5
+          },
+          {
+            "id": 49,
+            "title": "I.Q. (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 3
+          },
+          {
+            "id": 66,
+            "title": "While You Were Sleeping (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 4
+          },
+          {
+            "id": 70,
+            "title": "Four Weddings and a Funeral (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 3
+          },
+          {
+            "id": 81,
+            "title": "Hudsucker Proxy, The (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 5
+          }
+        ],
+        "profile_leakage": [
+          {
+            "id": 16,
+            "title": "French Twist (Gazon maudit) (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 5
+          },
+          {
+            "id": 49,
+            "title": "I.Q. (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 3
+          },
+          {
+            "id": 66,
+            "title": "While You Were Sleeping (1995)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 4
+          },
+          {
+            "id": 70,
+            "title": "Four Weddings and a Funeral (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 3
+          },
+          {
+            "id": 81,
+            "title": "Hudsucker Proxy, The (1994)",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "user_rating": 5
+          }
+        ]
+      },
+      {
+        "user_id": 3,
+        "selected_movies_most_recent_first": [
+          {
+            "id": 318,
+            "title": "Schindler's List (1993)",
+            "genres": [
+              "Drama",
+              "War"
+            ]
+          },
+          {
+            "id": 320,
+            "title": "Paradise Lost: The Child Murders at Robin Hood Hills (1996)",
+            "genres": [
+              "Documentary"
+            ]
+          },
+          {
+            "id": 181,
+            "title": "Return of the Jedi (1983)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Romance",
+              "Sci-Fi",
+              "War"
+            ]
+          }
+        ],
+        "item_top5": [
+          {
+            "id": 10,
+            "title": "Richard III (1995)",
+            "genres": [
+              "Drama",
+              "War"
+            ]
+          },
+          {
+            "id": 157,
+            "title": "Platoon (1986)",
+            "genres": [
+              "Drama",
+              "War"
+            ]
+          },
+          {
+            "id": 180,
+            "title": "Apocalypse Now (1979)",
+            "genres": [
+              "Drama",
+              "War"
+            ]
+          },
+          {
+            "id": 190,
+            "title": "Henry V (1989)",
+            "genres": [
+              "Drama",
+              "War"
+            ]
+          },
+          {
+            "id": 199,
+            "title": "Bridge on the River Kwai, The (1957)",
+            "genres": [
+              "Drama",
+              "War"
+            ]
+          }
+        ],
+        "profile_top5": [
+          {
+            "id": 172,
+            "title": "Empire Strikes Back, The (1980)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Drama",
+              "Romance",
+              "Sci-Fi",
+              "War"
+            ]
+          },
+          {
+            "id": 50,
+            "title": "Star Wars (1977)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Romance",
+              "Sci-Fi",
+              "War"
+            ]
+          },
+          {
+            "id": 271,
+            "title": "Starship Troopers (1997)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Sci-Fi",
+              "War"
+            ]
+          },
+          {
+            "id": 498,
+            "title": "African Queen, The (1951)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Romance",
+              "War"
+            ]
+          },
+          {
+            "id": 631,
+            "title": "Crying Game, The (1992)",
+            "genres": [
+              "Action",
+              "Drama",
+              "Romance",
+              "War"
+            ]
+          }
+        ],
+        "item_leakage": [],
+        "profile_leakage": [
+          {
+            "id": 271,
+            "title": "Starship Troopers (1997)",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Sci-Fi",
+              "War"
+            ],
+            "user_rating": 3
+          }
+        ]
+      },
+      {
+        "user_id": 4,
+        "selected_movies_most_recent_first": [
+          {
+            "id": 11,
+            "title": "Seven (Se7en) (1995)",
+            "genres": [
+              "Crime",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 294,
+            "title": "Liar Liar (1997)",
+            "genres": [
+              "Comedy"
+            ]
+          },
+          {
+            "id": 260,
+            "title": "Event Horizon (1997)",
+            "genres": [
+              "Action",
+              "Mystery",
+              "Sci-Fi",
+              "Thriller"
+            ]
+          }
+        ],
+        "item_top5": [
+          {
+            "id": 12,
+            "title": "Usual Suspects, The (1995)",
+            "genres": [
+              "Crime",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 156,
+            "title": "Reservoir Dogs (1992)",
+            "genres": [
+              "Crime",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 336,
+            "title": "Playing God (1997)",
+            "genres": [
+              "Crime",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 361,
+            "title": "Incognito (1997)",
+            "genres": [
+              "Crime",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 583,
+            "title": "Romeo Is Bleeding (1993)",
+            "genres": [
+              "Crime",
+              "Thriller"
+            ]
+          }
+        ],
+        "profile_top5": [
+          {
+            "id": 902,
+            "title": "Big Lebowski, The (1998)",
+            "genres": [
+              "Comedy",
+              "Crime",
+              "Mystery",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 96,
+            "title": "Terminator 2: Judgment Day (1991)",
+            "genres": [
+              "Action",
+              "Sci-Fi",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 145,
+            "title": "Lawnmower Man, The (1992)",
+            "genres": [
+              "Action",
+              "Sci-Fi",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 195,
+            "title": "Terminator, The (1984)",
+            "genres": [
+              "Action",
+              "Sci-Fi",
+              "Thriller"
+            ]
+          },
+          {
+            "id": 273,
+            "title": "Heat (1995)",
+            "genres": [
+              "Action",
+              "Crime",
+              "Thriller"
+            ]
+          }
+        ],
+        "item_leakage": [
+          {
+            "id": 361,
+            "title": "Incognito (1997)",
+            "genres": [
+              "Crime",
+              "Thriller"
+            ],
+            "user_rating": 5
+          }
+        ],
+        "profile_leakage": []
+      }
+    ],
+    "deterministic_metrics_with_invalid_exclusion": {
+      "comparison": {
+        "eligible_user_count": 942,
+        "changed_ordered_top5_count": 833,
+        "changed_ordered_top5_percent": 88.42887473460722,
+        "mean_top5_set_overlap_fraction": 0.18535031847133757,
+        "mean_shared_items_out_of_5": 0.9267515923566879
+      },
+      "item_to_item": {
+        "recommendation_slots": 4710,
+        "mean_rating_count": 126.88535031847134,
+        "median_rating_count": 93.0,
+        "long_tail_share": 0.5214437367303609,
+        "unique_movies_recommended": 485,
+        "catalog_coverage": 0.28834720570749106
+      },
+      "profile": {
+        "recommendation_slots": 4710,
+        "mean_rating_count": 136.66815286624202,
+        "median_rating_count": 104.0,
+        "long_tail_share": 0.47770700636942676,
+        "unique_movies_recommended": 435,
+        "catalog_coverage": 0.25862068965517243
+      }
+    }
+  },
+  "leakage_after_correction": {
+    "source_order_users_with_item_leakage": 0,
+    "source_order_users_with_profile_leakage": 0,
+    "source_order_total_leaked_slots": 0,
+    "source_order_assertions_checked": 1884,
+    "paired_random_total_leaked_slots": 0,
+    "paired_random_assertions_checked": 37680,
+    "assertion": "Top5 intersect watched_set is empty for every user, method, and evaluated tie policy"
+  },
+  "profile_averaging_diagnostics": {
+    "profile_count": 942,
+    "profile_input_pair_count": 2826,
+    "mean_profile_to_input_similarity": 0.7202339046255176,
+    "mean_of_user_mean_similarities": 0.7202339046255176,
+    "minimum_similarity_per_user": {
+      "mean": 0.5725238038331513,
+      "median": 0.5477225575051661,
+      "percentile_10": 0.3779644730092271,
+      "minimum": 0.2182178902359924,
+      "maximum": 1.0000000000000002,
+      "percentile_definition": "linear interpolation at (n - 1) * p"
+    },
+    "lowest_minimum_user": {
+      "user_id": 104,
+      "minimum_similarity": 0.2182178902359924,
+      "selected_movies_most_recent_first": [
+        {
+          "id": 181,
+          "title": "Return of the Jedi (1983)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Romance",
+            "Sci-Fi",
+            "War"
+          ],
+          "vector": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "profile_cosine": 0.9759000729485331
+        },
+        {
+          "id": 50,
+          "title": "Star Wars (1977)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Romance",
+            "Sci-Fi",
+            "War"
+          ],
+          "vector": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "profile_cosine": 0.9759000729485331
+        },
+        {
+          "id": 290,
+          "title": "Fierce Creatures (1997)",
+          "genres": [
+            "Comedy"
+          ],
+          "vector": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "profile_cosine": 0.2182178902359924
+        }
+      ]
+    }
+  },
+  "previous_source_order_with_three_selected_exclusion": {
+    "comparison": {
+      "eligible_user_count": 942,
+      "changed_ordered_top5_count": 833,
+      "changed_ordered_top5_percent": 88.42887473460722,
+      "mean_top5_set_overlap_fraction": 0.18535031847133757,
+      "mean_shared_items_out_of_5": 0.9267515923566879
+    },
+    "item_to_item": {
+      "recommendation_slots": 4710,
+      "mean_rating_count": 126.88535031847134,
+      "median_rating_count": 93.0,
+      "long_tail_share": 0.5214437367303609,
+      "unique_movies_recommended": 485,
+      "catalog_coverage": 0.28834720570749106
+    },
+    "profile": {
+      "recommendation_slots": 4710,
+      "mean_rating_count": 136.66815286624202,
+      "median_rating_count": 104.0,
+      "long_tail_share": 0.47770700636942676,
+      "unique_movies_recommended": 435,
+      "catalog_coverage": 0.25862068965517243
+    }
+  },
+  "corrected_source_order": {
+    "comparison": {
+      "eligible_user_count": 942,
+      "changed_ordered_top5_count": 833,
+      "changed_ordered_top5_percent": 88.42887473460722,
+      "mean_top5_set_overlap_fraction": 0.18513800424628452,
+      "mean_shared_items_out_of_5": 0.9256900212314225
+    },
+    "item_to_item": {
+      "recommendation_slots": 4710,
+      "mean_rating_count": 108.18832271762209,
+      "median_rating_count": 75.5,
+      "long_tail_share": 0.5840764331210191,
+      "unique_movies_recommended": 596,
+      "catalog_coverage": 0.35434007134363854
+    },
+    "profile": {
+      "recommendation_slots": 4710,
+      "mean_rating_count": 114.02101910828026,
+      "median_rating_count": 89.0,
+      "long_tail_share": 0.5554140127388535,
+      "unique_movies_recommended": 522,
+      "catalog_coverage": 0.3103448275862069
+    }
+  },
+  "corrected_paired_random": {
+    "summary": {
+      "comparison": {
+        "changed_ordered_top5_count": {
+          "mean": 834.1,
+          "standard_deviation": 1.57797338380595,
+          "minimum": 830,
+          "maximum": 837
+        },
+        "changed_ordered_top5_percent": {
+          "mean": 88.5456475583864,
+          "standard_deviation": 0.16751309806857478,
+          "minimum": 88.1104033970276,
+          "maximum": 88.85350318471338
+        },
+        "mean_top5_set_overlap_fraction": {
+          "mean": 0.1851167728237792,
+          "standard_deviation": 0.00211878533849547,
+          "minimum": 0.1823779193205945,
+          "maximum": 0.18853503184713374
+        },
+        "mean_shared_items_out_of_5": {
+          "mean": 0.925583864118896,
+          "standard_deviation": 0.01059392669247736,
+          "minimum": 0.9118895966029724,
+          "maximum": 0.9426751592356688
+        }
+      },
+      "item_to_item": {
+        "mean_rating_count": {
+          "mean": 63.72752653927813,
+          "standard_deviation": 3.122779450895295,
+          "minimum": 57.84097664543524,
+          "maximum": 70.38853503184713
+        },
+        "median_rating_count": {
+          "mean": 30.8,
+          "standard_deviation": 4.411349000022556,
+          "minimum": 25.0,
+          "maximum": 40.0
+        },
+        "long_tail_share": {
+          "mean": 0.7727813163481954,
+          "standard_deviation": 0.020850791905821675,
+          "minimum": 0.7354564755838641,
+          "maximum": 0.8099787685774947
+        },
+        "unique_movies_recommended": {
+          "mean": 525.8,
+          "standard_deviation": 5.6267219586540795,
+          "minimum": 514,
+          "maximum": 537
+        },
+        "catalog_coverage": {
+          "mean": 0.3126040428061831,
+          "standard_deviation": 0.0033452568125172883,
+          "minimum": 0.3055885850178359,
+          "maximum": 0.3192627824019025
+        }
+      },
+      "profile": {
+        "mean_rating_count": {
+          "mean": 73.84872611464968,
+          "standard_deviation": 3.2435421574653702,
+          "minimum": 68.94288747346071,
+          "maximum": 79.49256900212315
+        },
+        "median_rating_count": {
+          "mean": 41.4,
+          "standard_deviation": 3.878143885933063,
+          "minimum": 30.0,
+          "maximum": 48.0
+        },
+        "long_tail_share": {
+          "mean": 0.7372186836518047,
+          "standard_deviation": 0.020495098051368663,
+          "minimum": 0.7067940552016985,
+          "maximum": 0.7813163481953291
+        },
+        "unique_movies_recommended": {
+          "mean": 458.2,
+          "standard_deviation": 5.6,
+          "minimum": 446,
+          "maximum": 470
+        },
+        "catalog_coverage": {
+          "mean": 0.27241379310344827,
+          "standard_deviation": 0.003329369797859689,
+          "minimum": 0.26516052318668254,
+          "maximum": 0.2794292508917955
+        }
+      }
+    },
+    "directional_consistency": {
+      "random_seed_count": 20,
+      "profile_mean_popularity_higher_seed_count": 20,
+      "profile_median_popularity_higher_seed_count": 20,
+      "profile_long_tail_share_lower_seed_count": 19,
+      "profile_unique_count_lower_seed_count": 20,
+      "profile_catalog_coverage_lower_seed_count": 20
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 830,
+          "changed_ordered_top5_percent": 88.1104033970276,
+          "mean_top5_set_overlap_fraction": 0.18789808917197454,
+          "mean_shared_items_out_of_5": 0.9394904458598726
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 58.79044585987261,
+          "median_rating_count": 29.0,
+          "long_tail_share": 0.8087048832271763,
+          "unique_movies_recommended": 526,
+          "catalog_coverage": 0.31272294887039237
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 70.33290870488322,
+          "median_rating_count": 39.0,
+          "long_tail_share": 0.7554140127388536,
+          "unique_movies_recommended": 455,
+          "catalog_coverage": 0.27051129607609986
+        }
+      },
+      {
+        "seed": 1,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 833,
+          "changed_ordered_top5_percent": 88.42887473460722,
+          "mean_top5_set_overlap_fraction": 0.18853503184713374,
+          "mean_shared_items_out_of_5": 0.9426751592356688
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 60.92165605095541,
+          "median_rating_count": 25.0,
+          "long_tail_share": 0.78895966029724,
+          "unique_movies_recommended": 520,
+          "catalog_coverage": 0.3091557669441142
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 68.94288747346071,
+          "median_rating_count": 30.0,
+          "long_tail_share": 0.7590233545647559,
+          "unique_movies_recommended": 457,
+          "catalog_coverage": 0.27170035671819265
+        }
+      },
+      {
+        "seed": 2,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.18556263269639067,
+          "mean_shared_items_out_of_5": 0.9278131634819533
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 63.30467091295117,
+          "median_rating_count": 28.0,
+          "long_tail_share": 0.7609341825902336,
+          "unique_movies_recommended": 529,
+          "catalog_coverage": 0.3145065398335315
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 73.92505307855626,
+          "median_rating_count": 42.0,
+          "long_tail_share": 0.7369426751592356,
+          "unique_movies_recommended": 451,
+          "catalog_coverage": 0.2681331747919144
+        }
+      },
+      {
+        "seed": 3,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 837,
+          "changed_ordered_top5_percent": 88.85350318471338,
+          "mean_top5_set_overlap_fraction": 0.18280254777070062,
+          "mean_shared_items_out_of_5": 0.9140127388535032
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 66.15414012738853,
+          "median_rating_count": 39.0,
+          "long_tail_share": 0.7649681528662421,
+          "unique_movies_recommended": 530,
+          "catalog_coverage": 0.3151010701545779
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 73.24819532908705,
+          "median_rating_count": 42.0,
+          "long_tail_share": 0.7424628450106157,
+          "unique_movies_recommended": 458,
+          "catalog_coverage": 0.272294887039239
+        }
+      },
+      {
+        "seed": 4,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 836,
+          "changed_ordered_top5_percent": 88.74734607218684,
+          "mean_top5_set_overlap_fraction": 0.18535031847133757,
+          "mean_shared_items_out_of_5": 0.9267515923566879
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 70.38853503184713,
+          "median_rating_count": 40.0,
+          "long_tail_share": 0.7354564755838641,
+          "unique_movies_recommended": 525,
+          "catalog_coverage": 0.31212841854934603
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 79.46687898089172,
+          "median_rating_count": 47.0,
+          "long_tail_share": 0.7222929936305732,
+          "unique_movies_recommended": 458,
+          "catalog_coverage": 0.272294887039239
+        }
+      },
+      {
+        "seed": 5,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.18428874734607217,
+          "mean_shared_items_out_of_5": 0.921443736730361
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 67.41847133757962,
+          "median_rating_count": 31.0,
+          "long_tail_share": 0.7509554140127389,
+          "unique_movies_recommended": 524,
+          "catalog_coverage": 0.31153388822829964
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 71.31273885350319,
+          "median_rating_count": 39.0,
+          "long_tail_share": 0.7549893842887474,
+          "unique_movies_recommended": 457,
+          "catalog_coverage": 0.27170035671819265
+        }
+      },
+      {
+        "seed": 6,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 835,
+          "changed_ordered_top5_percent": 88.6411889596603,
+          "mean_top5_set_overlap_fraction": 0.1834394904458599,
+          "mean_shared_items_out_of_5": 0.9171974522292994
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 62.045010615711256,
+          "median_rating_count": 28.0,
+          "long_tail_share": 0.7919320594479831,
+          "unique_movies_recommended": 526,
+          "catalog_coverage": 0.31272294887039237
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 69.3723991507431,
+          "median_rating_count": 41.0,
+          "long_tail_share": 0.7813163481953291,
+          "unique_movies_recommended": 457,
+          "catalog_coverage": 0.27170035671819265
+        }
+      },
+      {
+        "seed": 7,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 835,
+          "changed_ordered_top5_percent": 88.6411889596603,
+          "mean_top5_set_overlap_fraction": 0.18280254777070062,
+          "mean_shared_items_out_of_5": 0.9140127388535032
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 65.77622080679406,
+          "median_rating_count": 28.0,
+          "long_tail_share": 0.7698513800424629,
+          "unique_movies_recommended": 525,
+          "catalog_coverage": 0.31212841854934603
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 75.98131634819534,
+          "median_rating_count": 37.0,
+          "long_tail_share": 0.7195329087048832,
+          "unique_movies_recommended": 457,
+          "catalog_coverage": 0.27170035671819265
+        }
+      },
+      {
+        "seed": 8,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 832,
+          "changed_ordered_top5_percent": 88.32271762208067,
+          "mean_top5_set_overlap_fraction": 0.18407643312101912,
+          "mean_shared_items_out_of_5": 0.9203821656050956
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 57.84097664543524,
+          "median_rating_count": 27.0,
+          "long_tail_share": 0.8099787685774947,
+          "unique_movies_recommended": 514,
+          "catalog_coverage": 0.3055885850178359
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 71.34033970276009,
+          "median_rating_count": 41.0,
+          "long_tail_share": 0.7598726114649682,
+          "unique_movies_recommended": 459,
+          "catalog_coverage": 0.2728894173602854
+        }
+      },
+      {
+        "seed": 9,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 835,
+          "changed_ordered_top5_percent": 88.6411889596603,
+          "mean_top5_set_overlap_fraction": 0.1883227176220807,
+          "mean_shared_items_out_of_5": 0.9416135881104034
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 66.79193205944799,
+          "median_rating_count": 34.0,
+          "long_tail_share": 0.7420382165605095,
+          "unique_movies_recommended": 525,
+          "catalog_coverage": 0.31212841854934603
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 73.78259023354565,
+          "median_rating_count": 43.0,
+          "long_tail_share": 0.716348195329087,
+          "unique_movies_recommended": 463,
+          "catalog_coverage": 0.27526753864447084
+        }
+      },
+      {
+        "seed": 10,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 836,
+          "changed_ordered_top5_percent": 88.74734607218684,
+          "mean_top5_set_overlap_fraction": 0.18683651804670912,
+          "mean_shared_items_out_of_5": 0.9341825902335457
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 62.22165605095542,
+          "median_rating_count": 31.0,
+          "long_tail_share": 0.7985138004246285,
+          "unique_movies_recommended": 531,
+          "catalog_coverage": 0.3156956004756243
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 77.02845010615711,
+          "median_rating_count": 42.0,
+          "long_tail_share": 0.7248407643312101,
+          "unique_movies_recommended": 470,
+          "catalog_coverage": 0.2794292508917955
+        }
+      },
+      {
+        "seed": 11,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 832,
+          "changed_ordered_top5_percent": 88.32271762208067,
+          "mean_top5_set_overlap_fraction": 0.18471337579617833,
+          "mean_shared_items_out_of_5": 0.9235668789808917
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 64.4552016985138,
+          "median_rating_count": 30.0,
+          "long_tail_share": 0.7715498938428875,
+          "unique_movies_recommended": 516,
+          "catalog_coverage": 0.30677764565992865
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 71.43142250530785,
+          "median_rating_count": 41.0,
+          "long_tail_share": 0.7569002123142251,
+          "unique_movies_recommended": 449,
+          "catalog_coverage": 0.26694411414982167
+        }
+      },
+      {
+        "seed": 12,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.18853503184713374,
+          "mean_shared_items_out_of_5": 0.9426751592356688
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 61.050530785562636,
+          "median_rating_count": 31.0,
+          "long_tail_share": 0.8006369426751593,
+          "unique_movies_recommended": 523,
+          "catalog_coverage": 0.31093935790725324
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 72.80721868365181,
+          "median_rating_count": 40.0,
+          "long_tail_share": 0.7513800424628451,
+          "unique_movies_recommended": 462,
+          "catalog_coverage": 0.2746730083234245
+        }
+      },
+      {
+        "seed": 13,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.18513800424628452,
+          "mean_shared_items_out_of_5": 0.9256900212314225
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 62.47791932059448,
+          "median_rating_count": 28.0,
+          "long_tail_share": 0.7660297239915075,
+          "unique_movies_recommended": 537,
+          "catalog_coverage": 0.3192627824019025
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 72.98322717622081,
+          "median_rating_count": 39.0,
+          "long_tail_share": 0.7067940552016985,
+          "unique_movies_recommended": 468,
+          "catalog_coverage": 0.27824019024970276
+        }
+      },
+      {
+        "seed": 14,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.1823779193205945,
+          "mean_shared_items_out_of_5": 0.9118895966029724
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 63.799787685774945,
+          "median_rating_count": 30.0,
+          "long_tail_share": 0.7632696390658175,
+          "unique_movies_recommended": 524,
+          "catalog_coverage": 0.31153388822829964
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 77.53906581740976,
+          "median_rating_count": 44.0,
+          "long_tail_share": 0.7188959660297239,
+          "unique_movies_recommended": 457,
+          "catalog_coverage": 0.27170035671819265
+        }
+      },
+      {
+        "seed": 15,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 836,
+          "changed_ordered_top5_percent": 88.74734607218684,
+          "mean_top5_set_overlap_fraction": 0.18301486199575373,
+          "mean_shared_items_out_of_5": 0.9150743099787686
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 67.07961783439491,
+          "median_rating_count": 35.0,
+          "long_tail_share": 0.7679405520169852,
+          "unique_movies_recommended": 529,
+          "catalog_coverage": 0.3145065398335315
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 79.49256900212315,
+          "median_rating_count": 48.0,
+          "long_tail_share": 0.710828025477707,
+          "unique_movies_recommended": 460,
+          "catalog_coverage": 0.2734839476813318
+        }
+      },
+      {
+        "seed": 16,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.1881104033970276,
+          "mean_shared_items_out_of_5": 0.940552016985138
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 66.79447983014862,
+          "median_rating_count": 29.0,
+          "long_tail_share": 0.7452229299363057,
+          "unique_movies_recommended": 521,
+          "catalog_coverage": 0.3097502972651605
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 79.02738853503185,
+          "median_rating_count": 48.0,
+          "long_tail_share": 0.7127388535031847,
+          "unique_movies_recommended": 458,
+          "catalog_coverage": 0.272294887039239
+        }
+      },
+      {
+        "seed": 17,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.1834394904458599,
+          "mean_shared_items_out_of_5": 0.9171974522292994
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 61.21613588110404,
+          "median_rating_count": 26.0,
+          "long_tail_share": 0.7717622080679406,
+          "unique_movies_recommended": 531,
+          "catalog_coverage": 0.3156956004756243
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 75.8515923566879,
+          "median_rating_count": 41.0,
+          "long_tail_share": 0.7193205944798301,
+          "unique_movies_recommended": 446,
+          "catalog_coverage": 0.26516052318668254
+        }
+      },
+      {
+        "seed": 18,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 834,
+          "changed_ordered_top5_percent": 88.53503184713375,
+          "mean_top5_set_overlap_fraction": 0.18428874734607217,
+          "mean_shared_items_out_of_5": 0.921443736730361
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 60.99256900212314,
+          "median_rating_count": 27.0,
+          "long_tail_share": 0.7753715498938429,
+          "unique_movies_recommended": 524,
+          "catalog_coverage": 0.31153388822829964
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 71.79936305732484,
+          "median_rating_count": 43.0,
+          "long_tail_share": 0.7484076433121019,
+          "unique_movies_recommended": 457,
+          "catalog_coverage": 0.27170035671819265
+        }
+      },
+      {
+        "seed": 19,
+        "comparison": {
+          "eligible_user_count": 942,
+          "changed_ordered_top5_count": 833,
+          "changed_ordered_top5_percent": 88.42887473460722,
+          "mean_top5_set_overlap_fraction": 0.18280254777070062,
+          "mean_shared_items_out_of_5": 0.9140127388535032
+        },
+        "item_to_item": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 65.03057324840765,
+          "median_rating_count": 40.0,
+          "long_tail_share": 0.7715498938428875,
+          "unique_movies_recommended": 536,
+          "catalog_coverage": 0.31866825208085614
+        },
+        "profile": {
+          "recommendation_slots": 4710,
+          "mean_rating_count": 71.30891719745223,
+          "median_rating_count": 41.0,
+          "long_tail_share": 0.746072186836518,
+          "unique_movies_recommended": 465,
+          "catalog_coverage": 0.27645659928656363
+        }
+      }
+    ]
+  },
+  "environment": {
+    "python_executable": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
+    "python_version": "3.10.11",
+    "python_implementation": "CPython",
+    "browser_runtime": "Codex in-app browser; exact browser/JavaScript engine version not exposed",
+    "node_path": "/Users/chenfengru/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "node_version": "v24.19.0",
+    "codex_path": "/Applications/ChatGPT.app/Contents/Resources/codex",
+    "codex_version": "codex-cli 0.155.0-alpha.9.2",
+    "model_version": "version not exposed",
+    "dataset_files": [
+      "u.item",
+      "u.data"
+    ],
+    "u_item_sha256": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701",
+    "u_data_sha256": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490"
+  }
+}
