@@ -1,0 +1,197 @@
+{
+  "protocol": {
+    "runtime": "v24.19.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "clock": "performance.now()",
+    "userIds": [
+      2,
+      3,
+      1,
+      405,
+      943
+    ],
+    "warmupsPerUserMethod": 2,
+    "measuredRepetitions": 5,
+    "order": "user method for fixed ascending user list, then item method",
+    "note": "Measures complete on-demand recommendation calls, including item-column construction and candidate sorting; no ratings are held out."
+  },
+  "theoreticalPairCounts": {
+    "users": {
+      "count": 943,
+      "fullSquareIncludingSelf": 889249,
+      "uniqueUnorderedExcludingSelf": 444153
+    },
+    "items": {
+      "count": 1682,
+      "fullSquareIncludingSelf": 2829124,
+      "uniqueUnorderedExcludingSelf": 1413721
+    }
+  },
+  "timing": {
+    "userBased": {
+      "1": {
+        "observedRatings": 272,
+        "similarityCallsPerRecommendation": 942,
+        "vectorLength": 1683,
+        "durationsMs": [
+          1.3659159999999986,
+          1.3518750000000068,
+          1.3459169999999858,
+          1.3978340000000173,
+          1.328958
+        ],
+        "meanMs": 1.3581000000000016,
+        "medianMs": 1.3518750000000068
+      },
+      "2": {
+        "observedRatings": 62,
+        "similarityCallsPerRecommendation": 942,
+        "vectorLength": 1683,
+        "durationsMs": [
+          1.261665999999991,
+          1.2337090000000046,
+          1.2772500000000093,
+          1.4131670000000156,
+          1.4178750000000093
+        ],
+        "meanMs": 1.320733400000006,
+        "medianMs": 1.2772500000000093
+      },
+      "3": {
+        "observedRatings": 54,
+        "similarityCallsPerRecommendation": 942,
+        "vectorLength": 1683,
+        "durationsMs": [
+          1.3029170000000079,
+          1.2885420000000067,
+          1.219458000000003,
+          1.1632920000000126,
+          1.1532909999999958
+        ],
+        "meanMs": 1.2255000000000051,
+        "medianMs": 1.219458000000003
+      },
+      "405": {
+        "observedRatings": 737,
+        "similarityCallsPerRecommendation": 942,
+        "vectorLength": 1683,
+        "durationsMs": [
+          2.500624999999985,
+          2.444625000000002,
+          2.4349160000000154,
+          2.410500000000013,
+          2.4243749999999977
+        ],
+        "meanMs": 2.4430082000000026,
+        "medianMs": 2.4349160000000154
+      },
+      "943": {
+        "observedRatings": 168,
+        "similarityCallsPerRecommendation": 942,
+        "vectorLength": 1683,
+        "durationsMs": [
+          1.6143749999999955,
+          1.6117909999999824,
+          1.5642919999999947,
+          1.5956659999999943,
+          1.5896250000000123
+        ],
+        "meanMs": 1.5951497999999957,
+        "medianMs": 1.5956659999999943
+      }
+    },
+    "itemBased": {
+      "1": {
+        "observedRatings": 272,
+        "similarityCallsPerRecommendation": 383520,
+        "vectorLength": 944,
+        "durationsMs": [
+          483.679584,
+          484.80095800000026,
+          484.0520829999996,
+          483.87741600000027,
+          483.83845799999926
+        ],
+        "meanMs": 484.04969979999987,
+        "medianMs": 483.87741600000027
+      },
+      "2": {
+        "observedRatings": 62,
+        "similarityCallsPerRecommendation": 100440,
+        "vectorLength": 944,
+        "durationsMs": [
+          153.62595800000008,
+          154.43258300000002,
+          152.25658399999986,
+          109.14745799999992,
+          108.85945900000002
+        ],
+        "meanMs": 135.66440839999999,
+        "medianMs": 152.25658399999986
+      },
+      "3": {
+        "observedRatings": 54,
+        "similarityCallsPerRecommendation": 87912,
+        "vectorLength": 944,
+        "durationsMs": [
+          123.83404199999995,
+          129.56554200000005,
+          128.6294580000001,
+          124.85716700000012,
+          125.96066700000029
+        ],
+        "meanMs": 126.56937520000011,
+        "medianMs": 125.96066700000029
+      },
+      "405": {
+        "observedRatings": 737,
+        "similarityCallsPerRecommendation": 696465,
+        "vectorLength": 944,
+        "durationsMs": [
+          871.7137920000005,
+          861.891916999999,
+          863.3428330000006,
+          860.8272079999988,
+          862.742291999999
+        ],
+        "meanMs": 864.1036083999995,
+        "medianMs": 862.742291999999
+      },
+      "943": {
+        "observedRatings": 168,
+        "similarityCallsPerRecommendation": 254352,
+        "vectorLength": 944,
+        "durationsMs": [
+          332.4004589999986,
+          331.18066700000054,
+          332.782333000001,
+          331.49841600000036,
+          332.31224999999904
+        ],
+        "meanMs": 332.0348249999999,
+        "medianMs": 332.31224999999904
+      }
+    }
+  },
+  "summary": {
+    "userBased": {
+      "count": 25,
+      "min": 1.1532909999999958,
+      "mean": 1.5884982800000023,
+      "p25": 1.2885420000000067,
+      "median": 1.3978340000000173,
+      "p75": 1.6117909999999824,
+      "max": 2.500624999999985
+    },
+    "itemBased": {
+      "count": 25,
+      "min": 108.85945900000002,
+      "mean": 388.4843833599999,
+      "p25": 129.56554200000005,
+      "median": 332.31224999999904,
+      "p75": 484.0520829999996,
+      "max": 871.7137920000005
+    }
+  }
+}

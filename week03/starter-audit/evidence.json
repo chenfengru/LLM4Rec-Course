@@ -1,0 +1,239 @@
+{
+  "method": "Node vm executes unmodified baseline JS with minimal DOM doubles and native Response byte decoding. No real browser layout or network test.",
+  "node": "v24.19.0",
+  "identicalCopy": true,
+  "sha256": {
+    "data.js": "4e8c0865357e1b95209841640828f223bbba78a136d6cf8e10cd60893ee878db",
+    "index.html": "1eb3055605ce31b71b071a7e1c138f80fba5e5144b1a51a649d9cbee278e21ec",
+    "readme.md": "e2713ef3940dbf376d353d41af986a417f795bbf7ba748b70963401f1b981d8f",
+    "script.js": "d8fa213641b53d4272ef82ba41bb350923b2c4e6313b05aee893842f9be0a1eb",
+    "style.css": "3a22f318d9bd1813217015cb88260ddffb65d60ac3af50caa5648135c40b930a",
+    "u.data": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490",
+    "u.item": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701"
+  },
+  "dataset": {
+    "movieRows": 1682,
+    "movieFieldCounts": {
+      "24": 1682
+    },
+    "ratingRows": 100000,
+    "ratingFieldCounts": {
+      "4": 100000
+    },
+    "users": 943,
+    "usersContiguous": true,
+    "movieIdsContiguousInOrder": true,
+    "allRatingFieldsValidIntegers": true,
+    "ratedItems": 1682,
+    "duplicateUserItemPairs": 0,
+    "ratingCounts": {
+      "1": 6110,
+      "2": 11370,
+      "3": 27145,
+      "4": 34174,
+      "5": 21201
+    },
+    "ratingsPerUserMinMax": [
+      20,
+      737
+    ],
+    "observedDensity": 0.06304669364224531,
+    "byteIdenticalToWeek02": {
+      "u.item": true,
+      "u.data": true
+    }
+  },
+  "startup": {
+    "state": {
+      "numUsers": 943,
+      "numMovies": 1682,
+      "ratingMatrix": null,
+      "ratings": 100000
+    },
+    "dropdownOptionsIncludingPlaceholder": 944,
+    "readyState": {
+      "user-based-result": "<p>Data loaded. Select a user.</p>",
+      "item-based-result": "<p>Data loaded. Select a user.</p>"
+    },
+    "noSelectionMessage": "<p>Please select a user first.</p>",
+    "selectedUser1Message": "<p>No recommendations. (Implement the TODO above.)</p>",
+    "identicalVectorSimilarity": 0,
+    "userCF": [],
+    "itemCF": []
+  },
+  "genreMapping": {
+    "mismatchedMovies": 1682,
+    "westernFlagMovies": 27,
+    "examples": [
+      {
+        "id": 1,
+        "title": "Toy Story (1995)",
+        "rawFlags": [
+          "0",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "actual": [
+          "Children's",
+          "Comedy",
+          "Crime"
+        ],
+        "expected": [
+          "Animation",
+          "Children's",
+          "Comedy"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "GoldenEye (1995)",
+        "rawFlags": [
+          "0",
+          "1",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "actual": [
+          "Adventure",
+          "Animation",
+          "War"
+        ],
+        "expected": [
+          "Action",
+          "Adventure",
+          "Thriller"
+        ]
+      },
+      {
+        "id": 267,
+        "title": "unknown",
+        "rawFlags": [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "actual": [
+          "Action"
+        ],
+        "expected": [
+          "unknown"
+        ]
+      }
+    ]
+  },
+  "decoding": {
+    "changedTitles": 9,
+    "examples": [
+      {
+        "id": 543,
+        "bytePreservingLatin1": "Misérables, Les (1995)",
+        "actual": "Mis�rables, Les (1995)"
+      },
+      {
+        "id": 1005,
+        "bytePreservingLatin1": "Double vie de Véronique, La (Double Life of Veronique, The) (1991)",
+        "actual": "Double vie de V�ronique, La (Double Life of Veronique, The) (1991)"
+      },
+      {
+        "id": 1104,
+        "bytePreservingLatin1": "C'est arrivé près de chez vous (1992)",
+        "actual": "C'est arriv� pr�s de chez vous (1992)"
+      },
+      {
+        "id": 1233,
+        "bytePreservingLatin1": "Nénette et Boni (1996)",
+        "actual": "N�nette et Boni (1996)"
+      },
+      {
+        "id": 1252,
+        "bytePreservingLatin1": "Contempt (Mépris, Le) (1963)",
+        "actual": "Contempt (M�pris, Le) (1963)"
+      },
+      {
+        "id": 1322,
+        "bytePreservingLatin1": "Metisse (Café au Lait) (1993)",
+        "actual": "Metisse (Caf� au Lait) (1993)"
+      },
+      {
+        "id": 1366,
+        "bytePreservingLatin1": "JLG/JLG - autoportrait de décembre (1994)",
+        "actual": "JLG/JLG - autoportrait de d�cembre (1994)"
+      },
+      {
+        "id": 1623,
+        "bytePreservingLatin1": "Cérémonie, La (1995)",
+        "actual": "C�r�monie, La (1995)"
+      },
+      {
+        "id": 1633,
+        "bytePreservingLatin1": "Á köldum klaka (Cold Fever) (1994)",
+        "actual": "� k�ldum klaka (Cold Fever) (1994)"
+      }
+    ]
+  },
+  "loadFailures": {
+    "u.item": {
+      "user": "<p class=\"error\">Error: Failed to load movie data: 404. Please make sure u.item and u.data are in the correct location.</p>",
+      "item": "<p>Loading movie data...</p>",
+      "errors": [
+        "Error loading data: Error: Failed to load movie data: 404",
+        "Initialization error: Error: Failed to load movie data: 404"
+      ]
+    },
+    "u.data": {
+      "user": "<p class=\"error\">Error: Failed to load rating data: 404. Please make sure u.item and u.data are in the correct location.</p>",
+      "item": "<p>Loading movie data...</p>",
+      "errors": [
+        "Error loading data: Error: Failed to load rating data: 404",
+        "Initialization error: Error: Failed to load rating data: 404"
+      ]
+    }
+  }
+}

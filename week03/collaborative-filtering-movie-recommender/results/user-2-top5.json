@@ -1,0 +1,51 @@
+{
+  "source": "Unmodified MovieLens files in the Week 3 working copy",
+  "activeUserId": 2,
+  "activeUserObservedRatings": 62,
+  "missingValueStrategy": "co-rated entries only",
+  "nearestUserLimit": 20,
+  "userBased": [
+    {
+      "title": "Godfather: Part II, The (1974)",
+      "score": 5.000000000000001
+    },
+    {
+      "title": "North by Northwest (1959)",
+      "score": 5.000000000000001
+    },
+    {
+      "title": "Maltese Falcon, The (1941)",
+      "score": 5.000000000000001
+    },
+    {
+      "title": "From Dusk Till Dawn (1996)",
+      "score": 5
+    },
+    {
+      "title": "Bad Boys (1995)",
+      "score": 5
+    }
+  ],
+  "itemBased": [
+    {
+      "title": "They Made Me a Criminal (1939)",
+      "score": 4.5
+    },
+    {
+      "title": "Mamma Roma (1962)",
+      "score": 4.5
+    },
+    {
+      "title": "All Things Fair (1996)",
+      "score": 4.375
+    },
+    {
+      "title": "Death in Brunswick (1991)",
+      "score": 4.3076923076923075
+    },
+    {
+      "title": "Shadows (Cienie) (1988)",
+      "score": 4.285714285714286
+    }
+  ]
+}

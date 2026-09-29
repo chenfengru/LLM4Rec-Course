@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Filtering Movie Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <h1>Collaborative Filtering Movie Recommender</h1>
+            <p>Select a user and an unseen movie to compare predicted ratings, or get two side-by-side Top-5 lists.</p>
+        </header>
+
+        <section class="section" aria-labelledby="predict-heading">
+            <h2 id="predict-heading">Predict a movie rating</h2>
+            <form id="prediction-form" onsubmit="event.preventDefault(); predictSelectedMovie();">
+                <div class="selector-grid">
+                    <div class="field">
+                        <label for="user-select">Select User</label>
+                        <select id="user-select" required disabled onchange="handleUserChange()">
+                            <option value="" selected>Select a user</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="movie-select">Select Movie</label>
+                        <div class="movie-combobox">
+                            <input id="movie-select" type="text" role="combobox" aria-autocomplete="list"
+                                aria-controls="movie-options" aria-expanded="false" aria-haspopup="listbox"
+                                autocomplete="off" placeholder="Type or choose an unseen movie" disabled
+                                onfocus="openMovieDropdown()" onclick="openMovieDropdown()"
+                                oninput="filterMovieDropdown()" onkeydown="handleMovieComboKeydown(event)"
+                                onblur="scheduleMovieDropdownClose()">
+                            <div id="movie-options" class="movie-options" role="listbox"
+                                aria-label="Unseen movies" onmousedown="event.preventDefault()"
+                                onclick="selectMovieResult(event)" hidden></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="predict-btn" type="submit" disabled>Predict Rating</button>
+            </form>
+
+            <div id="user-info" class="user-info" aria-live="polite">
+                <span>Select a user to see their rating history.</span>
+            </div>
+
+            <div id="prediction-status" class="status" role="status" aria-live="polite">Select a user and an unseen movie, then predict its rating.</div>
+            <div class="comparison-grid" aria-label="Predicted rating comparison">
+                <section class="method-card" aria-labelledby="user-prediction-heading">
+                    <h3 id="user-prediction-heading">User-Based CF</h3>
+                    <div id="user-prediction-result" class="prediction-result">No prediction yet.</div>
+                </section>
+                <section class="method-card" aria-labelledby="item-prediction-heading">
+                    <h3 id="item-prediction-heading">Item-Based CF</h3>
+                    <div id="item-prediction-result" class="prediction-result">No prediction yet.</div>
+                </section>
+            </div>
+            <p class="evidence-note">Evidence counts are method-specific and should not be compared directly.</p>
+        </section>
+
+        <section class="section" aria-labelledby="recommend-heading">
+            <div class="section-heading">
+                <div>
+                    <h2 id="recommend-heading">Top-5 unseen movies for the selected user</h2>
+                    <p>This ranking is independent of the movie selected above.</p>
+                </div>
+                <button id="recommend-btn" type="button" disabled onclick="getRecommendations()">Get Top-5 Recommendations</button>
+            </div>
+            <div id="result-box" class="comparison-grid">
+                <section class="method-card" aria-labelledby="user-list-heading">
+                    <h3 id="user-list-heading">User-Based Top-5</h3>
+                    <div id="user-based-result"><p>Loading movie data...</p></div>
+                </section>
+                <section class="method-card" aria-labelledby="item-list-heading">
+                    <h3 id="item-list-heading">Item-Based Top-5</h3>
+                    <div id="item-based-result"><p>Loading movie data...</p></div>
+                </section>
+            </div>
+        </section>
+
+        <aside class="method-notes" aria-label="How the methods work">
+            <p><strong>User-Based CF:</strong> Find similar users from co-rated movies, then predict the target movie from their ratings.</p>
+            <p><strong>Item-Based CF:</strong> Find movies with similar rating patterns, then predict the target movie from the active user's rated movies.</p>
+            <p><strong>Missing values:</strong> Only co-rated entries are used. Missing ratings are not imputed.</p>
+        </aside>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

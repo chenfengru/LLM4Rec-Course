@@ -1,0 +1,102 @@
+{
+  "check": "passed",
+  "datasetHashes": {
+    "u.data": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490",
+    "u.item": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701"
+  },
+  "users": 943,
+  "movies": 1682,
+  "observedRatings": 100000,
+  "toyStoryGenres": [
+    "Animation",
+    "Children's",
+    "Comedy"
+  ],
+  "user2Top5": {
+    "userBased": [
+      {
+        "movieId": 187,
+        "title": "Godfather: Part II, The (1974)",
+        "score": 5.000000000000001,
+        "supportCount": 2
+      },
+      {
+        "movieId": 480,
+        "title": "North by Northwest (1959)",
+        "score": 5.000000000000001,
+        "supportCount": 3
+      },
+      {
+        "movieId": 484,
+        "title": "Maltese Falcon, The (1941)",
+        "score": 5.000000000000001,
+        "supportCount": 2
+      },
+      {
+        "movieId": 17,
+        "title": "From Dusk Till Dawn (1996)",
+        "score": 5,
+        "supportCount": 1
+      },
+      {
+        "movieId": 27,
+        "title": "Bad Boys (1995)",
+        "score": 5,
+        "supportCount": 1
+      }
+    ],
+    "itemBased": [
+      {
+        "movieId": 1122,
+        "title": "They Made Me a Criminal (1939)",
+        "score": 4.5,
+        "supportCount": 6
+      },
+      {
+        "movieId": 1674,
+        "title": "Mamma Roma (1962)",
+        "score": 4.5,
+        "supportCount": 10
+      },
+      {
+        "movieId": 1619,
+        "title": "All Things Fair (1996)",
+        "score": 4.375,
+        "supportCount": 8
+      },
+      {
+        "movieId": 1593,
+        "title": "Death in Brunswick (1991)",
+        "score": 4.3076923076923075,
+        "supportCount": 13
+      },
+      {
+        "movieId": 1546,
+        "title": "Shadows (Cienie) (1988)",
+        "score": 4.285714285714286,
+        "supportCount": 7
+      }
+    ]
+  },
+  "selectedMovieExample": {
+    "userId": 2,
+    "movieId": 187,
+    "title": "Godfather: Part II, The (1974)",
+    "observedRating": 0,
+    "userBased": {
+      "score": 5.000000000000001,
+      "supportCount": 2
+    },
+    "itemBased": {
+      "score": 3.717442848679271,
+      "supportCount": 62
+    }
+  },
+  "checkedUsers": [
+    1,
+    2,
+    3,
+    405,
+    943
+  ]
+}

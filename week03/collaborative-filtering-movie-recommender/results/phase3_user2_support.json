@@ -1,0 +1,600 @@
+{
+  "protocol": "Full MovieLens matrix, no holdout; exact existing Top-5 with captured movie IDs",
+  "userId": 2,
+  "activeUserObservedRatings": 62,
+  "selectedNeighbors": [
+    {
+      "userId": 51,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 98,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 114,
+      "similarity": 1,
+      "coRatedCount": 2
+    },
+    {
+      "userId": 167,
+      "similarity": 1,
+      "coRatedCount": 3
+    },
+    {
+      "userId": 187,
+      "similarity": 1,
+      "coRatedCount": 2
+    },
+    {
+      "userId": 289,
+      "similarity": 1,
+      "coRatedCount": 2
+    },
+    {
+      "userId": 366,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 369,
+      "similarity": 1,
+      "coRatedCount": 2
+    },
+    {
+      "userId": 522,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 565,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 700,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 778,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 849,
+      "similarity": 1,
+      "coRatedCount": 2
+    },
+    {
+      "userId": 855,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 912,
+      "similarity": 1,
+      "coRatedCount": 1
+    },
+    {
+      "userId": 156,
+      "similarity": 0.9995120760870788,
+      "coRatedCount": 2
+    },
+    {
+      "userId": 426,
+      "similarity": 0.9981149841863163,
+      "coRatedCount": 3
+    },
+    {
+      "userId": 607,
+      "similarity": 0.997176464952738,
+      "coRatedCount": 4
+    },
+    {
+      "userId": 419,
+      "similarity": 0.9959484901689342,
+      "coRatedCount": 10
+    },
+    {
+      "userId": 96,
+      "similarity": 0.9958705948858224,
+      "coRatedCount": 4
+    }
+  ],
+  "userRecommendations": [
+    {
+      "movieId": 187,
+      "title": "Godfather: Part II, The (1974)",
+      "score": 5.000000000000001,
+      "contributingNeighborCount": 2,
+      "similarityWeightSum": 1.9953826709729012,
+      "contributors": [
+        {
+          "userId": 156,
+          "similarity": 0.9995120760870788,
+          "coRatedCount": 2,
+          "candidateRating": 5
+        },
+        {
+          "userId": 96,
+          "similarity": 0.9958705948858224,
+          "coRatedCount": 4,
+          "candidateRating": 5
+        }
+      ]
+    },
+    {
+      "movieId": 480,
+      "title": "North by Northwest (1959)",
+      "score": 5.000000000000001,
+      "contributingNeighborCount": 3,
+      "similarityWeightSum": 2.997627060273395,
+      "contributors": [
+        {
+          "userId": 522,
+          "similarity": 1,
+          "coRatedCount": 1,
+          "candidateRating": 5
+        },
+        {
+          "userId": 156,
+          "similarity": 0.9995120760870788,
+          "coRatedCount": 2,
+          "candidateRating": 5
+        },
+        {
+          "userId": 426,
+          "similarity": 0.9981149841863163,
+          "coRatedCount": 3,
+          "candidateRating": 5
+        }
+      ]
+    },
+    {
+      "movieId": 484,
+      "title": "Maltese Falcon, The (1941)",
+      "score": 5.000000000000001,
+      "contributingNeighborCount": 2,
+      "similarityWeightSum": 1.9939855790721386,
+      "contributors": [
+        {
+          "userId": 426,
+          "similarity": 0.9981149841863163,
+          "coRatedCount": 3,
+          "candidateRating": 5
+        },
+        {
+          "userId": 96,
+          "similarity": 0.9958705948858224,
+          "coRatedCount": 4,
+          "candidateRating": 5
+        }
+      ]
+    },
+    {
+      "movieId": 17,
+      "title": "From Dusk Till Dawn (1996)",
+      "score": 5,
+      "contributingNeighborCount": 1,
+      "similarityWeightSum": 1,
+      "contributors": [
+        {
+          "userId": 366,
+          "similarity": 1,
+          "coRatedCount": 1,
+          "candidateRating": 5
+        }
+      ]
+    },
+    {
+      "movieId": 27,
+      "title": "Bad Boys (1995)",
+      "score": 5,
+      "contributingNeighborCount": 1,
+      "similarityWeightSum": 1,
+      "contributors": [
+        {
+          "userId": 849,
+          "similarity": 1,
+          "coRatedCount": 2,
+          "candidateRating": 5
+        }
+      ]
+    }
+  ],
+  "itemRecommendations": [
+    {
+      "movieId": 1122,
+      "title": "They Made Me a Criminal (1939)",
+      "score": 4.5,
+      "contributingRatedItemCount": 6,
+      "similarityWeightSum": 6,
+      "contributors": [
+        {
+          "movieId": 13,
+          "title": "Mighty Aphrodite (1995)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 50,
+          "title": "Star Wars (1977)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 237,
+          "title": "Jerry Maguire (1996)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 272,
+          "title": "Good Will Hunting (1997)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 275,
+          "title": "Sense and Sensibility (1995)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 286,
+          "title": "English Patient, The (1996)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        }
+      ]
+    },
+    {
+      "movieId": 1674,
+      "title": "Mamma Roma (1962)",
+      "score": 4.5,
+      "contributingRatedItemCount": 10,
+      "similarityWeightSum": 10,
+      "contributors": [
+        {
+          "movieId": 14,
+          "title": "Postino, Il (1994)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 50,
+          "title": "Star Wars (1977)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 100,
+          "title": "Fargo (1996)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 127,
+          "title": "Godfather, The (1972)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 257,
+          "title": "Men in Black (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 272,
+          "title": "Good Will Hunting (1997)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 285,
+          "title": "Secrets & Lies (1996)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 297,
+          "title": "Ulee's Gold (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 300,
+          "title": "Air Force One (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 303,
+          "title": "Ulee's Gold (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        }
+      ]
+    },
+    {
+      "movieId": 1619,
+      "title": "All Things Fair (1996)",
+      "score": 4.375,
+      "contributingRatedItemCount": 8,
+      "similarityWeightSum": 8,
+      "contributors": [
+        {
+          "movieId": 13,
+          "title": "Mighty Aphrodite (1995)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 14,
+          "title": "Postino, Il (1994)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 111,
+          "title": "Truth About Cats & Dogs, The (1996)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 237,
+          "title": "Jerry Maguire (1996)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 272,
+          "title": "Good Will Hunting (1997)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 302,
+          "title": "L.A. Confidential (1997)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 303,
+          "title": "Ulee's Gold (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 313,
+          "title": "Titanic (1997)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        }
+      ]
+    },
+    {
+      "movieId": 1593,
+      "title": "Death in Brunswick (1991)",
+      "score": 4.3076923076923075,
+      "contributingRatedItemCount": 13,
+      "similarityWeightSum": 13,
+      "contributors": [
+        {
+          "movieId": 14,
+          "title": "Postino, Il (1994)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 50,
+          "title": "Star Wars (1977)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 100,
+          "title": "Fargo (1996)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 127,
+          "title": "Godfather, The (1972)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 275,
+          "title": "Sense and Sensibility (1995)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 276,
+          "title": "Leaving Las Vegas (1995)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 283,
+          "title": "Emma (1996)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 285,
+          "title": "Secrets & Lies (1996)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 286,
+          "title": "English Patient, The (1996)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 288,
+          "title": "Scream (1996)",
+          "activeUserRating": 3,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 289,
+          "title": "Evita (1996)",
+          "activeUserRating": 3,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 300,
+          "title": "Air Force One (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 303,
+          "title": "Ulee's Gold (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        }
+      ]
+    },
+    {
+      "movieId": 1546,
+      "title": "Shadows (Cienie) (1988)",
+      "score": 4.285714285714286,
+      "contributingRatedItemCount": 7,
+      "similarityWeightSum": 7,
+      "contributors": [
+        {
+          "movieId": 50,
+          "title": "Star Wars (1977)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 127,
+          "title": "Godfather, The (1972)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 288,
+          "title": "Scream (1996)",
+          "activeUserRating": 3,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 302,
+          "title": "L.A. Confidential (1997)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 303,
+          "title": "Ulee's Gold (1997)",
+          "activeUserRating": 4,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 308,
+          "title": "FairyTale: A True Story (1997)",
+          "activeUserRating": 3,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "movieId": 313,
+          "title": "Titanic (1997)",
+          "activeUserRating": 5,
+          "similarity": 1,
+          "coRatedCount": 1
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "userTop5NeighborCounts": [
+      2,
+      3,
+      2,
+      1,
+      1
+    ],
+    "userTop5WeightSums": [
+      1.9953826709729012,
+      2.997627060273395,
+      1.9939855790721386,
+      1,
+      1
+    ],
+    "userTop5AllContributingRatingsFive": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "itemTop5ContributingItemCounts": [
+      6,
+      10,
+      8,
+      13,
+      7
+    ],
+    "itemTop5WeightSums": [
+      6,
+      10,
+      8,
+      13,
+      7
+    ]
+  }
+}

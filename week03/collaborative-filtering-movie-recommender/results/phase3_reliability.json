@@ -1,0 +1,287 @@
+{
+  "protocol": "All unique unordered pairs; similarity uses unchanged co-rated-only cosine; zero-overlap pairs included; percentiles interpolate at (n-1)*p",
+  "users": {
+    "kind": "user-user",
+    "pairsEvaluated": 444153,
+    "includesZeroOverlapPairs": true,
+    "highSimilarityThreshold": 0.9,
+    "allPairsCoRatedCounts": {
+      "count": 444153,
+      "min": 0,
+      "mean": 18.807922044880932,
+      "p10": 2,
+      "p25": 4,
+      "median": 10,
+      "p75": 22,
+      "p90": 47,
+      "max": 346,
+      "atMost": {
+        "1": {
+          "pairs": 37402,
+          "fraction": 0.08420972052423377
+        },
+        "2": {
+          "pairs": 63490,
+          "fraction": 0.1429462369949094
+        },
+        "5": {
+          "pairs": 140521,
+          "fraction": 0.3163797159987662
+        },
+        "10": {
+          "pairs": 234407,
+          "fraction": 0.5277618298199044
+        }
+      },
+      "histogram": {
+        "0": 15043,
+        "1": 22359,
+        "2": 26088,
+        "3-5": 77031,
+        "6-10": 93886,
+        "11-20": 91981,
+        "21-50": 77303,
+        "51-100": 30951,
+        "101+": 9511
+      }
+    },
+    "highSimilarityPairCount": 374415,
+    "highSimilarityCoRatedCounts": {
+      "count": 374415,
+      "min": 1,
+      "mean": 20.245270622170587,
+      "p10": 2,
+      "p25": 5,
+      "median": 11,
+      "p75": 24,
+      "p90": 51,
+      "max": 334,
+      "atMost": {
+        "1": {
+          "pairs": 22359,
+          "fraction": 0.059717158767677574
+        },
+        "2": {
+          "pairs": 44690,
+          "fraction": 0.11935953420669577
+        },
+        "5": {
+          "pairs": 107779,
+          "fraction": 0.28785972784210034
+        },
+        "10": {
+          "pairs": 186121,
+          "fraction": 0.4970981397646996
+        }
+      },
+      "histogram": {
+        "0": 0,
+        "1": 22359,
+        "2": 22331,
+        "3-5": 63089,
+        "6-10": 78342,
+        "11-20": 79888,
+        "21-50": 70299,
+        "51-100": 29160,
+        "101+": 8947
+      }
+    },
+    "highSimilarityWithAtMostTwo": 44690,
+    "highSimilarityFewOverlapExamples": [
+      {
+        "firstId": 1,
+        "secondId": 88,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 155,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 166,
+        "similarity": 0.9021342216356465,
+        "coRatedCount": 2
+      },
+      {
+        "firstId": 1,
+        "secondId": 241,
+        "similarity": 0.9899494936611665,
+        "coRatedCount": 2
+      },
+      {
+        "firstId": 1,
+        "secondId": 273,
+        "similarity": 0.9909924304103233,
+        "coRatedCount": 2
+      },
+      {
+        "firstId": 1,
+        "secondId": 309,
+        "similarity": 0.9938837346736188,
+        "coRatedCount": 2
+      },
+      {
+        "firstId": 1,
+        "secondId": 341,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 351,
+        "similarity": 0.9872411207126471,
+        "coRatedCount": 2
+      }
+    ]
+  },
+  "items": {
+    "kind": "item-item",
+    "pairsEvaluated": 1413721,
+    "includesZeroOverlapPairs": true,
+    "highSimilarityThreshold": 0.9,
+    "allPairsCoRatedCounts": {
+      "count": 1413721,
+      "min": 0,
+      "mean": 7.109186324600116,
+      "p10": 0,
+      "p25": 0,
+      "median": 1,
+      "p75": 6,
+      "p90": 19,
+      "max": 480,
+      "atMost": {
+        "1": {
+          "pairs": 723185,
+          "fraction": 0.5115471864674854
+        },
+        "2": {
+          "pairs": 853536,
+          "fraction": 0.6037513766860646
+        },
+        "5": {
+          "pairs": 1039337,
+          "fraction": 0.7351782989712963
+        },
+        "10": {
+          "pairs": 1172069,
+          "fraction": 0.8290666970356951
+        }
+      },
+      "histogram": {
+        "0": 430515,
+        "1": 292670,
+        "2": 130351,
+        "3-5": 185801,
+        "6-10": 132732,
+        "11-20": 109012,
+        "21-50": 94562,
+        "51-100": 29683,
+        "101+": 8395
+      }
+    },
+    "highSimilarityPairCount": 827006,
+    "highSimilarityCoRatedCounts": {
+      "count": 827006,
+      "min": 1,
+      "mean": 10.539101288261511,
+      "p10": 1,
+      "p25": 1,
+      "median": 3,
+      "p75": 10,
+      "p90": 29,
+      "max": 480,
+      "atMost": {
+        "1": {
+          "pairs": 292670,
+          "fraction": 0.3538910237652447
+        },
+        "2": {
+          "pairs": 394512,
+          "fraction": 0.47703644229908854
+        },
+        "5": {
+          "pairs": 528286,
+          "fraction": 0.6387934307610827
+        },
+        "10": {
+          "pairs": 622848,
+          "fraction": 0.753136011105119
+        }
+      },
+      "histogram": {
+        "0": 0,
+        "1": 292670,
+        "2": 101842,
+        "3-5": 133774,
+        "6-10": 94562,
+        "11-20": 84353,
+        "21-50": 83178,
+        "51-100": 28325,
+        "101+": 8302
+      }
+    },
+    "highSimilarityWithAtMostTwo": 394512,
+    "highSimilarityFewOverlapExamples": [
+      {
+        "firstId": 1,
+        "secondId": 361,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 442,
+        "similarity": 0.9899494936611665,
+        "coRatedCount": 2
+      },
+      {
+        "firstId": 1,
+        "secondId": 598,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 600,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 626,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 666,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 711,
+        "similarity": 1,
+        "coRatedCount": 1
+      },
+      {
+        "firstId": 1,
+        "secondId": 777,
+        "similarity": 1,
+        "coRatedCount": 2
+      }
+    ]
+  },
+  "summary": {
+    "userPairs": 444153,
+    "userMedianCoRated": 10,
+    "userHighCosinePairs": 374415,
+    "itemPairs": 1413721,
+    "itemMedianCoRated": 1,
+    "itemHighCosinePairs": 827006
+  }
+}
