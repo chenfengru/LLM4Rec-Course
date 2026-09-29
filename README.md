@@ -10,7 +10,7 @@ This repository is organized week by week so that coursework, experiments, repor
 |---|---|---|
 | 01 | Random Lunch Generator / RecSys Fundamentals | ✅ Completed |
 | 02 | Content-Based Filtering | ✅ Completed |
-| 03 | Collaborative Filtering | Not started |
+| 03 | Collaborative Filtering | ✅ Completed |
 | 04 | Association Rules | Not started |
 | 05 | Matrix Factorization | Not started |
 | 06 | PageRank | Not started |
@@ -104,6 +104,63 @@ discriminability; they do not establish improved recommendation relevance.
 - `week02/content-based-movie-recommender/analysis/` — evaluation and audit scripts
 - `week02/content-based-movie-recommender/report.pdf` — final A02 report
 - `week02/content-based-movie-recommender/session.json` — Codex audit trail
+## Week 03 — Collaborative Filtering
+
+Status: ✅ Completed
+
+### Completed
+
+- [x] Preserve and audit the instructor Week 3 baseline
+- [x] Build the MovieLens rating matrix with co-rated-only missing-value handling
+- [x] Implement User-Based CF with Top-20 neighbors
+- [x] Implement Item-Based CF with similarity-weighted prediction
+- [x] Add selected-user / selected-movie rating prediction
+- [x] Add side-by-side User-Based and Item-Based Top-5 recommendation
+- [x] Exclude already-rated movies from recommendation candidates
+- [x] Verify cosine and prediction formulas on deterministic examples
+- [x] Measure user-user and item-item co-rating reliability
+- [x] Run a 911-user leave-one-out evaluation
+- [x] Compare HitRate@5, MRR@5, and runtime
+- [x] Test overlap-confidence weighting at T = 5, 10, 20
+- [x] Compare Week 2 content-based retrieval with Week 3 CF on 853 aligned users
+- [x] Re-run final UI and recommendation regression checks
+- [x] Preserve the final A03 report and native Codex session audit trail
+
+### Main results
+
+- Median user-user co-rating overlap was `10`; median item-item overlap was only `1`.
+- `14.29%` of user pairs and `60.38%` of item pairs had at most two co-ratings.
+- Even among cosine similarities `>= 0.9`, `11.94%` of user pairs and
+  `47.70%` of item pairs had at most two co-ratings.
+- On the 911-user leave-one-out evaluation:
+  - User-Based CF: `HitRate@5 = 0.988%`, `MRR@5 = 0.004848`
+  - Item-Based CF: `HitRate@5 = 0%`, `MRR@5 = 0`
+- Mean on-demand runtime in the current JavaScript implementation was about
+  `1.59 ms` for User-Based CF and `388.48 ms` for Item-Based CF.
+- Overlap weighting increased the median evidence behind contributing
+  User-Based similarities from `1` to `14` at `T = 10`, but Top-5 quality was
+  threshold-sensitive: raw / `T=5` / `T=10` / `T=20` produced
+  `9 / 11 / 10 / 5` User-Based hits.
+- In the aligned 853-user Week 2 vs Week 3 comparison:
+  - Week 2 three-movie content profile: `HitRate@5 = 2.34%`
+  - Week 3 User-Based CF: `HitRate@5 = 1.41%`
+  - Week 3 Item-Based CF: `HitRate@5 = 0%`
+
+The main Week 3 finding is that a high cosine similarity is not necessarily
+a reliable similarity when it is supported by very few shared ratings.
+Overlap weighting improved evidence support but did not provide a stable
+quality improvement, so the final application retains raw co-rated cosine.
+
+### Key files
+
+- `week03/teacher-baseline/` — original instructor baseline
+- `week03/starter-audit/` — starter-code audit and evidence
+- `week03/collaborative-filtering-movie-recommender/` — completed Week 3 implementation
+- `week03/collaborative-filtering-movie-recommender/analysis/` — analysis and verification scripts
+- `week03/collaborative-filtering-movie-recommender/results/` — experiment outputs
+- `week03/collaborative-filtering-movie-recommender/report.pdf` — final A03 report
+- `week03/collaborative-filtering-movie-recommender/session.json` — native Codex audit trail
+
 ## Repository structure
 
 ```text
@@ -113,6 +170,7 @@ LLM4Rec-Course/
 ├── week01/
 │   └── random-lunch-generator/
 ├── week02/
+├── week03/
 ├── ...
 ├── week12/
 ├── capstone/
