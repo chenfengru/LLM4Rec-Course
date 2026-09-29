@@ -1,0 +1,3208 @@
+{
+  "protocol": "Same strict earlier-only active-user matrix and selected profiles as phase5_aligned_comparison.json; support recomputed from current raw application cosine; no title-based outcome matching",
+  "cases": [
+    {
+      "type": "contentSucceedsCfFails",
+      "userId": 79,
+      "priorRatingCount": 53,
+      "priorRatingDistribution": {
+        "1": 0,
+        "2": 5,
+        "3": 11,
+        "4": 15,
+        "5": 22
+      },
+      "laterOrSameTimeRemovedCount": 2,
+      "profile": [
+        {
+          "movieId": 1008,
+          "title": "I Shot Andy Warhol (1996)",
+          "genres": [
+            "Drama"
+          ],
+          "rating": 4,
+          "timestamp": 891271982
+        },
+        {
+          "movieId": 222,
+          "title": "Star Trek: First Contact (1996)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "rating": 4,
+          "timestamp": 891271957
+        },
+        {
+          "movieId": 6,
+          "title": "Shanghai Triad (Yao a yao yao dao waipo qiao) (1995)",
+          "genres": [
+            "Drama"
+          ],
+          "rating": 4,
+          "timestamp": 891271901
+        }
+      ],
+      "activeProfileGenres": {
+        "Action": 0.3333333333333333,
+        "Adventure": 0.3333333333333333,
+        "Drama": 0.6666666666666666,
+        "Sci-Fi": 0.3333333333333333
+      },
+      "heldOut": {
+        "movieId": 7,
+        "title": "Twelve Monkeys (1995)",
+        "genres": [
+          "Drama",
+          "Sci-Fi"
+        ],
+        "rating": 5,
+        "timestamp": 891272016
+      },
+      "ranks": {
+        "content": 2,
+        "userBased": null,
+        "itemBased": null
+      },
+      "content": [
+        {
+          "movieId": 526,
+          "title": "Ben-Hur (1959)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+          ],
+          "score": 0.8728715609439697
+        },
+        {
+          "movieId": 7,
+          "title": "Twelve Monkeys (1995)",
+          "genres": [
+            "Drama",
+            "Sci-Fi"
+          ],
+          "score": 0.8017837257372732
+        },
+        {
+          "movieId": 339,
+          "title": "Mad City (1997)",
+          "genres": [
+            "Action",
+            "Drama"
+          ],
+          "score": 0.8017837257372732
+        },
+        {
+          "movieId": 429,
+          "title": "Day the Earth Stood Still, The (1951)",
+          "genres": [
+            "Drama",
+            "Sci-Fi"
+          ],
+          "score": 0.8017837257372732
+        },
+        {
+          "movieId": 686,
+          "title": "Perfect World, A (1993)",
+          "genres": [
+            "Action",
+            "Drama"
+          ],
+          "score": 0.8017837257372732
+        }
+      ],
+      "userBased": [
+        {
+          "movieId": 12,
+          "title": "Usual Suspects, The (1995)",
+          "genres": [
+            "Crime",
+            "Thriller"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 2,
+            "weightSum": 2,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 522,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "userId": 686,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 17,
+          "title": "From Dusk Till Dawn (1996)",
+          "genres": [
+            "Action",
+            "Comedy",
+            "Crime",
+            "Horror",
+            "Thriller"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 366,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 22,
+          "title": "Braveheart (1995)",
+          "genres": [
+            "Action",
+            "Drama",
+            "War"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 4,
+            "weightSum": 4,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1.5,
+            "contributors": [
+              {
+                "userId": 55,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 2
+              },
+              {
+                "userId": 225,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "userId": 371,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 2
+              },
+              {
+                "userId": 686,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 25,
+          "title": "Birdcage, The (1996)",
+          "genres": [
+            "Comedy"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 2,
+            "weightSum": 2,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 98,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "userId": 477,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 26,
+          "title": "Brothers McMullen, The (1995)",
+          "genres": [
+            "Comedy"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 686,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "itemBased": [
+        {
+          "movieId": 1618,
+          "title": "King of New York (1990)",
+          "genres": [
+            "Action",
+            "Crime"
+          ],
+          "score": 4.5,
+          "support": {
+            "contributorCount": 2,
+            "weightSum": 2,
+            "predictedScore": 4.5,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 2,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 258,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1674,
+          "title": "Mamma Roma (1962)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 4.375,
+          "support": {
+            "contributorCount": 8,
+            "weightSum": 8,
+            "predictedScore": 4.375,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 8,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 100,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 137,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 257,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 285,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 303,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 515,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 582,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 599,
+          "title": "Police Story 4: Project S (Chao ji ji hua) (1993)",
+          "genres": [
+            "Action"
+          ],
+          "score": 4.357142857142857,
+          "support": {
+            "contributorCount": 14,
+            "weightSum": 14,
+            "predictedScore": 4.357142857142857,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 14,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 10,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 50,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 93,
+                "rating": 2,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 100,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 258,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 268,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 269,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 275,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 285,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 286,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 515,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 582,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 676,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 677,
+          "title": "Fire on the Mountain (1996)",
+          "genres": [
+            "Documentary"
+          ],
+          "score": 4.357142857142857,
+          "support": {
+            "contributorCount": 14,
+            "weightSum": 14,
+            "predictedScore": 4.357142857142857,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 14,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 10,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 50,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 93,
+                "rating": 2,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 100,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 258,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 268,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 269,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 275,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 285,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 286,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 515,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 582,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 676,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 600,
+          "title": "Daniel Defoe's Robinson Crusoe (1996)",
+          "genres": [
+            "Children's"
+          ],
+          "score": 4.313482602515791,
+          "support": {
+            "contributorCount": 16,
+            "weightSum": 15.715340094127757,
+            "predictedScore": 4.313482602515791,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 12,
+            "observedRatingsOtherUsers": 2,
+            "contributors": [
+              {
+                "ratedMovieId": 1,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 10,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 50,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 93,
+                "rating": 2,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 100,
+                "rating": 5,
+                "similarity": 0.9486832980505138,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 222,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 258,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 268,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 269,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 275,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 285,
+                "rating": 5,
+                "similarity": 0.9778024140774094,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 286,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 515,
+                "rating": 5,
+                "similarity": 0.8944271909999159,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 582,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 676,
+                "rating": 3,
+                "similarity": 0.8944271909999159,
+                "coRatedCount": 2
+              }
+            ]
+          }
+        }
+      ],
+      "selectedNeighbors": [
+        {
+          "userId": 51,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 55,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 98,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 122,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 124,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 172,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 225,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 341,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 366,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 371,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 375,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 386,
+          "similarity": 1,
+          "coRatedCount": 3
+        },
+        {
+          "userId": 415,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 477,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 522,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 565,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 571,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 575,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 604,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 686,
+          "similarity": 1,
+          "coRatedCount": 1
+        }
+      ],
+      "heldOutSupport": {
+        "userBased": {
+          "contributorCount": 5,
+          "weightSum": 5,
+          "predictedScore": 3.2,
+          "medianCoRatedCount": 2,
+          "contributors": [
+            {
+              "userId": 55,
+              "rating": 3,
+              "similarity": 1,
+              "coRatedCount": 2
+            },
+            {
+              "userId": 124,
+              "rating": 4,
+              "similarity": 1,
+              "coRatedCount": 2
+            },
+            {
+              "userId": 366,
+              "rating": 2,
+              "similarity": 1,
+              "coRatedCount": 1
+            },
+            {
+              "userId": 386,
+              "rating": 3,
+              "similarity": 1,
+              "coRatedCount": 3
+            },
+            {
+              "userId": 604,
+              "rating": 4,
+              "similarity": 1,
+              "coRatedCount": 2
+            }
+          ]
+        },
+        "itemBased": {
+          "contributorCount": 53,
+          "weightSum": 49.83829158634319,
+          "predictedScore": 4.020577887703558,
+          "medianCoRatedCount": 88,
+          "oneCoRatingContributors": 0,
+          "observedRatingsOtherUsers": 391,
+          "contributors": [
+            {
+              "ratedMovieId": 1,
+              "rating": 4,
+              "similarity": 0.9488019575699149,
+              "coRatedCount": 280
+            },
+            {
+              "ratedMovieId": 6,
+              "rating": 4,
+              "similarity": 0.9004739336492891,
+              "coRatedCount": 14
+            },
+            {
+              "ratedMovieId": 10,
+              "rating": 5,
+              "similarity": 0.9481272264774896,
+              "coRatedCount": 61
+            },
+            {
+              "ratedMovieId": 13,
+              "rating": 3,
+              "similarity": 0.9450069874395971,
+              "coRatedCount": 131
+            },
+            {
+              "ratedMovieId": 19,
+              "rating": 5,
+              "similarity": 0.9399622264532924,
+              "coRatedCount": 40
+            },
+            {
+              "ratedMovieId": 50,
+              "rating": 4,
+              "similarity": 0.9568582266909061,
+              "coRatedCount": 323
+            },
+            {
+              "ratedMovieId": 93,
+              "rating": 2,
+              "similarity": 0.9458738918877287,
+              "coRatedCount": 97
+            },
+            {
+              "ratedMovieId": 100,
+              "rating": 5,
+              "similarity": 0.9541222401615468,
+              "coRatedCount": 319
+            },
+            {
+              "ratedMovieId": 116,
+              "rating": 5,
+              "similarity": 0.9506523923002423,
+              "coRatedCount": 74
+            },
+            {
+              "ratedMovieId": 124,
+              "rating": 5,
+              "similarity": 0.9548568583960139,
+              "coRatedCount": 135
+            },
+            {
+              "ratedMovieId": 137,
+              "rating": 4,
+              "similarity": 0.9385008363476078,
+              "coRatedCount": 106
+            },
+            {
+              "ratedMovieId": 150,
+              "rating": 3,
+              "similarity": 0.9387616476967643,
+              "coRatedCount": 117
+            },
+            {
+              "ratedMovieId": 222,
+              "rating": 4,
+              "similarity": 0.9519604297456601,
+              "coRatedCount": 233
+            },
+            {
+              "ratedMovieId": 236,
+              "rating": 5,
+              "similarity": 0.9577032372747185,
+              "coRatedCount": 34
+            },
+            {
+              "ratedMovieId": 246,
+              "rating": 5,
+              "similarity": 0.9611915643405439,
+              "coRatedCount": 88
+            },
+            {
+              "ratedMovieId": 251,
+              "rating": 5,
+              "similarity": 0.973266013399113,
+              "coRatedCount": 28
+            },
+            {
+              "ratedMovieId": 257,
+              "rating": 3,
+              "similarity": 0.9527788572627665,
+              "coRatedCount": 187
+            },
+            {
+              "ratedMovieId": 258,
+              "rating": 5,
+              "similarity": 0.9547799246214279,
+              "coRatedCount": 240
+            },
+            {
+              "ratedMovieId": 262,
+              "rating": 5,
+              "similarity": 0.93812375249501,
+              "coRatedCount": 33
+            },
+            {
+              "ratedMovieId": 268,
+              "rating": 5,
+              "similarity": 0.953598142149085,
+              "coRatedCount": 129
+            },
+            {
+              "ratedMovieId": 269,
+              "rating": 5,
+              "similarity": 0.9597002887970447,
+              "coRatedCount": 111
+            },
+            {
+              "ratedMovieId": 275,
+              "rating": 4,
+              "similarity": 0.9444469056574953,
+              "coRatedCount": 136
+            },
+            {
+              "ratedMovieId": 276,
+              "rating": 3,
+              "similarity": 0.9257694546548216,
+              "coRatedCount": 188
+            },
+            {
+              "ratedMovieId": 283,
+              "rating": 4,
+              "similarity": 0.9401013991942881,
+              "coRatedCount": 93
+            },
+            {
+              "ratedMovieId": 285,
+              "rating": 5,
+              "similarity": 0.9509561025386849,
+              "coRatedCount": 96
+            },
+            {
+              "ratedMovieId": 286,
+              "rating": 5,
+              "similarity": 0.9289217916492662,
+              "coRatedCount": 182
+            },
+            {
+              "ratedMovieId": 288,
+              "rating": 3,
+              "similarity": 0.9376224199461658,
+              "coRatedCount": 237
+            },
+            {
+              "ratedMovieId": 290,
+              "rating": 3,
+              "similarity": 0.9333645857102006,
+              "coRatedCount": 71
+            },
+            {
+              "ratedMovieId": 301,
+              "rating": 3,
+              "similarity": 0.9195824511003328,
+              "coRatedCount": 89
+            },
+            {
+              "ratedMovieId": 303,
+              "rating": 4,
+              "similarity": 0.9512795563437143,
+              "coRatedCount": 41
+            },
+            {
+              "ratedMovieId": 306,
+              "rating": 5,
+              "similarity": 0.9177715539279706,
+              "coRatedCount": 28
+            },
+            {
+              "ratedMovieId": 311,
+              "rating": 4,
+              "similarity": 0.9440624290633751,
+              "coRatedCount": 24
+            },
+            {
+              "ratedMovieId": 313,
+              "rating": 2,
+              "similarity": 0.9619848484731629,
+              "coRatedCount": 136
+            },
+            {
+              "ratedMovieId": 319,
+              "rating": 4,
+              "similarity": 0.9049997557294841,
+              "coRatedCount": 72
+            },
+            {
+              "ratedMovieId": 325,
+              "rating": 5,
+              "similarity": 0.9019823990638002,
+              "coRatedCount": 58
+            },
+            {
+              "ratedMovieId": 333,
+              "rating": 2,
+              "similarity": 0.9517880202482077,
+              "coRatedCount": 110
+            },
+            {
+              "ratedMovieId": 340,
+              "rating": 4,
+              "similarity": 0.9217671505350109,
+              "coRatedCount": 68
+            },
+            {
+              "ratedMovieId": 508,
+              "rating": 3,
+              "similarity": 0.9570832435455147,
+              "coRatedCount": 146
+            },
+            {
+              "ratedMovieId": 515,
+              "rating": 5,
+              "similarity": 0.9580315300156765,
+              "coRatedCount": 114
+            },
+            {
+              "ratedMovieId": 582,
+              "rating": 5,
+              "similarity": 0.9280327993897103,
+              "coRatedCount": 105
+            },
+            {
+              "ratedMovieId": 676,
+              "rating": 3,
+              "similarity": 0.9122542906598434,
+              "coRatedCount": 50
+            },
+            {
+              "ratedMovieId": 690,
+              "rating": 4,
+              "similarity": 0.9275575848522276,
+              "coRatedCount": 46
+            },
+            {
+              "ratedMovieId": 740,
+              "rating": 4,
+              "similarity": 0.9140006760556134,
+              "coRatedCount": 27
+            },
+            {
+              "ratedMovieId": 763,
+              "rating": 5,
+              "similarity": 0.9165674215926032,
+              "coRatedCount": 97
+            },
+            {
+              "ratedMovieId": 813,
+              "rating": 5,
+              "similarity": 0.9643286733789638,
+              "coRatedCount": 39
+            },
+            {
+              "ratedMovieId": 900,
+              "rating": 4,
+              "similarity": 0.9476339428735648,
+              "coRatedCount": 12
+            },
+            {
+              "ratedMovieId": 902,
+              "rating": 3,
+              "similarity": 0.9477428447430053,
+              "coRatedCount": 16
+            },
+            {
+              "ratedMovieId": 906,
+              "rating": 5,
+              "similarity": 0.9696899027331813,
+              "coRatedCount": 5
+            },
+            {
+              "ratedMovieId": 937,
+              "rating": 2,
+              "similarity": 0.9121422014059751,
+              "coRatedCount": 8
+            },
+            {
+              "ratedMovieId": 1008,
+              "rating": 4,
+              "similarity": 0.9317344215268988,
+              "coRatedCount": 27
+            },
+            {
+              "ratedMovieId": 1017,
+              "rating": 3,
+              "similarity": 0.92484799046803,
+              "coRatedCount": 38
+            },
+            {
+              "ratedMovieId": 1022,
+              "rating": 5,
+              "similarity": 0.90395954397465,
+              "coRatedCount": 10
+            },
+            {
+              "ratedMovieId": 1161,
+              "rating": 2,
+              "similarity": 0.9611830601359905,
+              "coRatedCount": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "userCfSucceedsContentFails",
+      "userId": 20,
+      "priorRatingCount": 45,
+      "priorRatingDistribution": {
+        "1": 6,
+        "2": 6,
+        "3": 14,
+        "4": 16,
+        "5": 3
+      },
+      "laterOrSameTimeRemovedCount": 3,
+      "profile": [
+        {
+          "movieId": 82,
+          "title": "Jurassic Park (1993)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "rating": 4,
+          "timestamp": 879669697
+        },
+        {
+          "movieId": 252,
+          "title": "Lost World: Jurassic Park, The (1997)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "rating": 4,
+          "timestamp": 879669697
+        },
+        {
+          "movieId": 22,
+          "title": "Braveheart (1995)",
+          "genres": [
+            "Action",
+            "Drama",
+            "War"
+          ],
+          "rating": 5,
+          "timestamp": 879669339
+        }
+      ],
+      "activeProfileGenres": {
+        "Action": 1,
+        "Adventure": 0.6666666666666666,
+        "Drama": 0.3333333333333333,
+        "Sci-Fi": 0.6666666666666666,
+        "Thriller": 0.3333333333333333,
+        "War": 0.3333333333333333
+      },
+      "heldOut": {
+        "movieId": 87,
+        "title": "Searching for Bobby Fischer (1993)",
+        "genres": [
+          "Drama"
+        ],
+        "rating": 5,
+        "timestamp": 879669746
+      },
+      "ranks": {
+        "content": null,
+        "userBased": 5,
+        "itemBased": null
+      },
+      "content": [
+        {
+          "movieId": 62,
+          "title": "Stargate (1994)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.9036961141150639
+        },
+        {
+          "movieId": 222,
+          "title": "Star Trek: First Contact (1996)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.9036961141150639
+        },
+        {
+          "movieId": 227,
+          "title": "Star Trek VI: The Undiscovered Country (1991)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.9036961141150639
+        },
+        {
+          "movieId": 228,
+          "title": "Star Trek: The Wrath of Khan (1982)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.9036961141150639
+        },
+        {
+          "movieId": 229,
+          "title": "Star Trek III: The Search for Spock (1984)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 0.9036961141150639
+        }
+      ],
+      "userBased": [
+        {
+          "movieId": 6,
+          "title": "Shanghai Triad (Yao a yao yao dao waipo qiao) (1995)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 9,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 9,
+          "title": "Dead Man Walking (1995)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 136,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 14,
+          "title": "Postino, Il (1994)",
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 136,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 32,
+          "title": "Crumb (1994)",
+          "genres": [
+            "Documentary"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 31,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 87,
+          "title": "Searching for Bobby Fischer (1993)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 212,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "itemBased": [
+        {
+          "movieId": 1414,
+          "title": "Coldblooded (1995)",
+          "genres": [
+            "Action"
+          ],
+          "score": 3.8,
+          "support": {
+            "contributorCount": 5,
+            "weightSum": 5,
+            "predictedScore": 3.8,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 5,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 143,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 181,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 186,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 496,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 678,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1662,
+          "title": "Rough Magic (1995)",
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "score": 3.5555555555555554,
+          "support": {
+            "contributorCount": 9,
+            "weightSum": 9,
+            "predictedScore": 3.5555555555555554,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 9,
+            "observedRatingsOtherUsers": 2,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 181,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 243,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 252,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 274,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 1,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 323,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 678,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 934,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1417,
+          "title": "Turning, The (1992)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 3.4989703245655703,
+          "support": {
+            "contributorCount": 10,
+            "weightSum": 9.979448813415358,
+            "predictedScore": 3.4989703245655703,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 8,
+            "observedRatingsOtherUsers": 2,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 143,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 181,
+                "rating": 4,
+                "similarity": 0.9988681377244375,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 186,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 243,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 252,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 1,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 323,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 496,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 678,
+                "rating": 4,
+                "similarity": 0.9805806756909201,
+                "coRatedCount": 2
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1430,
+          "title": "Ill Gotten Gains (1997)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 3.492295272219431,
+          "support": {
+            "contributorCount": 13,
+            "weightSum": 12.839570157152151,
+            "predictedScore": 3.492295272219431,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 11,
+            "observedRatingsOtherUsers": 3,
+            "contributors": [
+              {
+                "ratedMovieId": 11,
+                "rating": 2,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 22,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 50,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 82,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 121,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 172,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 174,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 181,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 210,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 243,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 1,
+                "similarity": 0.8395701571521512,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 323,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 678,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1611,
+          "title": "Intimate Relations (1996)",
+          "genres": [
+            "Comedy"
+          ],
+          "score": 3.4634533503920206,
+          "support": {
+            "contributorCount": 15,
+            "weightSum": 14.854519184806415,
+            "predictedScore": 3.4634533503920206,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 10,
+            "observedRatingsOtherUsers": 2,
+            "contributors": [
+              {
+                "ratedMovieId": 1,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 15,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 50,
+                "rating": 3,
+                "similarity": 0.970142500145332,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 121,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 148,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 151,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 181,
+                "rating": 4,
+                "similarity": 0.9899494936611665,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 243,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 252,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 1,
+                "similarity": 1,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 323,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 405,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 597,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 678,
+                "rating": 4,
+                "similarity": 0.8944271909999159,
+                "coRatedCount": 2
+              },
+              {
+                "ratedMovieId": 742,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "selectedNeighbors": [
+        {
+          "userId": 9,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 31,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 34,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 36,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 39,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 40,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 86,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 105,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 112,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 132,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 133,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 136,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 139,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 140,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 149,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 171,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 179,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 191,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 212,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 219,
+          "similarity": 1,
+          "coRatedCount": 2
+        }
+      ],
+      "heldOutSupport": {
+        "userBased": {
+          "contributorCount": 1,
+          "weightSum": 1,
+          "predictedScore": 5,
+          "medianCoRatedCount": 1,
+          "contributors": [
+            {
+              "userId": 212,
+              "rating": 5,
+              "similarity": 1,
+              "coRatedCount": 1
+            }
+          ]
+        },
+        "itemBased": {
+          "contributorCount": 45,
+          "weightSum": 42.736530618707405,
+          "predictedScore": 3.0905564036873723,
+          "medianCoRatedCount": 77,
+          "oneCoRatingContributors": 0,
+          "observedRatingsOtherUsers": 137,
+          "contributors": [
+            {
+              "ratedMovieId": 1,
+              "rating": 3,
+              "similarity": 0.9585760978877206,
+              "coRatedCount": 106
+            },
+            {
+              "ratedMovieId": 11,
+              "rating": 2,
+              "similarity": 0.9300146218965107,
+              "coRatedCount": 87
+            },
+            {
+              "ratedMovieId": 15,
+              "rating": 4,
+              "similarity": 0.9651115352037593,
+              "coRatedCount": 72
+            },
+            {
+              "ratedMovieId": 22,
+              "rating": 5,
+              "similarity": 0.9633572660880775,
+              "coRatedCount": 101
+            },
+            {
+              "ratedMovieId": 50,
+              "rating": 3,
+              "similarity": 0.968412518816174,
+              "coRatedCount": 127
+            },
+            {
+              "ratedMovieId": 69,
+              "rating": 1,
+              "similarity": 0.9602372457745129,
+              "coRatedCount": 106
+            },
+            {
+              "ratedMovieId": 82,
+              "rating": 4,
+              "similarity": 0.947867952503766,
+              "coRatedCount": 90
+            },
+            {
+              "ratedMovieId": 95,
+              "rating": 3,
+              "similarity": 0.9648107837282948,
+              "coRatedCount": 83
+            },
+            {
+              "ratedMovieId": 98,
+              "rating": 3,
+              "similarity": 0.9580522152346116,
+              "coRatedCount": 114
+            },
+            {
+              "ratedMovieId": 118,
+              "rating": 4,
+              "similarity": 0.9447449494925277,
+              "coRatedCount": 68
+            },
+            {
+              "ratedMovieId": 121,
+              "rating": 3,
+              "similarity": 0.9511811058637473,
+              "coRatedCount": 94
+            },
+            {
+              "ratedMovieId": 143,
+              "rating": 3,
+              "similarity": 0.9325815153166078,
+              "coRatedCount": 80
+            },
+            {
+              "ratedMovieId": 144,
+              "rating": 2,
+              "similarity": 0.9692035625059431,
+              "coRatedCount": 85
+            },
+            {
+              "ratedMovieId": 148,
+              "rating": 5,
+              "similarity": 0.9549659965895302,
+              "coRatedCount": 37
+            },
+            {
+              "ratedMovieId": 151,
+              "rating": 3,
+              "similarity": 0.9608499559283628,
+              "coRatedCount": 77
+            },
+            {
+              "ratedMovieId": 172,
+              "rating": 3,
+              "similarity": 0.9601247070012897,
+              "coRatedCount": 110
+            },
+            {
+              "ratedMovieId": 174,
+              "rating": 4,
+              "similarity": 0.9699624658777246,
+              "coRatedCount": 121
+            },
+            {
+              "ratedMovieId": 176,
+              "rating": 2,
+              "similarity": 0.9640661179347019,
+              "coRatedCount": 91
+            },
+            {
+              "ratedMovieId": 181,
+              "rating": 4,
+              "similarity": 0.9582043921871074,
+              "coRatedCount": 117
+            },
+            {
+              "ratedMovieId": 186,
+              "rating": 3,
+              "similarity": 0.9507938395286696,
+              "coRatedCount": 84
+            },
+            {
+              "ratedMovieId": 194,
+              "rating": 3,
+              "similarity": 0.9741335213579739,
+              "coRatedCount": 89
+            },
+            {
+              "ratedMovieId": 208,
+              "rating": 2,
+              "similarity": 0.9603815457953108,
+              "coRatedCount": 72
+            },
+            {
+              "ratedMovieId": 210,
+              "rating": 4,
+              "similarity": 0.9592265964422511,
+              "coRatedCount": 106
+            },
+            {
+              "ratedMovieId": 243,
+              "rating": 4,
+              "similarity": 0.8710027484703295,
+              "coRatedCount": 24
+            },
+            {
+              "ratedMovieId": 252,
+              "rating": 4,
+              "similarity": 0.9321278390620844,
+              "coRatedCount": 42
+            },
+            {
+              "ratedMovieId": 274,
+              "rating": 4,
+              "similarity": 0.9547820466566425,
+              "coRatedCount": 60
+            },
+            {
+              "ratedMovieId": 288,
+              "rating": 1,
+              "similarity": 0.9231545775034349,
+              "coRatedCount": 76
+            },
+            {
+              "ratedMovieId": 323,
+              "rating": 4,
+              "similarity": 0.8912127415209623,
+              "coRatedCount": 32
+            },
+            {
+              "ratedMovieId": 357,
+              "rating": 1,
+              "similarity": 0.9569172946647863,
+              "coRatedCount": 83
+            },
+            {
+              "ratedMovieId": 378,
+              "rating": 3,
+              "similarity": 0.9414922323464838,
+              "coRatedCount": 41
+            },
+            {
+              "ratedMovieId": 405,
+              "rating": 3,
+              "similarity": 0.9509681915620123,
+              "coRatedCount": 87
+            },
+            {
+              "ratedMovieId": 423,
+              "rating": 2,
+              "similarity": 0.9634654461697584,
+              "coRatedCount": 102
+            },
+            {
+              "ratedMovieId": 496,
+              "rating": 5,
+              "similarity": 0.9715843158491354,
+              "coRatedCount": 71
+            },
+            {
+              "ratedMovieId": 498,
+              "rating": 3,
+              "similarity": 0.9664548479027923,
+              "coRatedCount": 47
+            },
+            {
+              "ratedMovieId": 568,
+              "rating": 4,
+              "similarity": 0.9593608296112592,
+              "coRatedCount": 81
+            },
+            {
+              "ratedMovieId": 588,
+              "rating": 4,
+              "similarity": 0.9706348736203367,
+              "coRatedCount": 69
+            },
+            {
+              "ratedMovieId": 597,
+              "rating": 3,
+              "similarity": 0.9333450083589335,
+              "coRatedCount": 52
+            },
+            {
+              "ratedMovieId": 633,
+              "rating": 4,
+              "similarity": 0.9654551144204004,
+              "coRatedCount": 27
+            },
+            {
+              "ratedMovieId": 678,
+              "rating": 4,
+              "similarity": 0.9156933254803804,
+              "coRatedCount": 38
+            },
+            {
+              "ratedMovieId": 742,
+              "rating": 4,
+              "similarity": 0.9596205891506244,
+              "coRatedCount": 53
+            },
+            {
+              "ratedMovieId": 763,
+              "rating": 1,
+              "similarity": 0.9075308934614736,
+              "coRatedCount": 41
+            },
+            {
+              "ratedMovieId": 820,
+              "rating": 2,
+              "similarity": 0.9237857190330122,
+              "coRatedCount": 30
+            },
+            {
+              "ratedMovieId": 866,
+              "rating": 1,
+              "similarity": 0.9634930557772686,
+              "coRatedCount": 29
+            },
+            {
+              "ratedMovieId": 931,
+              "rating": 1,
+              "similarity": 0.9429206364266967,
+              "coRatedCount": 15
+            },
+            {
+              "ratedMovieId": 934,
+              "rating": 4,
+              "similarity": 0.9446677827034139,
+              "coRatedCount": 16
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "itemCfFailure",
+      "userId": 2,
+      "priorRatingCount": 57,
+      "priorRatingDistribution": {
+        "1": 2,
+        "2": 1,
+        "3": 15,
+        "4": 27,
+        "5": 12
+      },
+      "laterOrSameTimeRemovedCount": 5,
+      "profile": [
+        {
+          "movieId": 300,
+          "title": "Air Force One (1997)",
+          "genres": [
+            "Action",
+            "Thriller"
+          ],
+          "rating": 4,
+          "timestamp": 888979197
+        },
+        {
+          "movieId": 304,
+          "title": "Fly Away Home (1996)",
+          "genres": [
+            "Adventure",
+            "Children's"
+          ],
+          "rating": 4,
+          "timestamp": 888979197
+        },
+        {
+          "movieId": 272,
+          "title": "Good Will Hunting (1997)",
+          "genres": [
+            "Drama"
+          ],
+          "rating": 5,
+          "timestamp": 888979061
+        }
+      ],
+      "activeProfileGenres": {
+        "Action": 0.3333333333333333,
+        "Adventure": 0.3333333333333333,
+        "Children's": 0.3333333333333333,
+        "Drama": 0.3333333333333333,
+        "Thriller": 0.3333333333333333
+      },
+      "heldOut": {
+        "movieId": 316,
+        "title": "As Good As It Gets (1997)",
+        "genres": [
+          "Comedy",
+          "Drama"
+        ],
+        "rating": 5,
+        "timestamp": 888979693
+      },
+      "ranks": {
+        "content": null,
+        "userBased": null,
+        "itemBased": null
+      },
+      "content": [
+        {
+          "movieId": 2,
+          "title": "GoldenEye (1995)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+          ],
+          "score": 0.7745966692414834
+        },
+        {
+          "movieId": 28,
+          "title": "Apollo 13 (1995)",
+          "genres": [
+            "Action",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 0.7745966692414834
+        },
+        {
+          "movieId": 35,
+          "title": "Free Willy 2: The Adventure Home (1995)",
+          "genres": [
+            "Adventure",
+            "Children's",
+            "Drama"
+          ],
+          "score": 0.7745966692414834
+        },
+        {
+          "movieId": 54,
+          "title": "Outbreak (1995)",
+          "genres": [
+            "Action",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 0.7745966692414834
+        },
+        {
+          "movieId": 78,
+          "title": "Free Willy (1993)",
+          "genres": [
+            "Adventure",
+            "Children's",
+            "Drama"
+          ],
+          "score": 0.7745966692414834
+        }
+      ],
+      "userBased": [
+        {
+          "movieId": 484,
+          "title": "Maltese Falcon, The (1941)",
+          "genres": [
+            "Film-Noir",
+            "Mystery"
+          ],
+          "score": 5.000000000000001,
+          "support": {
+            "contributorCount": 2,
+            "weightSum": 1.9939855790721386,
+            "predictedScore": 5.000000000000001,
+            "medianCoRatedCount": 3.5,
+            "contributors": [
+              {
+                "userId": 426,
+                "rating": 5,
+                "similarity": 0.9981149841863163,
+                "coRatedCount": 3
+              },
+              {
+                "userId": 96,
+                "rating": 5,
+                "similarity": 0.9958705948858224,
+                "coRatedCount": 4
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 604,
+          "title": "It Happened One Night (1934)",
+          "genres": [
+            "Comedy"
+          ],
+          "score": 5.000000000000001,
+          "support": {
+            "contributorCount": 2,
+            "weightSum": 1.9918190850547566,
+            "predictedScore": 5.000000000000001,
+            "medianCoRatedCount": 7.5,
+            "contributors": [
+              {
+                "userId": 419,
+                "rating": 5,
+                "similarity": 0.9959484901689342,
+                "coRatedCount": 10
+              },
+              {
+                "userId": 350,
+                "rating": 5,
+                "similarity": 0.9958705948858224,
+                "coRatedCount": 5
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 657,
+          "title": "Manchurian Candidate, The (1962)",
+          "genres": [
+            "Film-Noir",
+            "Thriller"
+          ],
+          "score": 5.000000000000001,
+          "support": {
+            "contributorCount": 2,
+            "weightSum": 1.9939855790721386,
+            "predictedScore": 5.000000000000001,
+            "medianCoRatedCount": 4,
+            "contributors": [
+              {
+                "userId": 426,
+                "rating": 5,
+                "similarity": 0.9981149841863163,
+                "coRatedCount": 3
+              },
+              {
+                "userId": 350,
+                "rating": 5,
+                "similarity": 0.9958705948858224,
+                "coRatedCount": 5
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 8,
+          "title": "Babe (1995)",
+          "genres": [
+            "Children's",
+            "Comedy",
+            "Drama"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 3,
+            "weightSum": 2.9958705948858224,
+            "predictedScore": 5,
+            "medianCoRatedCount": 3,
+            "contributors": [
+              {
+                "userId": 167,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 3
+              },
+              {
+                "userId": 187,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 2
+              },
+              {
+                "userId": 96,
+                "rating": 5,
+                "similarity": 0.9958705948858224,
+                "coRatedCount": 4
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 17,
+          "title": "From Dusk Till Dawn (1996)",
+          "genres": [
+            "Action",
+            "Comedy",
+            "Crime",
+            "Horror",
+            "Thriller"
+          ],
+          "score": 5,
+          "support": {
+            "contributorCount": 1,
+            "weightSum": 1,
+            "predictedScore": 5,
+            "medianCoRatedCount": 1,
+            "contributors": [
+              {
+                "userId": 366,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "itemBased": [
+        {
+          "movieId": 1122,
+          "title": "They Made Me a Criminal (1939)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 4.5,
+          "support": {
+            "contributorCount": 6,
+            "weightSum": 6,
+            "predictedScore": 4.5,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 6,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 13,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 50,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 237,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 272,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 275,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 286,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1546,
+          "title": "Shadows (Cienie) (1988)",
+          "genres": [
+            "Drama"
+          ],
+          "score": 4.5,
+          "support": {
+            "contributorCount": 6,
+            "weightSum": 6,
+            "predictedScore": 4.5,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 6,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 127,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 302,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 303,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 313,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1548,
+          "title": "The Courtyard (1995)",
+          "genres": [
+            "Action",
+            "Thriller"
+          ],
+          "score": 4.5,
+          "support": {
+            "contributorCount": 6,
+            "weightSum": 6,
+            "predictedScore": 4.5,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 6,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 127,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 302,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 303,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 313,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1557,
+          "title": "Yankee Zulu (1994)",
+          "genres": [
+            "Comedy",
+            "Drama"
+          ],
+          "score": 4.5,
+          "support": {
+            "contributorCount": 6,
+            "weightSum": 6,
+            "predictedScore": 4.5,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 6,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 127,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 302,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 303,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 313,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "movieId": 1559,
+          "title": "Hostile Intentions (1994)",
+          "genres": [
+            "Action",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 4.5,
+          "support": {
+            "contributorCount": 6,
+            "weightSum": 6,
+            "predictedScore": 4.5,
+            "medianCoRatedCount": 1,
+            "oneCoRatingContributors": 6,
+            "observedRatingsOtherUsers": 1,
+            "contributors": [
+              {
+                "ratedMovieId": 50,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 127,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 288,
+                "rating": 3,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 302,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 303,
+                "rating": 4,
+                "similarity": 1,
+                "coRatedCount": 1
+              },
+              {
+                "ratedMovieId": 313,
+                "rating": 5,
+                "similarity": 1,
+                "coRatedCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "selectedNeighbors": [
+        {
+          "userId": 51,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 98,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 114,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 167,
+          "similarity": 1,
+          "coRatedCount": 3
+        },
+        {
+          "userId": 187,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 289,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 366,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 369,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 522,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 565,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 700,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 849,
+          "similarity": 1,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 855,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 912,
+          "similarity": 1,
+          "coRatedCount": 1
+        },
+        {
+          "userId": 156,
+          "similarity": 0.9995120760870788,
+          "coRatedCount": 2
+        },
+        {
+          "userId": 426,
+          "similarity": 0.9981149841863163,
+          "coRatedCount": 3
+        },
+        {
+          "userId": 607,
+          "similarity": 0.997176464952738,
+          "coRatedCount": 4
+        },
+        {
+          "userId": 419,
+          "similarity": 0.9959484901689342,
+          "coRatedCount": 10
+        },
+        {
+          "userId": 96,
+          "similarity": 0.9958705948858224,
+          "coRatedCount": 4
+        },
+        {
+          "userId": 350,
+          "similarity": 0.9958705948858224,
+          "coRatedCount": 5
+        }
+      ],
+      "heldOutSupport": {
+        "userBased": {
+          "contributorCount": 1,
+          "weightSum": 1,
+          "predictedScore": 5,
+          "medianCoRatedCount": 1,
+          "contributors": [
+            {
+              "userId": 369,
+              "rating": 5,
+              "similarity": 1,
+              "coRatedCount": 1
+            }
+          ]
+        },
+        "itemBased": {
+          "contributorCount": 57,
+          "weightSum": 54.63308730826567,
+          "predictedScore": 3.8069449986041377,
+          "medianCoRatedCount": 32,
+          "oneCoRatingContributors": 0,
+          "observedRatingsOtherUsers": 111,
+          "contributors": [
+            {
+              "ratedMovieId": 1,
+              "rating": 4,
+              "similarity": 0.9537117136410211,
+              "coRatedCount": 45
+            },
+            {
+              "ratedMovieId": 10,
+              "rating": 2,
+              "similarity": 0.9752230032184765,
+              "coRatedCount": 14
+            },
+            {
+              "ratedMovieId": 13,
+              "rating": 4,
+              "similarity": 0.9258590644450198,
+              "coRatedCount": 31
+            },
+            {
+              "ratedMovieId": 14,
+              "rating": 4,
+              "similarity": 0.9662480984185602,
+              "coRatedCount": 29
+            },
+            {
+              "ratedMovieId": 19,
+              "rating": 3,
+              "similarity": 0.9641188106558557,
+              "coRatedCount": 10
+            },
+            {
+              "ratedMovieId": 25,
+              "rating": 4,
+              "similarity": 0.9471769970619954,
+              "coRatedCount": 39
+            },
+            {
+              "ratedMovieId": 50,
+              "rating": 5,
+              "similarity": 0.9633545862246959,
+              "coRatedCount": 65
+            },
+            {
+              "ratedMovieId": 100,
+              "rating": 5,
+              "similarity": 0.9591806507760838,
+              "coRatedCount": 65
+            },
+            {
+              "ratedMovieId": 111,
+              "rating": 4,
+              "similarity": 0.9434375654707953,
+              "coRatedCount": 35
+            },
+            {
+              "ratedMovieId": 127,
+              "rating": 5,
+              "similarity": 0.9698702617855988,
+              "coRatedCount": 51
+            },
+            {
+              "ratedMovieId": 237,
+              "rating": 4,
+              "similarity": 0.9669084072856106,
+              "coRatedCount": 50
+            },
+            {
+              "ratedMovieId": 242,
+              "rating": 5,
+              "similarity": 0.9730299060142076,
+              "coRatedCount": 22
+            },
+            {
+              "ratedMovieId": 251,
+              "rating": 5,
+              "similarity": 0.9725138212540326,
+              "coRatedCount": 9
+            },
+            {
+              "ratedMovieId": 255,
+              "rating": 4,
+              "similarity": 0.9550399439508132,
+              "coRatedCount": 29
+            },
+            {
+              "ratedMovieId": 257,
+              "rating": 4,
+              "similarity": 0.9766013423455293,
+              "coRatedCount": 43
+            },
+            {
+              "ratedMovieId": 258,
+              "rating": 3,
+              "similarity": 0.9618490410428552,
+              "coRatedCount": 89
+            },
+            {
+              "ratedMovieId": 269,
+              "rating": 4,
+              "similarity": 0.9461468858708428,
+              "coRatedCount": 79
+            },
+            {
+              "ratedMovieId": 272,
+              "rating": 5,
+              "similarity": 0.9808605635518114,
+              "coRatedCount": 85
+            },
+            {
+              "ratedMovieId": 273,
+              "rating": 4,
+              "similarity": 0.9650761754219028,
+              "coRatedCount": 30
+            },
+            {
+              "ratedMovieId": 274,
+              "rating": 3,
+              "similarity": 0.9491318677832705,
+              "coRatedCount": 27
+            },
+            {
+              "ratedMovieId": 275,
+              "rating": 5,
+              "similarity": 0.962531891292522,
+              "coRatedCount": 33
+            },
+            {
+              "ratedMovieId": 276,
+              "rating": 4,
+              "similarity": 0.9542048218529876,
+              "coRatedCount": 37
+            },
+            {
+              "ratedMovieId": 277,
+              "rating": 4,
+              "similarity": 0.9335638713962128,
+              "coRatedCount": 15
+            },
+            {
+              "ratedMovieId": 278,
+              "rating": 3,
+              "similarity": 0.9837801559508863,
+              "coRatedCount": 12
+            },
+            {
+              "ratedMovieId": 279,
+              "rating": 4,
+              "similarity": 0.9823049816238727,
+              "coRatedCount": 7
+            },
+            {
+              "ratedMovieId": 280,
+              "rating": 3,
+              "similarity": 0.9526627788204353,
+              "coRatedCount": 17
+            },
+            {
+              "ratedMovieId": 282,
+              "rating": 4,
+              "similarity": 0.9602448635918921,
+              "coRatedCount": 35
+            },
+            {
+              "ratedMovieId": 283,
+              "rating": 5,
+              "similarity": 0.9591556769576892,
+              "coRatedCount": 28
+            },
+            {
+              "ratedMovieId": 284,
+              "rating": 4,
+              "similarity": 0.9706908984924614,
+              "coRatedCount": 31
+            },
+            {
+              "ratedMovieId": 285,
+              "rating": 5,
+              "similarity": 0.9615402395361105,
+              "coRatedCount": 28
+            },
+            {
+              "ratedMovieId": 286,
+              "rating": 4,
+              "similarity": 0.9404887628802644,
+              "coRatedCount": 90
+            },
+            {
+              "ratedMovieId": 287,
+              "rating": 3,
+              "similarity": 0.9440878906019585,
+              "coRatedCount": 18
+            },
+            {
+              "ratedMovieId": 288,
+              "rating": 3,
+              "similarity": 0.9433243618920282,
+              "coRatedCount": 66
+            },
+            {
+              "ratedMovieId": 289,
+              "rating": 3,
+              "similarity": 0.9413578341418881,
+              "coRatedCount": 49
+            },
+            {
+              "ratedMovieId": 290,
+              "rating": 3,
+              "similarity": 0.9636810415688931,
+              "coRatedCount": 21
+            },
+            {
+              "ratedMovieId": 291,
+              "rating": 3,
+              "similarity": 0.9800510852968167,
+              "coRatedCount": 20
+            },
+            {
+              "ratedMovieId": 292,
+              "rating": 4,
+              "similarity": 0.9496321891556497,
+              "coRatedCount": 23
+            },
+            {
+              "ratedMovieId": 293,
+              "rating": 4,
+              "similarity": 0.965587972334466,
+              "coRatedCount": 28
+            },
+            {
+              "ratedMovieId": 294,
+              "rating": 1,
+              "similarity": 0.9442495869018238,
+              "coRatedCount": 66
+            },
+            {
+              "ratedMovieId": 295,
+              "rating": 4,
+              "similarity": 0.9337822719760323,
+              "coRatedCount": 13
+            },
+            {
+              "ratedMovieId": 296,
+              "rating": 3,
+              "similarity": 0.9899494936611665,
+              "coRatedCount": 2
+            },
+            {
+              "ratedMovieId": 297,
+              "rating": 4,
+              "similarity": 0.9781936132985326,
+              "coRatedCount": 14
+            },
+            {
+              "ratedMovieId": 298,
+              "rating": 3,
+              "similarity": 0.9400244096770827,
+              "coRatedCount": 35
+            },
+            {
+              "ratedMovieId": 299,
+              "rating": 4,
+              "similarity": 0.9648308750820118,
+              "coRatedCount": 16
+            },
+            {
+              "ratedMovieId": 300,
+              "rating": 4,
+              "similarity": 0.9542819347506368,
+              "coRatedCount": 80
+            },
+            {
+              "ratedMovieId": 301,
+              "rating": 4,
+              "similarity": 0.9361540227947136,
+              "coRatedCount": 57
+            },
+            {
+              "ratedMovieId": 302,
+              "rating": 5,
+              "similarity": 0.9611970632948119,
+              "coRatedCount": 76
+            },
+            {
+              "ratedMovieId": 303,
+              "rating": 4,
+              "similarity": 0.9418447531075596,
+              "coRatedCount": 41
+            },
+            {
+              "ratedMovieId": 304,
+              "rating": 4,
+              "similarity": 0.9558393759691994,
+              "coRatedCount": 32
+            },
+            {
+              "ratedMovieId": 305,
+              "rating": 3,
+              "similarity": 0.9430622550217042,
+              "coRatedCount": 26
+            },
+            {
+              "ratedMovieId": 306,
+              "rating": 4,
+              "similarity": 0.9674419469484948,
+              "coRatedCount": 20
+            },
+            {
+              "ratedMovieId": 307,
+              "rating": 3,
+              "similarity": 0.9520658971184813,
+              "coRatedCount": 47
+            },
+            {
+              "ratedMovieId": 310,
+              "rating": 4,
+              "similarity": 0.9676366186024191,
+              "coRatedCount": 45
+            },
+            {
+              "ratedMovieId": 311,
+              "rating": 5,
+              "similarity": 0.9377492282328495,
+              "coRatedCount": 25
+            },
+            {
+              "ratedMovieId": 312,
+              "rating": 3,
+              "similarity": 0.941180769829929,
+              "coRatedCount": 40
+            },
+            {
+              "ratedMovieId": 313,
+              "rating": 5,
+              "similarity": 0.9658668324760803,
+              "coRatedCount": 95
+            },
+            {
+              "ratedMovieId": 315,
+              "rating": 1,
+              "similarity": 0.9935063359161402,
+              "coRatedCount": 86
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

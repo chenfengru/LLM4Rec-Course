@@ -1,0 +1,2589 @@
+{
+  "protocol": "Full unheld-out MovieLens matrix for user 2; T=5,10,20 sensitivity alongside raw cosine; full Top-5 contributor details",
+  "sourceHashes": {
+    "u.item": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701",
+    "u.data": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490"
+  },
+  "verification": {
+    "verifiedUsers": [
+      2,
+      65,
+      405
+    ],
+    "directMethodComparisons": 24,
+    "formulaAndSparseDenseChecks": "passed"
+  },
+  "userId": 2,
+  "originalRatings": 62,
+  "methods": {
+    "raw": {
+      "threshold": null,
+      "userBased": [
+        {
+          "movieId": 187,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 2,
+            "weightSum": 1.9953826709729012,
+            "coRatedCounts": [
+              2,
+              4
+            ],
+            "contributors": [
+              {
+                "id": 156,
+                "similarity": 0.9995120760870788,
+                "coRatedCount": 2,
+                "rating": 5
+              },
+              {
+                "id": 96,
+                "similarity": 0.9958705948858224,
+                "coRatedCount": 4,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Godfather: Part II, The (1974)"
+        },
+        {
+          "movieId": 480,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 3,
+            "weightSum": 2.997627060273395,
+            "coRatedCounts": [
+              1,
+              2,
+              3
+            ],
+            "contributors": [
+              {
+                "id": 522,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 156,
+                "similarity": 0.9995120760870788,
+                "coRatedCount": 2,
+                "rating": 5
+              },
+              {
+                "id": 426,
+                "similarity": 0.9981149841863163,
+                "coRatedCount": 3,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "North by Northwest (1959)"
+        },
+        {
+          "movieId": 484,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 2,
+            "weightSum": 1.9939855790721386,
+            "coRatedCounts": [
+              3,
+              4
+            ],
+            "contributors": [
+              {
+                "id": 426,
+                "similarity": 0.9981149841863163,
+                "coRatedCount": 3,
+                "rating": 5
+              },
+              {
+                "id": 96,
+                "similarity": 0.9958705948858224,
+                "coRatedCount": 4,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Maltese Falcon, The (1941)"
+        },
+        {
+          "movieId": 17,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 1,
+            "coRatedCounts": [
+              1
+            ],
+            "contributors": [
+              {
+                "id": 366,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "From Dusk Till Dawn (1996)"
+        },
+        {
+          "movieId": 27,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 1,
+            "coRatedCounts": [
+              2
+            ],
+            "contributors": [
+              {
+                "id": 849,
+                "similarity": 1,
+                "coRatedCount": 2,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Bad Boys (1995)"
+        }
+      ],
+      "itemBased": [
+        {
+          "movieId": 1122,
+          "score": 4.5,
+          "support": {
+            "count": 6,
+            "weightSum": 6,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 237,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "They Made Me a Criminal (1939)"
+        },
+        {
+          "movieId": 1674,
+          "score": 4.5,
+          "support": {
+            "count": 10,
+            "weightSum": 10,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 257,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 297,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 300,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Mamma Roma (1962)"
+        },
+        {
+          "movieId": 1619,
+          "score": 4.375,
+          "support": {
+            "count": 8,
+            "weightSum": 8,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 14,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 111,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 237,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 302,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 313,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "All Things Fair (1996)"
+        },
+        {
+          "movieId": 1593,
+          "score": 4.3076923076923075,
+          "support": {
+            "count": 13,
+            "weightSum": 13,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 276,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 283,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 288,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 289,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 300,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Death in Brunswick (1991)"
+        },
+        {
+          "movieId": 1546,
+          "score": 4.285714285714286,
+          "support": {
+            "count": 7,
+            "weightSum": 7,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 50,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 288,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 302,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 308,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 313,
+                "similarity": 1,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Shadows (Cienie) (1988)"
+        }
+      ],
+      "selectedNeighbors": [
+        {
+          "userId": 51,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 98,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 114,
+          "coRatedCount": 2,
+          "similarity": 1
+        },
+        {
+          "userId": 167,
+          "coRatedCount": 3,
+          "similarity": 1
+        },
+        {
+          "userId": 187,
+          "coRatedCount": 2,
+          "similarity": 1
+        },
+        {
+          "userId": 289,
+          "coRatedCount": 2,
+          "similarity": 1
+        },
+        {
+          "userId": 366,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 369,
+          "coRatedCount": 2,
+          "similarity": 1
+        },
+        {
+          "userId": 522,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 565,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 700,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 778,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 849,
+          "coRatedCount": 2,
+          "similarity": 1
+        },
+        {
+          "userId": 855,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 912,
+          "coRatedCount": 1,
+          "similarity": 1
+        },
+        {
+          "userId": 156,
+          "coRatedCount": 2,
+          "similarity": 0.9995120760870788
+        },
+        {
+          "userId": 426,
+          "coRatedCount": 3,
+          "similarity": 0.9981149841863163
+        },
+        {
+          "userId": 607,
+          "coRatedCount": 4,
+          "similarity": 0.997176464952738
+        },
+        {
+          "userId": 419,
+          "coRatedCount": 10,
+          "similarity": 0.9959484901689342
+        },
+        {
+          "userId": 96,
+          "coRatedCount": 4,
+          "similarity": 0.9958705948858224
+        }
+      ]
+    },
+    "T5": {
+      "threshold": 5,
+      "userBased": [
+        {
+          "movieId": 479,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 4,
+            "weightSum": 3.9736520457896862,
+            "coRatedCounts": [
+              5,
+              13,
+              9,
+              7
+            ],
+            "contributors": [
+              {
+                "id": 350,
+                "similarity": 0.9958705948858224,
+                "coRatedCount": 5,
+                "rating": 5
+              },
+              {
+                "id": 892,
+                "similarity": 0.9927612852667974,
+                "coRatedCount": 13,
+                "rating": 5
+              },
+              {
+                "id": 338,
+                "similarity": 0.992510907813407,
+                "coRatedCount": 9,
+                "rating": 5
+              },
+              {
+                "id": 890,
+                "similarity": 0.9925092578236596,
+                "coRatedCount": 7,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Vertigo (1958)"
+        },
+        {
+          "movieId": 482,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 2,
+            "weightSum": 1.987297127623985,
+            "coRatedCounts": [
+              6,
+              13
+            ],
+            "contributors": [
+              {
+                "id": 694,
+                "similarity": 0.9945358423571876,
+                "coRatedCount": 6,
+                "rating": 5
+              },
+              {
+                "id": 892,
+                "similarity": 0.9927612852667974,
+                "coRatedCount": 13,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Some Like It Hot (1959)"
+        },
+        {
+          "movieId": 661,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 2,
+            "weightSum": 1.987297127623985,
+            "coRatedCounts": [
+              6,
+              13
+            ],
+            "contributors": [
+              {
+                "id": 694,
+                "similarity": 0.9945358423571876,
+                "coRatedCount": 6,
+                "rating": 5
+              },
+              {
+                "id": 892,
+                "similarity": 0.9927612852667974,
+                "coRatedCount": 13,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "High Noon (1952)"
+        },
+        {
+          "movieId": 1269,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 2,
+            "weightSum": 1.987297127623985,
+            "coRatedCounts": [
+              6,
+              13
+            ],
+            "contributors": [
+              {
+                "id": 694,
+                "similarity": 0.9945358423571876,
+                "coRatedCount": 6,
+                "rating": 5
+              },
+              {
+                "id": 892,
+                "similarity": 0.9927612852667974,
+                "coRatedCount": 13,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Love in the Afternoon (1957)"
+        },
+        {
+          "movieId": 17,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 0.9938586931957764,
+            "coRatedCounts": [
+              6
+            ],
+            "contributors": [
+              {
+                "id": 368,
+                "similarity": 0.9938586931957764,
+                "coRatedCount": 6,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "From Dusk Till Dawn (1996)"
+        }
+      ],
+      "itemBased": [
+        {
+          "movieId": 1674,
+          "score": 4.500000000000001,
+          "support": {
+            "count": 10,
+            "weightSum": 1.9999999999999998,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 257,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 297,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 300,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Mamma Roma (1962)"
+        },
+        {
+          "movieId": 1122,
+          "score": 4.5,
+          "support": {
+            "count": 6,
+            "weightSum": 1.2,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 237,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "They Made Me a Criminal (1939)"
+        },
+        {
+          "movieId": 1619,
+          "score": 4.375,
+          "support": {
+            "count": 8,
+            "weightSum": 1.5999999999999999,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 14,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 111,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 237,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 302,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 313,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "All Things Fair (1996)"
+        },
+        {
+          "movieId": 1593,
+          "score": 4.307692307692308,
+          "support": {
+            "count": 13,
+            "weightSum": 2.6,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 276,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 283,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 288,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 289,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 300,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Death in Brunswick (1991)"
+        },
+        {
+          "movieId": 1546,
+          "score": 4.285714285714286,
+          "support": {
+            "count": 7,
+            "weightSum": 1.4,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 50,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 288,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 302,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 308,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 313,
+                "similarity": 0.2,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Shadows (Cienie) (1988)"
+        }
+      ],
+      "selectedNeighbors": [
+        {
+          "userId": 419,
+          "coRatedCount": 10,
+          "similarity": 0.9959484901689342
+        },
+        {
+          "userId": 350,
+          "coRatedCount": 5,
+          "similarity": 0.9958705948858224
+        },
+        {
+          "userId": 658,
+          "coRatedCount": 7,
+          "similarity": 0.9946942902610567
+        },
+        {
+          "userId": 45,
+          "coRatedCount": 14,
+          "similarity": 0.9946379479652361
+        },
+        {
+          "userId": 421,
+          "coRatedCount": 5,
+          "similarity": 0.9945710496240127
+        },
+        {
+          "userId": 694,
+          "coRatedCount": 6,
+          "similarity": 0.9945358423571876
+        },
+        {
+          "userId": 252,
+          "coRatedCount": 9,
+          "similarity": 0.9942942503922024
+        },
+        {
+          "userId": 310,
+          "coRatedCount": 9,
+          "similarity": 0.9941071475206932
+        },
+        {
+          "userId": 530,
+          "coRatedCount": 5,
+          "similarity": 0.9939964700457992
+        },
+        {
+          "userId": 368,
+          "coRatedCount": 6,
+          "similarity": 0.9938586931957764
+        },
+        {
+          "userId": 235,
+          "coRatedCount": 9,
+          "similarity": 0.9938160045481544
+        },
+        {
+          "userId": 420,
+          "coRatedCount": 12,
+          "similarity": 0.9937921295479389
+        },
+        {
+          "userId": 295,
+          "coRatedCount": 6,
+          "similarity": 0.9937117080631268
+        },
+        {
+          "userId": 138,
+          "coRatedCount": 6,
+          "similarity": 0.993399267798783
+        },
+        {
+          "userId": 892,
+          "coRatedCount": 13,
+          "similarity": 0.9927612852667974
+        },
+        {
+          "userId": 132,
+          "coRatedCount": 7,
+          "similarity": 0.992624729076267
+        },
+        {
+          "userId": 338,
+          "coRatedCount": 9,
+          "similarity": 0.992510907813407
+        },
+        {
+          "userId": 890,
+          "coRatedCount": 7,
+          "similarity": 0.9925092578236596
+        },
+        {
+          "userId": 794,
+          "coRatedCount": 14,
+          "similarity": 0.9910578045481098
+        },
+        {
+          "userId": 329,
+          "coRatedCount": 19,
+          "similarity": 0.9903142618603835
+        }
+      ]
+    },
+    "T10": {
+      "threshold": 10,
+      "userBased": [
+        {
+          "movieId": 641,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 2,
+            "weightSum": 1.9827235332971211,
+            "coRatedCounts": [
+              13,
+              11
+            ],
+            "contributors": [
+              {
+                "id": 892,
+                "similarity": 0.9927612852667974,
+                "coRatedCount": 13,
+                "rating": 5
+              },
+              {
+                "id": 397,
+                "similarity": 0.9899622480303238,
+                "coRatedCount": 11,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Paths of Glory (1957)"
+        },
+        {
+          "movieId": 23,
+          "score": 5,
+          "support": {
+            "count": 2,
+            "weightSum": 1.9796301414913462,
+            "coRatedCounts": [
+              11,
+              14
+            ],
+            "contributors": [
+              {
+                "id": 397,
+                "similarity": 0.9899622480303238,
+                "coRatedCount": 11,
+                "rating": 5
+              },
+              {
+                "id": 361,
+                "similarity": 0.9896678934610224,
+                "coRatedCount": 14,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Taxi Driver (1976)"
+        },
+        {
+          "movieId": 57,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 0.9892704544377235,
+            "coRatedCounts": [
+              21
+            ],
+            "contributors": [
+              {
+                "id": 184,
+                "similarity": 0.9892704544377235,
+                "coRatedCount": 21,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Priest (1994)"
+        },
+        {
+          "movieId": 114,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 0.9897589731170008,
+            "coRatedCounts": [
+              13
+            ],
+            "contributors": [
+              {
+                "id": 523,
+                "similarity": 0.9897589731170008,
+                "coRatedCount": 13,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Wallace & Gromit: The Best of Aardman Animation (1996)"
+        },
+        {
+          "movieId": 163,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 0.9897589731170008,
+            "coRatedCounts": [
+              13
+            ],
+            "contributors": [
+              {
+                "id": 523,
+                "similarity": 0.9897589731170008,
+                "coRatedCount": 13,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Return of the Pink Panther, The (1974)"
+        }
+      ],
+      "itemBased": [
+        {
+          "movieId": 1674,
+          "score": 4.500000000000001,
+          "support": {
+            "count": 10,
+            "weightSum": 0.9999999999999999,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 257,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 297,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 300,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Mamma Roma (1962)"
+        },
+        {
+          "movieId": 1122,
+          "score": 4.5,
+          "support": {
+            "count": 6,
+            "weightSum": 0.6,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 237,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "They Made Me a Criminal (1939)"
+        },
+        {
+          "movieId": 1619,
+          "score": 4.375,
+          "support": {
+            "count": 8,
+            "weightSum": 0.7999999999999999,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 14,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 111,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 237,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 302,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 313,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "All Things Fair (1996)"
+        },
+        {
+          "movieId": 1593,
+          "score": 4.307692307692308,
+          "support": {
+            "count": 13,
+            "weightSum": 1.3,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 276,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 283,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 288,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 289,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 300,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Death in Brunswick (1991)"
+        },
+        {
+          "movieId": 1546,
+          "score": 4.285714285714286,
+          "support": {
+            "count": 7,
+            "weightSum": 0.7,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 50,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 288,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 302,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 308,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 313,
+                "similarity": 0.1,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Shadows (Cienie) (1988)"
+        }
+      ],
+      "selectedNeighbors": [
+        {
+          "userId": 419,
+          "coRatedCount": 10,
+          "similarity": 0.9959484901689342
+        },
+        {
+          "userId": 45,
+          "coRatedCount": 14,
+          "similarity": 0.9946379479652361
+        },
+        {
+          "userId": 420,
+          "coRatedCount": 12,
+          "similarity": 0.9937921295479389
+        },
+        {
+          "userId": 892,
+          "coRatedCount": 13,
+          "similarity": 0.9927612852667974
+        },
+        {
+          "userId": 794,
+          "coRatedCount": 14,
+          "similarity": 0.9910578045481098
+        },
+        {
+          "userId": 329,
+          "coRatedCount": 19,
+          "similarity": 0.9903142618603835
+        },
+        {
+          "userId": 397,
+          "coRatedCount": 11,
+          "similarity": 0.9899622480303238
+        },
+        {
+          "userId": 195,
+          "coRatedCount": 11,
+          "similarity": 0.9898604687939055
+        },
+        {
+          "userId": 523,
+          "coRatedCount": 13,
+          "similarity": 0.9897589731170008
+        },
+        {
+          "userId": 361,
+          "coRatedCount": 14,
+          "similarity": 0.9896678934610224
+        },
+        {
+          "userId": 453,
+          "coRatedCount": 12,
+          "similarity": 0.989558818715312
+        },
+        {
+          "userId": 594,
+          "coRatedCount": 11,
+          "similarity": 0.9894970831750542
+        },
+        {
+          "userId": 184,
+          "coRatedCount": 21,
+          "similarity": 0.9892704544377235
+        },
+        {
+          "userId": 402,
+          "coRatedCount": 17,
+          "similarity": 0.9890067304332124
+        },
+        {
+          "userId": 591,
+          "coRatedCount": 11,
+          "similarity": 0.9883808686951725
+        },
+        {
+          "userId": 606,
+          "coRatedCount": 21,
+          "similarity": 0.9881492767318407
+        },
+        {
+          "userId": 288,
+          "coRatedCount": 14,
+          "similarity": 0.9881049293224639
+        },
+        {
+          "userId": 330,
+          "coRatedCount": 13,
+          "similarity": 0.9880159228880787
+        },
+        {
+          "userId": 376,
+          "coRatedCount": 10,
+          "similarity": 0.9877427950327017
+        },
+        {
+          "userId": 266,
+          "coRatedCount": 12,
+          "similarity": 0.9877189694957434
+        }
+      ]
+    },
+    "T20": {
+      "threshold": 20,
+      "userBased": [
+        {
+          "movieId": 169,
+          "score": 5.000000000000001,
+          "support": {
+            "count": 4,
+            "weightSum": 3.906114855063178,
+            "coRatedCounts": [
+              20,
+              24,
+              22,
+              21
+            ],
+            "contributors": [
+              {
+                "id": 457,
+                "similarity": 0.9834367144492052,
+                "coRatedCount": 20,
+                "rating": 5
+              },
+              {
+                "id": 514,
+                "similarity": 0.9753080201639467,
+                "coRatedCount": 24,
+                "rating": 5
+              },
+              {
+                "id": 343,
+                "similarity": 0.9743581866342237,
+                "coRatedCount": 22,
+                "rating": 5
+              },
+              {
+                "id": 889,
+                "similarity": 0.9730119338158028,
+                "coRatedCount": 21,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Wrong Trousers, The (1993)"
+        },
+        {
+          "movieId": 114,
+          "score": 5,
+          "support": {
+            "count": 2,
+            "weightSum": 1.958744734613152,
+            "coRatedCounts": [
+              20,
+              24
+            ],
+            "contributors": [
+              {
+                "id": 457,
+                "similarity": 0.9834367144492052,
+                "coRatedCount": 20,
+                "rating": 5
+              },
+              {
+                "id": 514,
+                "similarity": 0.9753080201639467,
+                "coRatedCount": 24,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Wallace & Gromit: The Best of Aardman Animation (1996)"
+        },
+        {
+          "movieId": 611,
+          "score": 5,
+          "support": {
+            "count": 2,
+            "weightSum": 1.9573591364437433,
+            "coRatedCounts": [
+              35,
+              29
+            ],
+            "contributors": [
+              {
+                "id": 234,
+                "similarity": 0.9807324785327041,
+                "coRatedCount": 35,
+                "rating": 5
+              },
+              {
+                "id": 90,
+                "similarity": 0.9766266579110393,
+                "coRatedCount": 29,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Laura (1944)"
+        },
+        {
+          "movieId": 710,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 0.9753080201639467,
+            "coRatedCounts": [
+              24
+            ],
+            "contributors": [
+              {
+                "id": 514,
+                "similarity": 0.9753080201639467,
+                "coRatedCount": 24,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Better Off Dead... (1985)"
+        },
+        {
+          "movieId": 730,
+          "score": 5,
+          "support": {
+            "count": 1,
+            "weightSum": 0.9766266579110393,
+            "coRatedCounts": [
+              29
+            ],
+            "contributors": [
+              {
+                "id": 90,
+                "similarity": 0.9766266579110393,
+                "coRatedCount": 29,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Queen Margot (Reine Margot, La) (1994)"
+        }
+      ],
+      "itemBased": [
+        {
+          "movieId": 1674,
+          "score": 4.500000000000001,
+          "support": {
+            "count": 10,
+            "weightSum": 0.49999999999999994,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 257,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 297,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 300,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Mamma Roma (1962)"
+        },
+        {
+          "movieId": 1122,
+          "score": 4.5,
+          "support": {
+            "count": 6,
+            "weightSum": 0.3,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 237,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "They Made Me a Criminal (1939)"
+        },
+        {
+          "movieId": 1619,
+          "score": 4.375,
+          "support": {
+            "count": 8,
+            "weightSum": 0.39999999999999997,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 13,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 14,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 111,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 237,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 272,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 302,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 313,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "All Things Fair (1996)"
+        },
+        {
+          "movieId": 1593,
+          "score": 4.307692307692308,
+          "support": {
+            "count": 13,
+            "weightSum": 0.65,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 14,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 50,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 100,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 275,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 276,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 283,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 285,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 286,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 288,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 289,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 300,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 303,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              }
+            ]
+          },
+          "title": "Death in Brunswick (1991)"
+        },
+        {
+          "movieId": 1546,
+          "score": 4.285714285714286,
+          "support": {
+            "count": 7,
+            "weightSum": 0.35,
+            "coRatedCounts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "contributors": [
+              {
+                "id": 50,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 127,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 288,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 302,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              },
+              {
+                "id": 303,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 4
+              },
+              {
+                "id": 308,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 3
+              },
+              {
+                "id": 313,
+                "similarity": 0.05,
+                "coRatedCount": 1,
+                "rating": 5
+              }
+            ]
+          },
+          "title": "Shadows (Cienie) (1988)"
+        }
+      ],
+      "selectedNeighbors": [
+        {
+          "userId": 184,
+          "coRatedCount": 21,
+          "similarity": 0.9892704544377235
+        },
+        {
+          "userId": 606,
+          "coRatedCount": 21,
+          "similarity": 0.9881492767318407
+        },
+        {
+          "userId": 910,
+          "coRatedCount": 20,
+          "similarity": 0.9846021350679568
+        },
+        {
+          "userId": 457,
+          "coRatedCount": 20,
+          "similarity": 0.9834367144492052
+        },
+        {
+          "userId": 378,
+          "coRatedCount": 38,
+          "similarity": 0.9816642557033467
+        },
+        {
+          "userId": 234,
+          "coRatedCount": 35,
+          "similarity": 0.9807324785327041
+        },
+        {
+          "userId": 624,
+          "coRatedCount": 35,
+          "similarity": 0.9803282923225372
+        },
+        {
+          "userId": 178,
+          "coRatedCount": 31,
+          "similarity": 0.9802432710638271
+        },
+        {
+          "userId": 595,
+          "coRatedCount": 20,
+          "similarity": 0.9792915186666463
+        },
+        {
+          "userId": 919,
+          "coRatedCount": 40,
+          "similarity": 0.9774206261983114
+        },
+        {
+          "userId": 90,
+          "coRatedCount": 29,
+          "similarity": 0.9766266579110393
+        },
+        {
+          "userId": 851,
+          "coRatedCount": 22,
+          "similarity": 0.9763432149087888
+        },
+        {
+          "userId": 277,
+          "coRatedCount": 20,
+          "similarity": 0.975950980768138
+        },
+        {
+          "userId": 514,
+          "coRatedCount": 24,
+          "similarity": 0.9753080201639467
+        },
+        {
+          "userId": 360,
+          "coRatedCount": 26,
+          "similarity": 0.974477481600691
+        },
+        {
+          "userId": 343,
+          "coRatedCount": 22,
+          "similarity": 0.9743581866342237
+        },
+        {
+          "userId": 468,
+          "coRatedCount": 20,
+          "similarity": 0.9743493473413817
+        },
+        {
+          "userId": 524,
+          "coRatedCount": 23,
+          "similarity": 0.9742016125467274
+        },
+        {
+          "userId": 697,
+          "coRatedCount": 27,
+          "similarity": 0.973437465603131
+        },
+        {
+          "userId": 889,
+          "coRatedCount": 21,
+          "similarity": 0.9730119338158028
+        }
+      ]
+    }
+  },
+  "summary": {
+    "raw": {
+      "userBasedTop5Ids": [
+        187,
+        480,
+        484,
+        17,
+        27
+      ],
+      "itemBasedTop5Ids": [
+        1122,
+        1674,
+        1619,
+        1593,
+        1546
+      ],
+      "userBasedSupportCounts": [
+        2,
+        3,
+        2,
+        1,
+        1
+      ],
+      "itemBasedSupportCounts": [
+        6,
+        10,
+        8,
+        13,
+        7
+      ]
+    },
+    "T5": {
+      "userBasedTop5Ids": [
+        479,
+        482,
+        661,
+        1269,
+        17
+      ],
+      "itemBasedTop5Ids": [
+        1674,
+        1122,
+        1619,
+        1593,
+        1546
+      ],
+      "userBasedSupportCounts": [
+        4,
+        2,
+        2,
+        2,
+        1
+      ],
+      "itemBasedSupportCounts": [
+        10,
+        6,
+        8,
+        13,
+        7
+      ]
+    },
+    "T10": {
+      "userBasedTop5Ids": [
+        641,
+        23,
+        57,
+        114,
+        163
+      ],
+      "itemBasedTop5Ids": [
+        1674,
+        1122,
+        1619,
+        1593,
+        1546
+      ],
+      "userBasedSupportCounts": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "itemBasedSupportCounts": [
+        10,
+        6,
+        8,
+        13,
+        7
+      ]
+    },
+    "T20": {
+      "userBasedTop5Ids": [
+        169,
+        114,
+        611,
+        710,
+        730
+      ],
+      "itemBasedTop5Ids": [
+        1674,
+        1122,
+        1619,
+        1593,
+        1546
+      ],
+      "userBasedSupportCounts": [
+        4,
+        2,
+        2,
+        1,
+        1
+      ],
+      "itemBasedSupportCounts": [
+        10,
+        6,
+        8,
+        13,
+        7
+      ]
+    }
+  }
+}

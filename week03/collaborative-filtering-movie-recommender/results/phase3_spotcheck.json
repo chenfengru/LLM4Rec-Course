@@ -1,0 +1,764 @@
+{
+  "protocol": "Fixed ten users; same most-recent-positive holdout and restored matrix; capture full sorted candidate ranks from the unchanged sorter; cross-check Top-5 hits against exhaustive result",
+  "userIds": [
+    1,
+    2,
+    3,
+    65,
+    251,
+    382,
+    423,
+    542,
+    902,
+    943
+  ],
+  "samples": [
+    {
+      "userId": 1,
+      "heldOutMovieId": 256,
+      "heldOutRating": 4,
+      "heldOutItemOtherUserRatings": 15,
+      "methods": {
+        "userBased": {
+          "candidateCount": 123,
+          "heldOutRank": null,
+          "heldOutScore": null,
+          "top5": [
+            {
+              "movieId": 309,
+              "score": 5,
+              "observedItemRatings": 28
+            },
+            {
+              "movieId": 318,
+              "score": 5,
+              "observedItemRatings": 298
+            },
+            {
+              "movieId": 329,
+              "score": 5,
+              "observedItemRatings": 45
+            },
+            {
+              "movieId": 330,
+              "score": 5,
+              "observedItemRatings": 41
+            },
+            {
+              "movieId": 341,
+              "score": 5,
+              "observedItemRatings": 11
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1411,
+          "heldOutRank": 506,
+          "heldOutScore": 3.667673184844967,
+          "top5": [
+            {
+              "movieId": 1156,
+              "score": 4.378378378378378,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1653,
+              "score": 4.375,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1601,
+              "score": 4.27906976744186,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1618,
+              "score": 4.222222222222222,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1656,
+              "score": 4.185780121994757,
+              "observedItemRatings": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 2,
+      "heldOutMovieId": 316,
+      "heldOutRating": 5,
+      "heldOutItemOtherUserRatings": 111,
+      "methods": {
+        "userBased": {
+          "candidateCount": 383,
+          "heldOutRank": 18,
+          "heldOutScore": 5,
+          "top5": [
+            {
+              "movieId": 187,
+              "score": 5.000000000000001,
+              "observedItemRatings": 209
+            },
+            {
+              "movieId": 480,
+              "score": 5.000000000000001,
+              "observedItemRatings": 179
+            },
+            {
+              "movieId": 484,
+              "score": 5.000000000000001,
+              "observedItemRatings": 138
+            },
+            {
+              "movieId": 17,
+              "score": 5,
+              "observedItemRatings": 92
+            },
+            {
+              "movieId": 27,
+              "score": 5,
+              "observedItemRatings": 57
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1621,
+          "heldOutRank": 1409,
+          "heldOutScore": 3.6885340597215563,
+          "top5": [
+            {
+              "movieId": 1122,
+              "score": 4.5,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1674,
+              "score": 4.5,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1619,
+              "score": 4.375,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1593,
+              "score": 4.3076923076923075,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1546,
+              "score": 4.285714285714286,
+              "observedItemRatings": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 3,
+      "heldOutMovieId": 181,
+      "heldOutRating": 4,
+      "heldOutItemOtherUserRatings": 506,
+      "methods": {
+        "userBased": {
+          "candidateCount": 527,
+          "heldOutRank": 251,
+          "heldOutScore": 3.8,
+          "top5": [
+            {
+              "movieId": 71,
+              "score": 5,
+              "observedItemRatings": 220
+            },
+            {
+              "movieId": 114,
+              "score": 5,
+              "observedItemRatings": 67
+            },
+            {
+              "movieId": 124,
+              "score": 5,
+              "observedItemRatings": 187
+            },
+            {
+              "movieId": 136,
+              "score": 5,
+              "observedItemRatings": 105
+            },
+            {
+              "movieId": 162,
+              "score": 5,
+              "observedItemRatings": 106
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1629,
+          "heldOutRank": 888,
+          "heldOutScore": 2.784205533503525,
+          "top5": [
+            {
+              "movieId": 1536,
+              "score": 3.7142857142857144,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1653,
+              "score": 3.5714285714285716,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1397,
+              "score": 3.2344148233952934,
+              "observedItemRatings": 5
+            },
+            {
+              "movieId": 1656,
+              "score": 3.2334616687240714,
+              "observedItemRatings": 2
+            },
+            {
+              "movieId": 1622,
+              "score": 3.2189555398214083,
+              "observedItemRatings": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 65,
+      "heldOutMovieId": 185,
+      "heldOutRating": 4,
+      "heldOutItemOtherUserRatings": 238,
+      "methods": {
+        "userBased": {
+          "candidateCount": 162,
+          "heldOutRank": 3,
+          "heldOutScore": 5,
+          "top5": [
+            {
+              "movieId": 86,
+              "score": 5,
+              "observedItemRatings": 150
+            },
+            {
+              "movieId": 183,
+              "score": 5,
+              "observedItemRatings": 291
+            },
+            {
+              "movieId": 185,
+              "score": 5,
+              "observedItemRatings": 238
+            },
+            {
+              "movieId": 234,
+              "score": 5,
+              "observedItemRatings": 280
+            },
+            {
+              "movieId": 330,
+              "score": 5,
+              "observedItemRatings": 41
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1603,
+          "heldOutRank": 962,
+          "heldOutScore": 3.937784281497069,
+          "top5": [
+            {
+              "movieId": 1673,
+              "score": 4.310344827586207,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1533,
+              "score": 4.3,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1653,
+              "score": 4.25,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1593,
+              "score": 4.206896551724138,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1309,
+              "score": 4.2,
+              "observedItemRatings": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 251,
+      "heldOutMovieId": 25,
+      "heldOutRating": 4,
+      "heldOutItemOtherUserRatings": 292,
+      "methods": {
+        "userBased": {
+          "candidateCount": 324,
+          "heldOutRank": 3,
+          "heldOutScore": 5,
+          "top5": [
+            {
+              "movieId": 475,
+              "score": 5.000000000000001,
+              "observedItemRatings": 250
+            },
+            {
+              "movieId": 955,
+              "score": 5.000000000000001,
+              "observedItemRatings": 49
+            },
+            {
+              "movieId": 25,
+              "score": 5,
+              "observedItemRatings": 292
+            },
+            {
+              "movieId": 32,
+              "score": 5,
+              "observedItemRatings": 81
+            },
+            {
+              "movieId": 46,
+              "score": 5,
+              "observedItemRatings": 27
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1606,
+          "heldOutRank": 951,
+          "heldOutScore": 3.7944808653651307,
+          "top5": [
+            {
+              "movieId": 1593,
+              "score": 4.388888888888889,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1309,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1310,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1122,
+              "score": 4.32,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1306,
+              "score": 4.29993244628265,
+              "observedItemRatings": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 382,
+      "heldOutMovieId": 334,
+      "heldOutRating": 5,
+      "heldOutItemOtherUserRatings": 63,
+      "methods": {
+        "userBased": {
+          "candidateCount": 165,
+          "heldOutRank": 2,
+          "heldOutScore": 5,
+          "top5": [
+            {
+              "movieId": 8,
+              "score": 5,
+              "observedItemRatings": 219
+            },
+            {
+              "movieId": 334,
+              "score": 5,
+              "observedItemRatings": 63
+            },
+            {
+              "movieId": 352,
+              "score": 5,
+              "observedItemRatings": 26
+            },
+            {
+              "movieId": 361,
+              "score": 5,
+              "observedItemRatings": 10
+            },
+            {
+              "movieId": 435,
+              "score": 5,
+              "observedItemRatings": 216
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1630,
+          "heldOutRank": 615,
+          "heldOutScore": 3.44064921807708,
+          "top5": [
+            {
+              "movieId": 1619,
+              "score": 3.8333333333333335,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1546,
+              "score": 3.8095238095238093,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1548,
+              "score": 3.8095238095238093,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1557,
+              "score": 3.8095238095238093,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1559,
+              "score": 3.8095238095238093,
+              "observedItemRatings": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 423,
+      "heldOutMovieId": 10,
+      "heldOutRating": 4,
+      "heldOutItemOtherUserRatings": 88,
+      "methods": {
+        "userBased": {
+          "candidateCount": 509,
+          "heldOutRank": 1,
+          "heldOutScore": 5,
+          "top5": [
+            {
+              "movieId": 10,
+              "score": 5,
+              "observedItemRatings": 88
+            },
+            {
+              "movieId": 26,
+              "score": 5,
+              "observedItemRatings": 73
+            },
+            {
+              "movieId": 39,
+              "score": 5,
+              "observedItemRatings": 87
+            },
+            {
+              "movieId": 45,
+              "score": 5,
+              "observedItemRatings": 80
+            },
+            {
+              "movieId": 65,
+              "score": 5,
+              "observedItemRatings": 115
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1619,
+          "heldOutRank": 844,
+          "heldOutScore": 3.577228418677911,
+          "top5": [
+            {
+              "movieId": 1674,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1533,
+              "score": 4.222222222222222,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1619,
+              "score": 4.2,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1472,
+              "score": 4.1822409436730075,
+              "observedItemRatings": 2
+            },
+            {
+              "movieId": 1653,
+              "score": 4.142857142857143,
+              "observedItemRatings": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 542,
+      "heldOutMovieId": 12,
+      "heldOutRating": 4,
+      "heldOutItemOtherUserRatings": 266,
+      "methods": {
+        "userBased": {
+          "candidateCount": 147,
+          "heldOutRank": 1,
+          "heldOutScore": 5,
+          "top5": [
+            {
+              "movieId": 12,
+              "score": 5,
+              "observedItemRatings": 266
+            },
+            {
+              "movieId": 262,
+              "score": 5,
+              "observedItemRatings": 66
+            },
+            {
+              "movieId": 275,
+              "score": 5,
+              "observedItemRatings": 268
+            },
+            {
+              "movieId": 330,
+              "score": 5,
+              "observedItemRatings": 41
+            },
+            {
+              "movieId": 361,
+              "score": 5,
+              "observedItemRatings": 10
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1548,
+          "heldOutRank": 805,
+          "heldOutScore": 3.4912220212069323,
+          "top5": [
+            {
+              "movieId": 711,
+              "score": 3.909090909090909,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1618,
+              "score": 3.9,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1653,
+              "score": 3.857142857142857,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1673,
+              "score": 3.857142857142857,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1674,
+              "score": 3.843137254901961,
+              "observedItemRatings": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 902,
+      "heldOutMovieId": 79,
+      "heldOutRating": 5,
+      "heldOutItemOtherUserRatings": 335,
+      "methods": {
+        "userBased": {
+          "candidateCount": 375,
+          "heldOutRank": 4,
+          "heldOutScore": 5,
+          "top5": [
+            {
+              "movieId": 477,
+              "score": 5.000000000000001,
+              "observedItemRatings": 95
+            },
+            {
+              "movieId": 48,
+              "score": 5,
+              "observedItemRatings": 117
+            },
+            {
+              "movieId": 70,
+              "score": 5,
+              "observedItemRatings": 251
+            },
+            {
+              "movieId": 79,
+              "score": 5,
+              "observedItemRatings": 335
+            },
+            {
+              "movieId": 117,
+              "score": 5,
+              "observedItemRatings": 378
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1634,
+          "heldOutRank": 693,
+          "heldOutScore": 3.4244231761094412,
+          "top5": [
+            {
+              "movieId": 1309,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1310,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1619,
+              "score": 4.214285714285714,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1599,
+              "score": 4.157894736842105,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1573,
+              "score": 4.1324804945863125,
+              "observedItemRatings": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "userId": 943,
+      "heldOutMovieId": 840,
+      "heldOutRating": 4,
+      "heldOutItemOtherUserRatings": 52,
+      "methods": {
+        "userBased": {
+          "candidateCount": 370,
+          "heldOutRank": null,
+          "heldOutScore": null,
+          "top5": [
+            {
+              "movieId": 52,
+              "score": 5,
+              "observedItemRatings": 91
+            },
+            {
+              "movieId": 83,
+              "score": 5,
+              "observedItemRatings": 176
+            },
+            {
+              "movieId": 137,
+              "score": 5,
+              "observedItemRatings": 171
+            },
+            {
+              "movieId": 238,
+              "score": 5,
+              "observedItemRatings": 256
+            },
+            {
+              "movieId": 287,
+              "score": 5,
+              "observedItemRatings": 78
+            }
+          ]
+        },
+        "itemBased": {
+          "candidateCount": 1503,
+          "heldOutRank": 1149,
+          "heldOutScore": 3.4071588959233123,
+          "top5": [
+            {
+              "movieId": 1191,
+              "score": 4.333333333333333,
+              "observedItemRatings": 3
+            },
+            {
+              "movieId": 1243,
+              "score": 4.333333333333333,
+              "observedItemRatings": 7
+            },
+            {
+              "movieId": 1663,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1665,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            },
+            {
+              "movieId": 1666,
+              "score": 4.333333333333333,
+              "observedItemRatings": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "crossCheckedUsers": 10,
+    "itemBasedHeldOutRanks": [
+      506,
+      1409,
+      888,
+      962,
+      951,
+      615,
+      844,
+      805,
+      693,
+      1149
+    ],
+    "userBasedHeldOutRanks": [
+      null,
+      18,
+      251,
+      3,
+      3,
+      2,
+      1,
+      1,
+      4,
+      null
+    ]
+  }
+}
