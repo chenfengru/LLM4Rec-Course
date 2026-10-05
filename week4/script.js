@@ -184,8 +184,24 @@ function asIndex(basketsOrIndex) {
  * @returns {number} count(A) for a single-element `stocks`, count(A union B) for two.
  */
 function countItemset(basketsOrIndex, stocks) {
-  // TODO(hw4): intersect the posting lists and return the number of baskets.
-  throw new Error("TODO(hw4): countItemset is not implemented yet.");
+  const uniqueStocks = dedupeBasket(stocks);
+  if (uniqueStocks.length === 0) return 0;
+
+  const index = asIndex(basketsOrIndex);
+  const postings = [];
+  for (const stock of uniqueStocks) {
+    const posting = index.byStock.get(stock);
+    if (!posting) return 0;
+    postings.push(posting);
+  }
+
+  postings.sort((a, b) => a.size - b.size);
+  const [smallest, ...remaining] = postings;
+  let count = 0;
+  for (const basketId of smallest) {
+    if (remaining.every((posting) => posting.has(basketId))) count += 1;
+  }
+  return count;
 }
 
 /**
@@ -228,8 +244,7 @@ function countPair(basketsOrIndex, stockA, stockB) {
  * @returns {Array<string>} unique stock codes, in first-appearance order.
  */
 function dedupeBasket(rawItems) {
-  // TODO(hw4): return the unique stock codes in first-appearance order.
-  throw new Error("TODO(hw4): dedupeBasket is not implemented yet.");
+  return [...new Set(rawItems.map(stockOf))];
 }
 
 /**
@@ -246,8 +261,10 @@ function dedupeBasket(rawItems) {
  * @returns {{value: number, defined: boolean}} `defined` is false when `n === 0`.
  */
 function computeSupport(jointCount, n) {
-  // TODO(hw4): support = jointCount / n, undefined when n === 0.
-  throw new Error("TODO(hw4): computeSupport is not implemented yet.");
+  if (n === 0) return { value: 0, defined: false };
+  const value = jointCount / n;
+  if (!Number.isFinite(value)) return { value: 0, defined: false };
+  return { value, defined: true };
 }
 
 /**
@@ -265,8 +282,10 @@ function computeSupport(jointCount, n) {
  * @returns {{value: number, defined: boolean}}
  */
 function computeConfidence(jointCount, antecedentCount) {
-  // TODO(hw4): confidence = jointCount / antecedentCount, undefined when count(A) === 0.
-  throw new Error("TODO(hw4): computeConfidence is not implemented yet.");
+  if (antecedentCount === 0) return { value: 0, defined: false };
+  const value = jointCount / antecedentCount;
+  if (!Number.isFinite(value)) return { value: 0, defined: false };
+  return { value, defined: true };
 }
 
 /**
@@ -287,8 +306,14 @@ function computeConfidence(jointCount, antecedentCount) {
  * @returns {{value: number, defined: boolean}}
  */
 function computeLift(confidence, consequentCount, n) {
-  // TODO(hw4): lift = confidence / (consequentCount / n), guarded.
-  throw new Error("TODO(hw4): computeLift is not implemented yet.");
+  if (!confidence || !confidence.defined || n === 0 || consequentCount === 0) {
+    return { value: 0, defined: false };
+  }
+  const baseline = consequentCount / n;
+  if (baseline === 0) return { value: 0, defined: false };
+  const value = confidence.value / baseline;
+  if (!Number.isFinite(value)) return { value: 0, defined: false };
+  return { value, defined: true };
 }
 
 /**
@@ -333,8 +358,56 @@ function validateThresholds(minSupport, minConfidence) {
  * @returns {Array<{items: string[], count: number, support: number}>} frequent itemsets
  */
 function findFrequentItemsets(transactions, minSupport) {
-  // TODO(hw4): implement Apriori (or an equivalent frequent-itemset miner).
-  throw new Error("TODO(hw4): findFrequentItemsets is not implemented yet.");
+  if (transactions.length === 0) return [];
+  const index = asIndex(transactions);
+  let level = [];
+
+  for (const stock of [...index.byStock.keys()].sort()) {
+    const count = index.byStock.get(stock).size;
+    const support = computeSupport(count, index.n).value;
+    if (support >= minSupport) {
+      level.push({ items: [stock], count, support });
+    }
+  }
+  const frequentItemsets = [...level];
+
+  while (level.length > 0) {
+    const previousKeys = new Set(level.map(({ items }) => JSON.stringify(items)));
+    const nextLevel = [];
+
+    for (let i = 0; i < level.length; i += 1) {
+      const left = level[i].items;
+      for (let j = i + 1; j < level.length; j += 1) {
+        const right = level[j].items;
+        // Levels stay lexically ordered, so equal prefixes are contiguous.
+        if (!left.slice(0, -1).every((stock, position) => stock === right[position])) {
+          break;
+        }
+        const candidate = [...left, right[right.length - 1]];
+
+        // Apriori: prune before counting if any immediate subset is infrequent.
+        let allSubsetsFrequent = true;
+        for (let omitted = 0; omitted < candidate.length; omitted += 1) {
+          const subset = candidate.filter((_, position) => position !== omitted);
+          if (!previousKeys.has(JSON.stringify(subset))) {
+            allSubsetsFrequent = false;
+            break;
+          }
+        }
+        if (!allSubsetsFrequent) continue;
+
+        const count = countItemset(index, candidate);
+        const support = computeSupport(count, index.n).value;
+        if (support >= minSupport) {
+          const itemset = { items: candidate, count, support };
+          nextLevel.push(itemset);
+          frequentItemsets.push(itemset);
+        }
+      }
+    }
+    level = nextLevel;
+  }
+  return frequentItemsets;
 }
 
 /**
@@ -360,9 +433,42 @@ function findFrequentItemsets(transactions, minSupport) {
  * @returns {Rule[]}
  */
 function generateRules(frequentItemsets, minConfidence) {
-  // TODO(hw4): generate candidate rules from each frequent itemset, compute
-  // confidence in both directions, then keep the rules that pass the threshold.
-  throw new Error("TODO(hw4): generateRules is not implemented yet.");
+  const itemsets = frequentItemsets.map(({ items, count }) => ({
+    items: [...items].sort(),
+    count,
+  }));
+  const counts = new Map(itemsets.map(({ items, count }) => [JSON.stringify(items), count]));
+  const rules = [];
+
+  for (const { items, count } of itemsets) {
+    if (items.length < 2) continue;
+    const antecedent = [];
+    const consequent = [];
+
+    const enumerate = (position) => {
+      if (position === items.length) {
+        if (antecedent.length === 0 || consequent.length === 0) return;
+        const confidence = computeConfidence(count, counts.get(JSON.stringify(antecedent)));
+        if (confidence.defined && confidence.value >= minConfidence) {
+          rules.push({
+            antecedent: [...antecedent],
+            consequent: [...consequent],
+            confidence: confidence.value,
+          });
+        }
+        return;
+      }
+
+      antecedent.push(items[position]);
+      enumerate(position + 1);
+      antecedent.pop();
+      consequent.push(items[position]);
+      enumerate(position + 1);
+      consequent.pop();
+    };
+    enumerate(0);
+  }
+  return rules;
 }
 
 // ---------------------------------------------------------------------------
