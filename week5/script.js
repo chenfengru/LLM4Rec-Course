@@ -374,9 +374,25 @@ function computeBaselineRMSE(split) {
  * @returns {number} predicted rating in `[1, 5]`
  */
 function predictRating(userId, movieId) {
-  // TODO(hw5): gather the two factor rows, take their dot product, add
-  // globalMean and clamp the result to [1, 5].
-  throw new Error("TODO(hw5): predictRating is not implemented yet.");
+  if (model === null) return 0;
+  if (
+    !Number.isInteger(userId) ||
+    !Number.isInteger(movieId) ||
+    userId < 0 ||
+    movieId < 0 ||
+    userId >= model.userFactors.shape[0] ||
+    movieId >= model.itemFactors.shape[0]
+  ) {
+    return model.globalMean;
+  }
+
+  return tf.tidy(() => {
+    const width = model.userFactors.shape[1];
+    const user = model.userFactors.slice([userId, 0], [1, width]);
+    const item = model.itemFactors.slice([movieId, 0], [1, width]);
+    const dot = user.mul(item).sum().dataSync()[0];
+    return clamp(model.globalMean + dot, 1, 5);
+  });
 }
 
 /**
@@ -408,8 +424,23 @@ function predictRating(userId, movieId) {
  * @returns {Model}
  */
 function initializeFactors(train, numFactors = NUM_FACTORS) {
-  // TODO(hw5): compute globalMean, create the two tf.Variables, assign to model.
-  throw new Error("TODO(hw5): initializeFactors is not implemented yet.");
+  const globalMean = train.length
+    ? train.reduce((sum, r) => sum + r.rating, 0) / train.length
+    : 0;
+  const maxMovieId = movies.reduce((max, movie) => Math.max(max, movie.id), 0);
+
+  if (model !== null) {
+    tf.dispose([model.userFactors, model.itemFactors]);
+    model = null;
+  }
+
+  // Variables survive tidy; their temporary random initializer tensors do not.
+  model = tf.tidy(() => ({
+    userFactors: tf.variable(tf.randomNormal([numUsers + 1, numFactors], 0, 0.05)),
+    itemFactors: tf.variable(tf.randomNormal([maxMovieId + 1, numFactors], 0, 0.05)),
+    globalMean,
+  }));
+  return model;
 }
 
 /**
@@ -462,8 +493,63 @@ function initializeFactors(train, numFactors = NUM_FACTORS) {
  * @returns {HistoryRow[]}
  */
 function trainMF(train, val, opts) {
-  // TODO(hw5): batched tensor training loop; update model in place; return history.
-  throw new Error("TODO(hw5): trainMF is not implemented yet.");
+  trainingHistory = [];
+  if (train.length === 0) return trainingHistory;
+
+  const { epochs, lr, reg, batchSize } = opts;
+  const optimizer = tf.train.adam(lr);
+  let bestValRMSE = Infinity;
+  let bestWeights = null;
+
+  try {
+    for (let epoch = 1; epoch <= epochs; epoch++) {
+      for (let start = 0; start < train.length; start += batchSize) {
+        const batch = train.slice(start, start + batchSize);
+        tf.tidy(() => {
+          const userIdx = tf.tensor1d(batch.map((r) => r.userId), "int32");
+          const itemIdx = tf.tensor1d(batch.map((r) => r.movieId), "int32");
+          const targets = tf.tensor1d(batch.map((r) => r.rating));
+
+          optimizer.minimize(() => {
+            const users = tf.gather(model.userFactors, userIdx);
+            const items = tf.gather(model.itemFactors, itemIdx);
+            const predictions = users.mul(items).sum(1).add(model.globalMean);
+            const mse = tf.losses.meanSquaredError(targets, predictions);
+            const l2 = model.userFactors.square().sum()
+              .add(model.itemFactors.square().sum()).mul(reg);
+            return mse.add(l2);
+          }, false, [model.userFactors, model.itemFactors]);
+        });
+      }
+
+      const row = {
+        epoch,
+        trainRMSE: computeRMSEFor(train),
+        valRMSE: computeRMSEFor(val),
+      };
+      trainingHistory.push(row);
+
+      // Strict improvement preserves the earliest epoch when validation ties.
+      if (Number.isFinite(row.valRMSE) && row.valRMSE < bestValRMSE) {
+        tf.dispose(bestWeights);
+        bestWeights = tf.tidy(() => ({
+          epoch,
+          userFactors: model.userFactors.clone(),
+          itemFactors: model.itemFactors.clone(),
+        }));
+        bestValRMSE = row.valRMSE;
+      }
+    }
+
+    if (bestWeights !== null) {
+      model.userFactors.assign(bestWeights.userFactors);
+      model.itemFactors.assign(bestWeights.itemFactors);
+    }
+    return trainingHistory;
+  } finally {
+    tf.dispose(bestWeights);
+    optimizer.dispose();
+  }
 }
 
 /**
@@ -481,8 +567,18 @@ function trainMF(train, val, opts) {
  * @returns {HistoryRow|null}
  */
 function selectBestCheckpoint(history) {
-  // TODO(hw5): scan for the minimum valRMSE, breaking ties toward the earliest epoch.
-  throw new Error("TODO(hw5): selectBestCheckpoint is not implemented yet.");
+  let best = null;
+  for (const row of history || []) {
+    if (!Number.isFinite(row.valRMSE)) continue;
+    if (
+      best === null ||
+      row.valRMSE < best.valRMSE ||
+      (row.valRMSE === best.valRMSE && row.epoch < best.epoch)
+    ) {
+      best = row;
+    }
+  }
+  return best;
 }
 
 /**
@@ -517,8 +613,54 @@ function selectBestCheckpoint(history) {
  * @returns {Array<{movieId: number, title: string, score: number}>}
  */
 function recommendTopK(userId, K = 10) {
-  // TODO(hw5): matMul + tf.topk, mask train/val items, sort desc, take the top K.
-  throw new Error("TODO(hw5): recommendTopK is not implemented yet.");
+  // Invalid counts or unavailable user rows have no recommendation list.
+  if (
+    model === null ||
+    !Number.isInteger(K) || K <= 0 ||
+    !Number.isInteger(userId) || userId <= 0 ||
+    userId >= model.userFactors.shape[0]
+  ) {
+    return [];
+  }
+
+  const seen = new Set();
+  for (const split of [trainSet, valSet]) {
+    for (const rating of split) {
+      if (rating.userId === userId) seen.add(rating.movieId);
+    }
+  }
+
+  const rows = model.itemFactors.shape[0];
+  const eligible = new Uint8Array(rows);
+  let candidateCount = 0;
+  for (const movie of movies) {
+    const id = movie.id;
+    if (Number.isInteger(id) && id > 0 && id < rows && !seen.has(id) && !eligible[id]) {
+      eligible[id] = 1;
+      candidateCount++;
+    }
+  }
+  const actualK = Math.min(K, candidateCount);
+  if (actualK === 0) return [];
+
+  return tf.tidy(() => {
+    const width = model.userFactors.shape[1];
+    const user = model.userFactors.slice([userId, 0], [1, width]);
+    const scores = model.itemFactors.matMul(user, false, true)
+      .squeeze([1]).add(model.globalMean);
+    // -Infinity stays below every finite raw score, even very negative ones.
+    const maskedScores = tf.where(
+      tf.tensor1d(eligible, "bool"), scores, tf.fill([rows], -Infinity),
+    );
+    const top = tf.topk(maskedScores, actualK, true);
+    const ids = top.indices.dataSync();
+    const values = top.values.dataSync();
+    return Array.from(ids, (movieId, index) => ({
+      movieId,
+      title: movieTitle(movieId),
+      score: values[index],
+    })).filter((rec) => eligible[rec.movieId]);
+  });
 }
 
 /**
@@ -549,8 +691,49 @@ function recommendTopK(userId, K = 10) {
  * @returns {{overallRecall: number, perUser: Array<{userId: number, relevant: number, hit: number}>, excluded: {unseenIds: number[], usersWithoutRelevant: number[]}}}
  */
 function recallAtK(K = 10) {
-  // TODO(hw5): evaluate Recall@K with explicit exclusions.
-  throw new Error("TODO(hw5): recallAtK is not implemented yet.");
+  const trainCandidateIds = new Set(trainSet.map((r) => r.movieId));
+  const relevantByUser = new Map();
+  const unseenIds = new Set();
+  for (const rating of testSet) {
+    if (!relevantByUser.has(rating.userId)) relevantByUser.set(rating.userId, new Set());
+    if (rating.rating >= 4.0) {
+      if (trainCandidateIds.has(rating.movieId)) {
+        relevantByUser.get(rating.userId).add(rating.movieId);
+      } else {
+        unseenIds.add(rating.movieId);
+      }
+    }
+  }
+
+  const perUser = [];
+  const usersWithoutRelevant = [];
+  let recallSum = 0;
+  const userIds = Array.from(relevantByUser.keys()).sort((a, b) => a - b);
+  for (const userId of userIds) {
+    const relevantIds = relevantByUser.get(userId);
+    if (relevantIds.size === 0) {
+      usersWithoutRelevant.push(userId);
+      continue;
+    }
+
+    // Training membership gates the denominator, not the returned ranking.
+    const recommendedIds = new Set(recommendTopK(userId, K).map((r) => r.movieId));
+    let hit = 0;
+    for (const movieId of relevantIds) {
+      if (recommendedIds.has(movieId)) hit++;
+    }
+    perUser.push({ userId, relevant: relevantIds.size, hit });
+    recallSum += hit / relevantIds.size;
+  }
+
+  return {
+    overallRecall: perUser.length ? recallSum / perUser.length : 0,
+    perUser,
+    excluded: {
+      unseenIds: Array.from(unseenIds).sort((a, b) => a - b),
+      usersWithoutRelevant,
+    },
+  };
 }
 
 // ---------------------------------------------------------------------------
