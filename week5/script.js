@@ -458,8 +458,8 @@ function initializeFactors(train, numFactors = NUM_FACTORS) {
  *       const i = tf.gather(model.itemFactors, batch.itemIdx);
  *       const pred = tf.sum(u.mul(i), 1).add(model.globalMean);
  *       const mse = tf.losses.meanSquaredError(batch.targets, pred);
- *       const l2 = model.userFactors.square().sum()
- *         .add(model.itemFactors.square().sum()).mul(reg);
+ *       const l2 = u.square().sum(1)
+ *         .add(i.square().sum(1)).mean().mul(reg);
  *       return mse.add(l2);
  *     }), false, [model.userFactors, model.itemFactors]).dispose();
  *   }
@@ -515,8 +515,8 @@ function trainMF(train, val, opts) {
             const items = tf.gather(model.itemFactors, itemIdx);
             const predictions = users.mul(items).sum(1).add(model.globalMean);
             const mse = tf.losses.meanSquaredError(targets, predictions);
-            const l2 = model.userFactors.square().sum()
-              .add(model.itemFactors.square().sum()).mul(reg);
+            const l2 = users.square().sum(1)
+              .add(items.square().sum(1)).mean().mul(reg);
             return mse.add(l2);
           }, false, [model.userFactors, model.itemFactors]);
         });
