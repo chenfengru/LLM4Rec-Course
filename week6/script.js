@@ -3864,3 +3864,49 @@ if (document.readyState === "loading") {
   hw6Bootstrap();
 }
 
+// ---------------------------------------------------------------------------
+// UI workflow pagination — presentation only; no recommender state access.
+// ---------------------------------------------------------------------------
+(function () {
+  function initWorkflowPagination() {
+    const nav = document.querySelector('.workflow-nav');
+    const pages = Array.from(document.querySelectorAll('.workflow-page'));
+    if (!nav || pages.length !== 4) return;
+    const links = Array.from(nav.querySelectorAll('a[href]'));
+
+    function showPage(moveFocus) {
+      const requestedId = 'workflow-' + window.location.hash.slice(1);
+      const active = pages.find(function (page) { return page.id === requestedId; }) || pages[0];
+      const hash = '#' + active.id.slice('workflow-'.length);
+      if (window.location.hash !== hash) {
+        window.history.replaceState(window.history.state, '', hash);
+      }
+      pages.forEach(function (page) { page.hidden = page !== active; });
+      links.forEach(function (link) {
+        if (link.getAttribute('href') === hash) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+      const activeLink = links.find(function (link) { return link.getAttribute('href') === hash; });
+      if (activeLink) {
+        const left = activeLink.offsetLeft;
+        const right = left + activeLink.offsetWidth;
+        if (left < nav.scrollLeft) nav.scrollLeft = left;
+        else if (right > nav.scrollLeft + nav.clientWidth) nav.scrollLeft = right - nav.clientWidth;
+      }
+      if (moveFocus) {
+        nav.scrollIntoView({ block: 'start' });
+        const heading = document.getElementById(active.getAttribute('aria-labelledby'));
+        if (heading) heading.focus({ preventScroll: true });
+      }
+    }
+
+    window.addEventListener('hashchange', function () { showPage(true); });
+    showPage(false);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWorkflowPagination, { once: true });
+  } else {
+    initWorkflowPagination();
+  }
+})();

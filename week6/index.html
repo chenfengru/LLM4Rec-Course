@@ -26,12 +26,18 @@
     </header>
 
     <main>
+      <nav class="workflow-nav" aria-label="Workflow pages">
+        <a href="#setup" aria-controls="workflow-setup" aria-current="page"><span aria-hidden="true">01</span> Setup</a>
+        <a href="#recommend" aria-controls="workflow-recommend"><span aria-hidden="true">02</span> Recommend</a>
+        <a href="#evaluate" aria-controls="workflow-evaluate"><span aria-hidden="true">03</span> Evaluate</a>
+        <a href="#verify" aria-controls="workflow-verify"><span aria-hidden="true">04</span> Verify</a>
+      </nav>
       <p id="status" class="status" role="status" aria-live="polite">Loading…</p>
-      <section class="workflow-section" aria-labelledby="setup-heading">
+      <section id="workflow-setup" class="workflow-section workflow-page" aria-labelledby="setup-heading">
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">01</span>
           <div>
-            <h2 id="setup-heading">Setup &amp; Data</h2>
+            <h2 id="setup-heading" tabindex="-1">Setup &amp; Data</h2>
             <p>Inspect the runtime and training split, then build the interaction graph.</p>
           </div>
         </div>
@@ -57,12 +63,15 @@
             </div>
           </section>
         </div>
+        <nav class="page-navigation" aria-label="Setup &amp; Data page navigation">
+          <a class="page-link next" href="#recommend">Next: Recommendation Playground <span aria-hidden="true">→</span></a>
+        </nav>
       </section>
-      <section class="workflow-section" aria-labelledby="playground-heading">
+      <section id="workflow-recommend" class="workflow-section workflow-page" aria-labelledby="playground-heading" hidden>
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">02</span>
           <div>
-            <h2 id="playground-heading">Recommendation Playground</h2>
+            <h2 id="playground-heading" tabindex="-1">Recommendation Playground</h2>
             <p>Explore propagation and inspect recommendations for one user at a time.</p>
           </div>
         </div>
@@ -149,12 +158,16 @@
             </div>
           </section>
         </div>
+        <nav class="page-navigation" aria-label="Recommendation Playground page navigation">
+          <a class="page-link previous" href="#setup"><span aria-hidden="true">←</span> Previous: Setup &amp; Data</a>
+          <a class="page-link next" href="#evaluate">Next: Evaluation &amp; Experiments <span aria-hidden="true">→</span></a>
+        </nav>
       </section>
-      <section class="workflow-section" aria-labelledby="experiments-heading">
+      <section id="workflow-evaluate" class="workflow-section workflow-page" aria-labelledby="experiments-heading" hidden>
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">03</span>
           <div>
-            <h2 id="experiments-heading">Evaluation &amp; Experiments</h2>
+            <h2 id="experiments-heading" tabindex="-1">Evaluation &amp; Experiments</h2>
             <p>Validation selects alpha; test evaluation uses the shared cohort. These actions run broader experiments.</p>
           </div>
         </div>
@@ -196,12 +209,16 @@
             <p class="caption">Shows the readme §6.2 settings: baseline user A at alpha = 0.85; seed changed to user B at alpha = 0.85; alpha changed to 0.50 for user A.</p>
           </section>
         </div>
+        <nav class="page-navigation" aria-label="Evaluation &amp; Experiments page navigation">
+          <a class="page-link previous" href="#recommend"><span aria-hidden="true">←</span> Previous: Recommendation Playground</a>
+          <a class="page-link next" href="#verify">Next: Verification &amp; Export <span aria-hidden="true">→</span></a>
+        </nav>
       </section>
-      <section class="workflow-section" aria-labelledby="verification-heading">
+      <section id="workflow-verify" class="workflow-section workflow-page" aria-labelledby="verification-heading" hidden>
         <div class="section-heading">
           <span class="section-number" aria-hidden="true">04</span>
           <div>
-            <h2 id="verification-heading">Verification &amp; Export</h2>
+            <h2 id="verification-heading" tabindex="-1">Verification &amp; Export</h2>
             <p>Check implementation behavior and download the available outputs.</p>
           </div>
         </div>
@@ -224,6 +241,9 @@
             <p class="caption">Downloads: <code class="filename">verification.json</code> (machine-readable test results), <code class="filename">results.csv</code> (retrieval metrics, common-cohort size, exclusions, selected settings) and <code class="filename">recommendations.csv</code> (user ID, method, alpha, rank, movie ID, title, genres, score, training popularity).</p>
           </section>
         </div>
+        <nav class="page-navigation" aria-label="Verification &amp; Export page navigation">
+          <a class="page-link previous" href="#evaluate"><span aria-hidden="true">←</span> Previous: Evaluation &amp; Experiments</a>
+        </nav>
       </section>
     </main>
 

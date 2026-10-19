@@ -148,3 +148,46 @@ button:disabled { cursor: not-allowed; opacity: 0.55; }
   .button-row { align-items: stretch; }
   button { max-width: 100%; }
 }
+
+/* Workflow pages share one document; hidden panels retain their DOM and data. */
+.workflow-page[hidden] { display: none; }
+.workflow-section + .workflow-section { margin-top: 0; }
+.workflow-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  margin: 0 0 14px;
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.workflow-nav a {
+  flex: 1 0 auto;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.workflow-nav a span { margin-right: 8px; font: 0.72rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.workflow-nav a:hover { background: var(--inset); color: var(--accent); }
+.workflow-nav a[aria-current="page"] { background: #e9f2f1; border-color: #c9dedd; color: var(--accent); }
+.workflow-nav a:focus-visible { outline-offset: -3px; }
+.page-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border); padding-top: 18px; margin-top: 24px; }
+.page-link { display: inline-flex; align-items: center; gap: 10px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 5px; color: var(--accent); background: var(--surface); font-size: 0.8rem; font-weight: 600; text-decoration: none; }
+.page-link:hover { background: #e9f2f1; border-color: var(--accent); }
+.page-link.next { margin-left: auto; }
+@media (max-width: 700px) {
+  .workflow-nav a { padding: 10px 12px; font-size: 0.75rem; }
+  .workflow-nav a span { margin-right: 4px; font-size: 0.65rem; }
+  .page-link { max-width: 100%; }
+}
