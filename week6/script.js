@@ -1110,8 +1110,18 @@ function mfScores(userId) {
  * @returns {Float64Array} Movie scores in `graph.movieIds` order.
  */
 function movieScores(p, graph) {
-  // TODO(hw6): select the movie-node entries of `p`, in `graph.movieIds` order.
-  throw new Error("TODO(hw6): movieScores is not implemented yet.");
+  const count = graph.movieIds.length;
+  const nodes = graph.movieNodes;
+  const explicit = (Array.isArray(nodes) || ArrayBuffer.isView(nodes)) && nodes.length === count;
+  const scores = new Float64Array(count);
+  for (let k = 0; k < count; k++) {
+    const node = explicit ? nodes[k] : graph.userIds.length + k;
+    if (!Number.isInteger(node) || node < 0 || node >= p.length || !Number.isFinite(p[node])) {
+      throw new Error("Missing or invalid movie-node score for movie " + graph.movieIds[k] + " at node " + node);
+    }
+    scores[k] = p[node];
+  }
+  return scores;
 }
 
 /**
@@ -1148,8 +1158,29 @@ function movieScores(p, graph) {
  * @returns {RecommendedMovie[]}
  */
 function recommendTopK(method, userId, K, split) {
-  // TODO(hw6): filter the candidate pool, sort by score desc / id asc, slice to K.
-  throw new Error("TODO(hw6): recommendTopK is not implemented yet.");
+  const limit = K === undefined ? 10 : K;
+  const name = split === undefined ? "test" : split;
+  if (!["popularity", "pagerank", "ppr", "mf"].includes(method) || !(limit > 0)) return [];
+  const excluded = hw6ExclusionSet(name, userId);
+  const candidates = HW6_STATE.candidateIds
+    .map((movieId, index) => ({ movieId, index }))
+    .filter((candidate) => !excluded.has(candidate.movieId));
+  if (candidates.length === 0) return [];
+
+  const vector = hw6ScoreVector(method, userId, hw6ReadAlpha(), name);
+  return candidates
+    .map((candidate) => ({ movieId: candidate.movieId, score: vector.scores[candidate.index] }))
+    // The provided scorer uses -Infinity for unavailable scores; zero is valid.
+    .filter((candidate) => Number.isFinite(candidate.score))
+    .sort((a, b) => b.score - a.score || a.movieId - b.movieId)
+    .slice(0, limit)
+    .map((candidate) => ({
+      movieId: candidate.movieId,
+      title: hw6Title(candidate.movieId),
+      genres: hw6Genres(candidate.movieId).slice(),
+      score: candidate.score,
+      popularity: hw6PopularityOf(candidate.movieId)
+    }));
 }
 
 /**
@@ -1181,8 +1212,43 @@ function recommendTopK(method, userId, K, split) {
  * @returns {RecallReport}
  */
 function recallAtK(method, K, split) {
-  // TODO(hw6): macro-average Recall@K over the shared cohort, with exclusions.
-  throw new Error("TODO(hw6): recallAtK is not implemented yet.");
+  const limit = K === undefined ? 10 : K;
+  const name = split === "val" ? "val" : "test";
+  const cohort = hw6SharedCohort(name);
+  const exclusions = hw6CohortExclusions(name);
+  const perUser = [];
+  let totalRecall = 0;
+
+  for (const userId of cohort) {
+    const excluded = hw6ExclusionSet(name, userId);
+    const relevantIds = new Set();
+    const grades = HW6_STATE.gradesBySplit[name].get(userId);
+    if (grades) {
+      grades.forEach((rating, movieId) => {
+        if (rating >= 4.0 && HW6_STATE.candidateSet.has(movieId) && !excluded.has(movieId)) {
+          relevantIds.add(movieId);
+        }
+      });
+    }
+    const recommendedIds = new Set(
+      recommendTopK(method, userId, limit, name).map((movie) => movie.movieId)
+    );
+    let hit = 0;
+    relevantIds.forEach((movieId) => {
+      if (recommendedIds.has(movieId)) hit++;
+    });
+    const relevant = relevantIds.size;
+    totalRecall += relevant > 0 ? hit / relevant : 0;
+    perUser.push({ userId, relevant, hit });
+  }
+
+  return {
+    recall: cohort.length > 0 ? totalRecall / cohort.length : 0,
+    cohort,
+    excludedUnseen: exclusions.excludedUnseen,
+    excludedNoEligible: exclusions.excludedNoEligible,
+    perUser
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -1429,8 +1495,7 @@ function hw6AdapterPageRank(graph, alpha) {
  * The real `graph.js` signature is `personalizedPageRank(userId, alpha, opts)`
  * reading the active `GRAPH`, so the user-first form is tried first; a
  * graph-first `(graph, seed, alpha)` shape is also tolerated. The seed passed to
- * the user-first form is the raw user id (not a node index) when the graph
- * exposes one.
+ * the canonical first call is the graph node index, not the raw user ID.
  *
  * A `TODO(hw6)` throw is propagated unchanged. Only an unrecognised call shape
  * becomes `HW6_INTERFACE`.
@@ -1453,7 +1518,7 @@ function hw6AdapterPPR(graph, seedNode, alpha, seedUserId) {
     : seedUserId;
 
   const attempts = [
-    function () { return hw6WithActiveGraph(graph, function () { return personalizedPageRank(rawUserId, alpha); }); },
+    function () { return hw6WithActiveGraph(graph, function () { return personalizedPageRank(seedNode, alpha); }); },
   ];
   if (personalizedPageRank.length >= 3) {
     attempts.push(function () { return personalizedPageRank(graph, seedNode, alpha); });

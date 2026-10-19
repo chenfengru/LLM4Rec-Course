@@ -354,9 +354,51 @@ function getGraph() {
  * @returns {Graph}
  */
 function buildGraph(train) {
-  // TODO(hw6): collect observed ids, map them to contiguous indices, fill R and
-  // degree, then return the object described in the typedef and readme 3.1.
-  throw new Error("TODO(hw6): buildGraph is not implemented yet.");
+  const records = Array.isArray(train) ? train : [];
+  const userIds = Array.from(new Set(records.map((row) => row.userId))).sort((a, b) => a - b);
+  const movieIds = Array.from(new Set(records.map((row) => row.movieId))).sort((a, b) => a - b);
+  const nUsers = userIds.length;
+  const nMovies = movieIds.length;
+  const nodeCount = nUsers + nMovies;
+  const userIndexOf = new Map(userIds.map((id, index) => [id, index]));
+  const movieIndexOf = new Map(movieIds.map((id, index) => [id, index]));
+  const R = Array.from({ length: nUsers }, () => new Array(nMovies).fill(0));
+  const degree = new Float64Array(nodeCount);
+  let positiveEdges = 0;
+
+  for (const row of records) {
+    if (row.rating >= 4.0) {
+      const u = userIndexOf.get(row.userId);
+      const i = movieIndexOf.get(row.movieId);
+      // Binary set semantics: repeated positives never increase the degree.
+      if (R[u][i] === 0) {
+        R[u][i] = 1;
+        degree[u]++;
+        degree[nUsers + i]++;
+        positiveEdges++;
+      }
+    }
+  }
+
+  return {
+    nUsers,
+    nMovies,
+    userIds,
+    movieIds,
+    userIndexOf,
+    movieIndexOf,
+    nodeCount,
+    // Unknown IDs and non-movie node positions have no mapping: return -1.
+    nodeOfUser: (userId) => userIndexOf.has(userId) ? userIndexOf.get(userId) : -1,
+    movieOfNode: (node) => Number.isInteger(node) && node >= nUsers && node < nodeCount
+      ? movieIds[node - nUsers] : -1,
+    isUserNode: (node) => Number.isInteger(node) && node >= 0 && node < nUsers,
+    degree,
+    zeroDegreeUsers: userIds.filter((id, u) => degree[u] === 0),
+    zeroDegreeMovies: movieIds.filter((id, i) => degree[nUsers + i] === 0),
+    positiveEdges,
+    R
+  };
 }
 
 /**
@@ -388,8 +430,21 @@ function buildGraph(train) {
  * @returns {RowNormalized}
  */
 function rowNormalize(graph) {
-  // TODO(hw6): normalize positive-degree rows and build the dangling mask.
-  throw new Error("TODO(hw6): rowNormalize is not implemented yet.");
+  if (!graph) return { Q: [], danglingMask: [] };
+  const { nUsers, nMovies, nodeCount, R, degree } = graph;
+  const Q = Array.from({ length: nodeCount }, () => new Array(nodeCount).fill(0));
+  const danglingMask = Array.from(degree, (value) => value === 0);
+
+  for (let u = 0; u < nUsers; u++) {
+    for (let i = 0; i < nMovies; i++) {
+      if (R[u][i] === 0) continue;
+      const movieNode = nUsers + i;
+      if (degree[u] > 0) Q[u][movieNode] = R[u][i] / degree[u];
+      if (degree[movieNode] > 0) Q[movieNode][u] = R[u][i] / degree[movieNode];
+    }
+  }
+  // Dangling rows remain zero; redistribution belongs to propagation.
+  return { Q, danglingMask };
 }
 
 /**
@@ -438,8 +493,7 @@ function rowNormalize(graph) {
  * @throws {Error} when neither `opts.transition` nor the global `GRAPH` exists.
  */
 function pageRank(alpha, opts) {
-  // TODO(hw6): power iteration with a uniform restart on the tensor path.
-  throw new Error("TODO(hw6): pageRank is not implemented yet.");
+  return graphPropagate(alpha, opts);
 }
 
 /**
@@ -475,8 +529,102 @@ function pageRank(alpha, opts) {
  *   neither `opts.transition` nor the global `GRAPH` exists.
  */
 function personalizedPageRank(userId, alpha, opts) {
-  // TODO(hw6): one-hot restart at the user's node; fail loudly on unknown users.
-  throw new Error("TODO(hw6): personalizedPageRank is not implemented yet.");
+  return graphPropagate(alpha, opts, userId, true);
+}
+
+/**
+ * Shared synchronous TensorFlow.js power iteration (private).
+ *
+ * Explicit transitions use their own node order and normalized Q unchanged.
+ * The installed graph uses users-then-movies R blocks, without a square Q.
+ * All tensors are owned by this call; only copied probabilities escape tidy.
+ * The caller must await tf.ready() before calling either public wrapper.
+ *
+ * @param {number} alpha Link-following probability in [0, 1].
+ * @param {Object} [opts] Transition override, positive tol and positive integer maxIter.
+ * @param {number} [seedNode] Global node position, never a raw user ID.
+ * @param {boolean} [personalized=false] Use one-hot rather than uniform restart.
+ * @returns {PageRankResult} Float32-computed probabilities copied to Float64Array.
+ * @throws {Error} For a missing/empty graph, invalid seed or invalid iteration settings.
+ */
+function graphPropagate(alpha, opts, seedNode, personalized = false) {
+  const options = opts || {};
+  const tol = options.tol === undefined ? 1e-6 : options.tol;
+  const maxIter = options.maxIter === undefined ? 500 : options.maxIter;
+  if (!Number.isFinite(alpha) || alpha < 0 || alpha > 1) {
+    throw new Error("alpha must be a finite link-following probability in [0, 1].");
+  }
+  if (!Number.isFinite(tol) || tol <= 0 || !Number.isInteger(maxIter) || maxIter < 1) {
+    throw new Error("tol must be positive and finite; maxIter must be a positive integer.");
+  }
+  const explicit = options.transition !== undefined;
+  const transition = options.transition;
+  const graph = explicit ? null : getGraph();
+  if (explicit ? !transition || !Array.isArray(transition.Q) : !graph) {
+    throw new Error("Propagation requires opts.transition or an installed graph.");
+  }
+  const n = explicit ? transition.Q.length : graph.nodeCount;
+  if (!Number.isInteger(n) || n <= 0) {
+    throw new Error("Propagation requires at least one graph node.");
+  }
+  if (personalized && (!Number.isInteger(seedNode) || seedNode < 0 || seedNode >= n)) {
+    throw new Error("Invalid restart node index: " + seedNode);
+  }
+  const restart = new Array(n).fill(personalized ? 0 : 1 / n);
+  if (personalized) restart[seedNode] = 1;
+
+  return tf.tidy(() => {
+    const v = tf.tensor2d(restart, [n, 1]);
+    const dangling = tf.tensor2d(
+      explicit ? Array.from(transition.danglingMask, (value) => value ? 1 : 0)
+        : Array.from(graph.degree, (value) => value === 0 ? 1 : 0),
+      [n, 1]
+    );
+    const Q = explicit ? tf.tensor2d(transition.Q, [n, n]) : null;
+    const R = explicit ? null : tf.tensor2d(graph.R, [graph.nUsers, graph.nMovies]);
+    const inverseUsers = explicit ? null : tf.tensor2d(
+      Array.from(graph.degree.slice(0, graph.nUsers), (value) => value > 0 ? 1 / value : 0),
+      [graph.nUsers, 1]
+    );
+    const inverseMovies = explicit ? null : tf.tensor2d(
+      Array.from(graph.degree.slice(graph.nUsers), (value) => value > 0 ? 1 / value : 0),
+      [graph.nMovies, 1]
+    );
+    let p = v.clone();
+    let residual = Infinity;
+    let iterations = 0;
+    while (iterations < maxIter) {
+      const step = tf.tidy(() => {
+        let incoming;
+        if (explicit) {
+          incoming = tf.matMul(Q, p, true, false);
+        } else {
+          const pU = p.slice([0, 0], [graph.nUsers, 1]);
+          const pM = p.slice([graph.nUsers, 0], [graph.nMovies, 1]);
+          incoming = tf.concat([
+            tf.matMul(R, pM.mul(inverseMovies)),
+            tf.matMul(R, pU.mul(inverseUsers), true, false)
+          ], 0);
+        }
+        const d = p.mul(dangling).sum();
+        const next = incoming.add(v.mul(d)).mul(alpha).add(v.mul(1 - alpha));
+        const difference = next.sub(p).abs().sum().dataSync()[0];
+        return { next, difference };
+      });
+      p.dispose();
+      p = step.next;
+      residual = step.difference;
+      iterations++;
+      if (residual < tol) break;
+    }
+    return {
+      p: Float64Array.from(p.dataSync()),
+      iterations,
+      residual,
+      // The public contract requires reaching tolerance before the cap.
+      converged: residual < tol && iterations < maxIter
+    };
+  });
 }
 
 // ---------------------------------------------------------------------------
