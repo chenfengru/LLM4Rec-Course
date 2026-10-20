@@ -3627,8 +3627,8 @@ function hw6HandleRunPPR() {
 }
 
 /**
- * Run the whole retrieval evaluation: four-method comparison, validation alpha
- * sweep and the recall detail for the selected method. Every panel degrades to
+ * Select and apply alpha on validation, then run the TEST four-method comparison
+ * and recall detail for the selected method. Every panel degrades to
  * a readable state while the stubs are unimplemented.
  *
  * The two-user demonstration is NOT part of this run: it has its own control
@@ -3637,6 +3637,29 @@ function hw6HandleRunPPR() {
  * @returns {Promise<void>}
  */
 async function hw6HandleRecall() {
+  let sweep = null;
+  let selectionError = "";
+  try {
+    sweep = hw6RunAlphaSweep();
+    hw6RenderAlphaSweep(sweep);
+  } catch (error) {
+    selectionError = String(error && error.message ? error.message : error);
+    const target = document.getElementById("alpha-sweep-results");
+    if (target) target.innerHTML = hw6UnavailableHtml("Alpha sweep", error);
+  }
+  if (!sweep || !Number.isFinite(sweep.best)) {
+    const message = "Validation alpha selection failed; TEST comparison not run. " +
+      (selectionError || (sweep && sweep.note) || "No finite best alpha is available.");
+    HW6_STATE.comparisonRows = null;
+    HW6_STATE.recallReport = null;
+    ["comparison-results", "recall-results"].forEach(function (id) {
+      const target = document.getElementById(id);
+      if (target) target.innerHTML = hw6UnavailableHtml("Retrieval evaluation", message);
+    });
+    hw6SetStatus(message);
+    return;
+  }
+  hw6SetAlpha(sweep.best);
   const alpha = hw6ReadAlpha();
   const method = hw6ReadMethod();
   const graph = hw6ActiveGraph();
@@ -3661,9 +3684,6 @@ async function hw6HandleRecall() {
   hw6RenderConvergence();
   hw6RenderComparison(comparison);
 
-  const sweep = hw6RunAlphaSweep();
-  hw6RenderAlphaSweep(sweep);
-
   const target = document.getElementById("recall-results");
   if (target) {
     try {
@@ -3675,8 +3695,7 @@ async function hw6HandleRecall() {
     }
   }
 
-  const selected = sweep.best === null ? "not selected (validation sweep unavailable)" : "alpha " + hw6Fmt(sweep.best, 2);
-  hw6SetStatus("Evaluation run complete \u2014 selected " + selected + ".");
+  hw6SetStatus("Evaluation run complete \u2014 validation-selected alpha " + hw6Fmt(alpha, 2) + ".");
 }
 
 /**
@@ -3697,8 +3716,13 @@ function hw6HandleAlphaSweep() {
     return;
   }
   hw6RenderAlphaSweep(sweep);
-  const selected = sweep.best === null ? "not selected (validation sweep unavailable)" : "alpha " + hw6Fmt(sweep.best, 2);
-  hw6SetStatus("Alpha sweep (validation Recall@10) complete \u2014 selected " + selected + ".");
+  if (!sweep || !Number.isFinite(sweep.best)) {
+    hw6SetStatus("Validation alpha selection failed: " +
+      ((sweep && sweep.note) || "No finite best alpha is available.") + " Alpha unchanged.");
+    return;
+  }
+  hw6SetAlpha(sweep.best);
+  hw6SetStatus("Alpha sweep (validation Recall@10) complete \u2014 applied alpha " + hw6Fmt(sweep.best, 2) + ".");
 }
 
 /**
