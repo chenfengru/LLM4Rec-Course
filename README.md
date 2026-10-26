@@ -13,7 +13,7 @@ This repository is organized week by week so that coursework, experiments, repor
 | 03 | Collaborative Filtering | ✅ Completed |
 | 04 | Association Rules | Not started |
 | 05 | Matrix Factorization | Not started |
-| 06 | PageRank | Not started |
+| 06 | [Personalized PageRank / Graph Recommendation](week6/readme.md) | ✅ Completed |
 | 07 | Recommender Systems with Deep Learning | Not started |
 | 08 | Context Encoder | Not started |
 | 09 | Context Ranker | Not started |
@@ -160,6 +160,17 @@ quality improvement, so the final application retains raw co-rated cosine.
 - `week03/collaborative-filtering-movie-recommender/results/` — experiment outputs
 - `week03/collaborative-filtering-movie-recommender/report.pdf` — final A03 report
 - `week03/collaborative-filtering-movie-recommender/session.json` — native Codex audit trail
+
+## Week 06 — Personalized PageRank (Graph-Based Recommendations)
+
+Status: ✅ Completed · [Implementation, usage, and full experiment details](week6/readme.md)
+
+- Implemented a MovieLens 100K positive-interaction bipartite graph and TensorFlow.js global PageRank / personalized PageRank.
+- Validated one shared restart setting on the validation cohort: **α = 0.50**.
+- Compared Popularity, Global PageRank, PPR, and the provided MF reference using **macro Recall@10 over 861 shared test users**.
+- Final Recall@10: **PPR 0.112189**, Global PageRank 0.079693, Popularity 0.076023, provided MF 0.021137. The reference MF showed constant scores for inspected users and should not be interpreted as a representative MF benchmark.
+- Browser verification: **12 PASS / 0 FAIL / 0 PENDING**; independent metric checks matched the recorded test results.
+- Committed evidence: [summary](week6/evidence/experiment-summary.md), [validation/test metrics](week6/evidence/results.csv), [recommendation lists](week6/evidence/recommendations.csv), and [verification](week6/evidence/verification.json).
 
 ## Repository structure
 
