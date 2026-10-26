@@ -1,3 +1,23 @@
+> **Implementation status — Completed (2026-10-13).** This branch contains the Week 5 MovieLens matrix-factorization assignment. The original instructor specification and starting test expectations are preserved below for reference; instructions to implement the stubs describe the **initial task**, not the final state.
+>
+> **Branch:** [`week05-matrix-factorization`](https://github.com/chenfengru/LLM4Rec-Course/tree/week05-matrix-factorization/week5) · **Final commit:** [`4e7b7b0`](https://github.com/chenfengru/LLM4Rec-Course/commit/4e7b7b0e2970e1542d4271c0764b17017cbd9a90)
+>
+> **Verified final work (from the recorded HW5 run):**
+> - Completed TensorFlow.js 16-factor MF, per-user chronological train/validation/test splitting, validation checkpoint selection, Top-10 exclusions, and Recall@10.
+> - Achieved **11 PASS / 0 FAIL / 0 PENDING** on the course self-checks.
+> - Investigated the initial regularization-related score collapse and tested a **batch-local mean-normalized L2** correction with matched initialization. The final corrected WebGL run selected **epoch 19** with **validation RMSE 1.0708684104**.
+> - Final test **RMSE 1.1168579469**, versus the training-mean baseline **1.2289001372** (approximately **9.12% lower RMSE**). Test **macro Recall@10 0.0099386041** over **861 evaluable users**; 13 relevant test records were absent from the training-movie candidate pool and 82 users lacked an eligible relevant test movie.
+> - Fixed-user familiarity inspection reported **User 1: 7/10** and **User 2: 8/10** as familiar/broader-preference recommendations. This is descriptive, not evidence of viewer delight or online retention.
+> - Course artifacts `FengruChen_A05_report.pdf` and the byte-verified native `FengruChen_A05_session.json` were exported **outside this tracked branch**; they are not files in `week5/`.
+>
+> **Run:** serve the folder over HTTP (e.g., `cd week5 && python3 -m http.server 8000`), then open `http://localhost:8000/`. TensorFlow.js 4.22.0 loads from CDN; use the UI's **Run tests**, **Train**, **Recommend Top-10**, and **Evaluate Recall@10** actions. The model was evaluated with WebGL, but numerical replication can vary by backend.
+>
+> **Important cross-week limitation:** The **provided MF reference** measured in the Week 6 PPR experiment is an **unchanged reference configuration** with its own collapse diagnostics. Its weak Recall@10 is **not** the corrected Week 5 MF experiment above; do not present Week 6's MF result as the performance of this corrected implementation.
+>
+> **Evidence boundary:** These final results are recovered from the previous course conversation; this README edit does **not** claim a fresh browser rerun. The implementation remains on this branch and has **not been merged into `main`**.
+
+---
+
 # HW5 — From Ratings to Recommendations (Matrix Factorization)
 
 **Course**: LLM4Rec, HSE University
