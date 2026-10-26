@@ -11,8 +11,8 @@ This repository is organized week by week so that coursework, experiments, repor
 | 01 | [Random Lunch Generator / RecSys Fundamentals](week01/random-lunch-generator/README.md) | ✅ App implemented; PDF not tracked |
 | 02 | [Content-Based Filtering](week02/content-based-movie-recommender/README.md) | ✅ Completed |
 | 03 | [Collaborative Filtering](week03/collaborative-filtering-movie-recommender/readme.md) | ✅ Completed |
-| 04 | Association Rules | Placeholder directory only |
-| 05 | Matrix Factorization | Placeholder directory only |
+| 04 | [Association Rules](https://github.com/chenfengru/LLM4Rec-Course/blob/week04-association-rules/week4/readme.md) | ✅ Completed on `week04-association-rules` (not merged) |
+| 05 | [Matrix Factorization](https://github.com/chenfengru/LLM4Rec-Course/blob/week05-matrix-factorization/week5/readme.md) | ✅ Completed on `week05-matrix-factorization` (not merged) |
 | 06 | [Personalized PageRank / Graph Recommendation](week6/readme.md) | ✅ Completed |
 | 07 | Recommender Systems with Deep Learning | Not started |
 | 08 | Context Encoder | Not started |
@@ -166,6 +166,25 @@ quality improvement, so the final application retains raw co-rated cosine.
 
 The [final Week 3 evidence](week03/collaborative-filtering-movie-recommender/analysis/week03_final_evidence.md) is the primary source for the cohort definitions, threshold-sensitivity tests and the Week 2 vs Week 3 comparison. The instructor's original scaffold remains preserved under `week03/teacher-baseline/`.
 
+## Week 04 — [Association Rules](https://github.com/chenfengru/LLM4Rec-Course/blob/week04-association-rules/week4/readme.md)
+
+Status: ✅ **Completed 2026-10-06** · Implementation lives on independent branch [`week04-association-rules`](https://github.com/chenfengru/LLM4Rec-Course/tree/week04-association-rules/week4); **not yet merged into `main`**.
+
+- Implemented Apriori association-rule mining, unique basket/itemset counting, support/confidence/lift, threshold filtering, bidirectional rules, and interactive inspection on cleaned UCI Online Retail data.
+- Dataset: **17,080 baskets** and **3,653 distinct items**. Self-checks went from **2 PASS / 0 FAIL / 9 PENDING** to **11 PASS / 0 FAIL / 0 PENDING**.
+- Main thresholds: minimum support **1%**, minimum confidence **30%**. An illustrative actionable candidate `82494L → 82482` had **support 2.7400%**, **confidence 57.8492%**, **lift 11.3051**; the offline rule does not establish a causal cross-sell effect.
+- Submission files `FengruChen_A04_report.pdf` and `FengruChen_A04_session.json` were prepared separately; **they are not tracked under `main/week04/` or `week4/`**.
+
+## Week 05 — [Matrix Factorization](https://github.com/chenfengru/LLM4Rec-Course/blob/week05-matrix-factorization/week5/readme.md)
+
+Status: ✅ **Completed 2026-10-13** · Implementation lives on independent branch [`week05-matrix-factorization`](https://github.com/chenfengru/LLM4Rec-Course/tree/week05-matrix-factorization/week5); **not yet merged into `main`**.
+
+- Implemented 16-factor MF training in TensorFlow.js, chronological 80/10/10 splits, validation checkpointing, Top-10 candidate exclusion, RMSE and Recall@10.
+- Diagnosed initial MF prediction-score collapse; the corrected, batch-local mean-normalized L2 run passed **11/11 tests** and selected **epoch 19**.
+- Corrected test **RMSE 1.116858** versus mean-rating baseline **1.228900** (**9.12% improvement**). Test **Recall@10 0.009939** on **861 evaluable users**. Lower RMSE does not guarantee strong top-K retrieval.
+- Submission files `FengruChen_A05_report.pdf` and `FengruChen_A05_session.json` were exported separately, not committed under `main/week05/` or `week5/`.
+- **Do not conflate:** Week 6 compared PPR against the **unchanged provided MF reference**, not this corrected Week 5 implementation; its MF Recall@10 is a different experimental configuration.
+
 ## Week 06 — Personalized PageRank (Graph-Based Recommendations)
 
 Status: ✅ Completed · [Implementation, usage, and full experiment details](week6/readme.md)
@@ -193,7 +212,9 @@ LLM4Rec-Course/
 │   ├── teacher-baseline/                 # Original specification and code
 │   ├── starter-audit/                    # Initial code audit
 │   └── collaborative-filtering-movie-recommender/
-├── week04/, week05/, week06/              # Placeholder folders
+├── week04/, week05/, week06/              # Empty main-branch placeholders
+├── week4/                                # On week04-association-rules branch only
+├── week5/                                # On week05-matrix-factorization branch only
 ├── week6/                                # Actual completed Week 6 PPR app
 ├── week07/ ... week12/                   # Future-week scaffolds
 ├── capstone/
@@ -201,7 +222,7 @@ LLM4Rec-Course/
 └── assets/
 ```
 
-**Directory naming note:** the actual completed Personalized PageRank implementation lives at `week6/`, not the empty `week06/` placeholder. Both paths are retained as they exist in the repository; the roadmap deliberately links to the real implementation.
+**Directory/branch note:** `week04/`, `week05/`, and `week06/` are empty placeholders **on `main`**, not evidence that these assignments were skipped. Completed Week 4 and Week 5 work resides in the independently pushed `week4/` and `week5/` directories on their linked branches, while completed Week 6 is in `main/week6/`. The roadmap points to the real files.
 
 ## Weekly working convention
 
