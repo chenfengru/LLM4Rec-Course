@@ -1,133 +1,145 @@
-You are an expert full-stack web developer who creates robust, well-commented, and modular web applications using only vanilla HTML, CSS, and JavaScript.
+# Week 03 — Collaborative Filtering Movie Recommender
 
-Your task is to generate the complete code for a "Collaborative Filtering Movie Recommender" web application based on the detailed specifications below. The application logic will be split into two separate JavaScript files: `data.js` for data loading and parsing, and `script.js` for UI and recommendation logic. Please provide the code for each of the four files—`index.html`, `style.css`, `data.js`, and `script.js`—separately and clearly labeled.
+**Course:** LLM4Rec, HSE University  
+**Status:** Implemented, verified, evaluated, and reported  
+**Stack:** Vanilla HTML/CSS/JavaScript · Node.js (offline analyses, Node 18+ recommended)  
+**Dataset:** MovieLens 100K · 943 users, 1,682 movies, 100,000 observed ratings
 
----
+This project implements and compares **User-Based** and **Item-Based Collaborative Filtering (CF)** based on observed user–movie ratings. Unlike Week 2's genre-based retrieval, these algorithms use **co-rating patterns**, with explicit handling of missing ratings and sparse neighborhoods.
 
-### **Project Specification: Collaborative Filtering Movie Recommender (Modular)**
+The instructor's original specification is preserved separately under [`../teacher-baseline/`](../teacher-baseline/). This file describes the **completed student implementation and measured results**, not the original code-generation prompt.
 
-#### **1. Overall Goal**
+## Quick start
 
-Build a single-page web application that recommends movies using **collaborative filtering**. The application will use `data.js` to load and parse the same MovieLens 100K files as the previous exercise (`u.item`, `u.data`)—the dataset is deliberately unchanged so that the **algorithm** is the only thing that changes between the Content-Based assignment and this one.
+From the repository root:
 
-Unlike the Content-Based version, which compared movie **genres**, this version uses the **rating patterns of users**. It must produce a Top-5 recommendation list **two ways** for the same active user—**User-Based CF** and **Item-Based CF**—so the two lists can be compared side by side.
+```bash
+cd week03/collaborative-filtering-movie-recommender
+python3 -m http.server 8000 --bind 127.0.0.1
+```
 
-#### **2. File `index.html` - The Application Structure**
+Open http://127.0.0.1:8000/index.html. Data are loaded with `fetch('u.item')` and `fetch('u.data')`, so **HTTP serving is required** rather than assuming direct `file://` loading works.
 
--   **DOCTYPE and Language:** The document should start with `<!DOCTYPE html>` and the `<html>` tag should specify `lang="en"`.
--   **Title:** The page title should be "Collaborative Filtering Movie Recommender".
--   **Main Heading:** Include an `<h1>` with the text "Collaborative Filtering Movie Recommender".
--   **Instructions:** Add a `<p>` tag explaining that the user picks a user and receives two Top-5 lists (one per CF approach).
--   **User Dropdown:** Include a `<select>` element with the ID `user-select`. It will be populated dynamically with one option per user ID present in `u.data`.
--   **Button:** Include a `<button>` with the text "Get Recommendations". When clicked, it must call the `getRecommendations()` JavaScript function.
--   **Result Display Areas:** Include a `<div>` with the ID `result-box`. Inside it, provide two clearly labelled sections:
-    -   `<div id="user-based-result">` — for the User-Based CF Top-5
-    -   `<div id="item-based-result">` — for the Item-Based CF Top-5
+The browser interface supports two workflows:
 
-    Each section should show the recommended movie titles together with their predicted score (or similarity), so the two approaches can be compared directly.
--   **File Linking:** Link `data.js` and `script.js` at the end of the `<body>`. `data.js` must be loaded **before** `script.js`.
-    ```
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    ```
+1. **Single rating prediction:** select a user and an unrated movie; inspect both User-Based and Item-Based estimates and their evidence-support counts.
+2. **Top-5 recommendation:** choose a user and compare two side-by-side lists, excluding that user's already-rated movies.
 
-#### **3. File `style.css` - The Application Design**
+The application is self-contained, with no npm install or external ML library. The Python command above only starts a static file server; **the recommendation algorithms run in JavaScript**.
 
--   **Layout:** Create a professional, modern, and user-friendly layout. All content should be centered on the page within a main container.
--   **Background:** The `<body>` should have a light, neutral background color (e.g., `#f4f7f6`).
--   **Container:** The main container holding all elements should have a white background, rounded corners (`border-radius`), and a subtle box shadow.
--   **Typography:** Use a clean, sans-serif font like 'Helvetica' or 'Arial'.
--   **Controls:** The `<select>` dropdown and `<button>` should have consistent styling.
--   **Button:** Distinct background colour (e.g., a shade of blue), white text, hover effect.
--   **Result Areas:** `#user-based-result` and `#item-based-result` should be visually separated (e.g., two columns on wide screens, stacked on narrow screens) with a light background and a clear heading each.
+## Algorithm and missing-value convention
 
-#### **4. File `data.js` - The Data Handling Module**
+The rating matrix indexes **users × movies**, with observed integer ratings from 1 to 5. A zero is an **internal missing-value sentinel**, not an actual zero rating or evidence of dislike. Similarity uses only **co-rated coordinates**:
 
-This file is responsible only for fetching and parsing the data from local files, and for building the rating structures.
+\[
+\operatorname{sim}(a,b) = \frac{\sum_{j\in C} a_j b_j}
+{\sqrt{\sum_{j\in C}a_j^2}\sqrt{\sum_{j\in C}b_j^2}},
+\]
 
-1.  **Global Variables:** Declare `let movies = [];`, `let ratings = [];`, `let numUsers = 0;`, `let numMovies = 0;`, and `let ratingMatrix = null;`.
+where `C` is the set of coordinates rated by both users/items. Empty overlap or zero norm yields similarity zero.
 
-2.  **Primary Function: `loadData()`**
-    -   Must be `async`.
-    -   Uses `fetch()` to read `u.item` and `u.data` (same directory as `index.html`).
-    -   Uses `try...catch`; on failure, display an error message in the result area.
-    -   Awaits `u.item` first, then `u.data`, passing the text to the parsers.
-    -   After parsing: set `numUsers` (max user ID in `ratings`), `numMovies` (number of parsed movies), and call `buildRatingMatrix()`.
+- **User-Based CF:** find up to **20** other users with positive similarity, then score unseen movies using a similarity-weighted average of ratings from neighbors who rated the movie.
+- **Item-Based CF:** compare item columns on shared raters; score a candidate using positively similar items the active user has rated and a similarity-weighted rating average.
+- **Top-5:** exclude all already-rated movies; order by descending predicted score, with movie ID as deterministic tie-breaker.
+- **Evidence support:** show contributing-neighbor count for User-Based and contributing-rated-item count for Item-Based. These are descriptive counts; they do **not** directly reweight the final app's similarities.
 
-3.  **Parsing Function: `parseItemData(text)`**
-    -   Defines the 18 genre names ("Action" ... "Western").
-    -   Splits by lines; each line split by `|`.
-    -   Extracts `id` (field 0) and `title` (field 1); builds a `genres` array from the last 19 fields where the value is `'1'`.
-    -   Pushes `{ id, title, genres }` to `movies`.
+The final application deliberately retains **raw co-rated-only cosine**. **Overlap-confidence weighting was tested as an offline alternative and was not adopted.**
 
-4.  **Parsing Function: `parseRatingData(text)`**
-    -   Splits by lines; each line split by `\t`.
-    -   Pushes `{ userId, itemId, rating, timestamp }` (numbers) to `ratings`.
+## Deterministic verification
 
-5.  **Matrix Function: `buildRatingMatrix()`**
-    -   Builds a 2-D structure of shape `(numUsers + 1) × (numMovies + 1)`, where a missing rating is represented by `0`.
-    -   Also build a parallel "rated" boolean mask (or use `0` as "not rated") so the similarity function can distinguish *not rated* from *rated 0*.
-    -   Store the result in the global `ratingMatrix`.
+Run from the repository root (Node.js with built-in `fetch`/`Response` support, for example Node 18+):
 
-#### **5. File `script.js` - The UI and Logic Module**
+```bash
+node week03/collaborative-filtering-movie-recommender/analysis/verify_cf.mjs
+node week03/collaborative-filtering-movie-recommender/analysis/verify_phase6a.mjs
+```
 
-This file handles the user interface and the collaborative-filtering logic.
+The committed checks cover hand-checkable cosine and toy-matrix cases, no-overlap behavior, actual MovieLens counts, recommendation exclusions, selected User 2 Top-5 consistency, UI wiring, and dataset immutability. The saved [Phase 6A verification output](results/phase6a_verification.json) documents a previous verification run. The above commands are offered for reproducibility and were **not freshly rerun for this README update**.
 
-1.  **Initialization Logic:**
-    -   Use `window.onload` with an `async` function.
-    -   `await loadData()`, then call `populateUserDropdown()` and set an initial status message.
+## Main measured results
 
-2.  **UI Function: `populateUserDropdown()`**
-    -   Gets the `#user-select` element.
-    -   Adds one `<option>` per user ID from `1` to `numUsers`, with the value set to the integer user ID.
+### Sparsity and similarity reliability
 
-3.  **Similarity Function: `cosineSimilarity(a, b)`**
-    -   Computes the cosine similarity between two vectors, **using only co-rated (non-zero) entries**.
-    -   Must guard against a zero denominator (return `0` in that case).
-    -   Include a comment explaining the missing-value convention chosen here and why (see "Missing Value Handling" below).
+| Diagnostic | User–user pairs | Item–item pairs |
+| --- | ---: | ---: |
+| Unique unordered pairs | 444,153 | 1,413,721 |
+| Median common ratings | 10 | 1 |
+| Pairs with ≤2 common ratings | 14.29% | 60.38% |
+| Pairs with cosine ≥0.9 that have ≤2 common ratings | 11.94% | 47.70% |
 
-4.  **Core Logic - User-Based: `getUserBasedRecommendations(activeUserId, topK)`**
-    -   Step 1: For every other user, compute `cosineSimilarity` against the active user's rating vector.
-    -   Step 2: Select the `N` most similar users (e.g., `N = 20`) with positive similarity.
-    -   Step 3: For each movie the active user has **not** rated, compute a predicted score as the similarity-weighted average of the similar users' ratings.
-    -   Step 4: Sort the candidates by predicted score (descending) and take the top `topK` (default `5`).
-    -   Return an array of `{ title, score }`.
+Very high cosine scores can therefore be supported by **one or two** ratings. That is a reliability concern, not a mathematical failure of cosine.
 
-5.  **Core Logic - Item-Based: `getItemBasedRecommendations(activeUserId, topK)`**
-    -   Step 1: For each movie the active user has rated, compute item-to-item `cosineSimilarity` between that movie's rating column and every other movie's rating column.
-    -   Step 2: For each candidate movie the user has **not** rated, aggregate the similarities from the user's rated movies, weighted by the user's rating.
-    -   Step 3: Sort by the aggregated score (descending) and take the top `topK` (default `5`).
-    -   Return an array of `{ title, score }`.
+### Held-out evaluation (911 eligible users)
 
-6.  **Display Function: `getRecommendations()`**
-    -   Reads `#user-select`, converted to an integer.
-    -   Calls both `getUserBasedRecommendations()` and `getItemBasedRecommendations()`.
-    -   Renders each list into its own section, in the form *"Because you are similar to other users, we recommend: ..."* / *"Because you liked ... we recommend: ..."*.
-    -   Handle the empty case gracefully (a user with too few ratings) with a clear message.
+The experiment holds out each eligible user's most recent **positive** rating, leaving at least 20 earlier ratings for the active user.
 
-#### **6. Missing Value Handling**
+| Method | Hits | HitRate@5 | MRR@5 |
+| --- | ---: | ---: | ---: |
+| User-Based raw cosine | 9 | 0.988% | 0.004848 |
+| Item-Based raw cosine | 0 | 0% | 0 |
 
-The rating matrix is sparse. Pick **exactly one** strategy and apply it consistently in `cosineSimilarity`. State the choice in a comment at the top of `script.js`:
+**Measured on-demand runtime** (five users, two warmups and five repetitions per method; local JavaScript implementation): **1.588 ms mean** for User-Based, versus **388.484 ms mean** for Item-Based. This is not a general cross-device performance claim.
 
--   **Use co-rated items only** (ignore missing values): the default and simplest.
--   **Mean imputation** — replace missing entries with the row/column average.
--   **Weighted approach** — weight the similarity by the number of co-rated items.
+### Overlap-confidence sensitivity (analysis only)
 
-Do not mix strategies.
+| Configuration | User-Based hits / 911 | Item-Based hits / 911 |
+| --- | ---: | ---: |
+| Raw cosine (final app) | 9 | 0 |
+| T = 5 | 11 | 0 |
+| T = 10 | 10 | 0 |
+| T = 20 | 5 | 0 |
 
-#### **7. Notes on This Exercise**
+For `T=10` the User-Based count rose by **one net hit** (10 gained and 9 lost relative to raw) and changes were sensitive to `T`. Item-Based still retrieved no targets. The final browser app **does not apply** this weighting.
 
--   Do **not** change the dataset files.
--   Keep the modular split (`data.js` / `script.js`); do not move logic between them.
--   The code must run offline from `file://`-like static hosting (GitHub Pages); no build step and no external libraries.
+### Week 2 vs Week 3 on an aligned 853-user cohort
 
----
-Please now generate the complete code for the `index.html`, `style.css`, `data.js`, and `script.js` files based on these final, detailed specifications.
+| Ranking method | Hits | HitRate@5 | MRR@5 |
+| --- | ---: | ---: | ---: |
+| Week 2 three-movie binary-genre profile | 20 | 2.34% | 0.010219 |
+| Week 3 User-Based CF | 12 | 1.41% | 0.007562 |
+| Week 3 Item-Based CF | 0 | 0% | 0 |
 
----
+This experiment uses the same held-out targets and **earlier-only active-user history**. Other users' full histories remain available, so it is **not a globally chronological split**. These 853-user numbers must not be mixed with the separate 911-user comparison. Week 2 cosine scores and Week 3 predicted rating scores have different meanings and are not directly comparable.
 
-### Working application demo
+Representative case analyses (Users **79**, **20**, and **2**) and the reasons behind successes/failures are in the [final evidence summary](analysis/week03_final_evidence.md).
 
-The page includes the lecture's selected-user/selected-movie rating comparison above the GitHub specification's two Top-5 lists. Choose a user first; the movie dropdown then offers only movies that user has **not** rated. This keeps an observed rating out of the prediction display. If a stale or programmatic selection supplies an already-rated movie, the page displays its observed rating and does not label it as a prediction.
+## Evidence and reproduction map
 
-Both actions use the same raw co-rated-only cosine and similarity-weighted prediction formulas. User-Based support is the number of the 20 nearest positive-similarity neighbors who rated the candidate. Item-Based support is the number of the active user's rated movies with positive item similarity. Support counts describe available evidence; they do not change the score or weight similarities. A target without positive-similarity support has no predicted score. The Top-5 lists exclude already-rated movies and use predicted rating, then movie ID, for deterministic ranking. No experimental overlap weighting is used by the application.
+| File | Purpose |
+| --- | --- |
+| [`analysis/week03_final_evidence.md`](analysis/week03_final_evidence.md) | Canonical prose summary, protocols, caveats, representative users |
+| [`results/week03_final_evidence.json`](results/week03_final_evidence.json) | Structured metrics, cohort definitions, sensitivities |
+| [`results/phase3_leave_one_out.json`](results/phase3_leave_one_out.json) | Individual held-out evaluation |
+| [`results/phase3_reliability.json`](results/phase3_reliability.json) | Pairwise overlap and high-similarity evidence |
+| [`results/phase3_efficiency.json`](results/phase3_efficiency.json) | Pair counts and local runtime |
+| [`results/phase4_evaluation.json`](results/phase4_evaluation.json) | Overlap-confidence experiments |
+| [`results/phase5_aligned_comparison.json`](results/phase5_aligned_comparison.json) | Week 2 vs Week 3 common-cohort comparison |
+| [`results/phase6a_verification.json`](results/phase6a_verification.json) | Final application regression/immutability evidence |
+| [`report.pdf`](report.pdf) | Final Week 3 course report |
+| [`session.json`](session.json) | AI-tool session audit trail |
+
+The canonical evidence JSON was produced at an earlier research stage and contains a then-current note stating that no report PDF existed. **The PDF was subsequently added to this repository**; that historical metadata remains unaltered for audit provenance.
+
+## Limitations and lessons
+
+- **One positive holdout per user** and only one dataset do not establish general ranking quality.
+- Co-rated cosine can reach 1.0 on a single observed match, even when the similarity has poor evidential support.
+- Cold start was **discussed, not measured** on users with no rating history. Mean imputation and MF were **not implemented or benchmarked** as Week 3 alternatives.
+- The threshold-sensitive overlap experiment did not justify replacing raw cosine in the submitted app.
+- Runtime is a local on-demand measurement, **not** production-serving latency or a generalized scalability result.
+
+## Files
+
+```text
+collaborative-filtering-movie-recommender/
+├── index.html, style.css       # Browser UI
+├── data.js, script.js          # MovieLens loader and CF scoring
+├── u.item, u.data              # MovieLens 100K
+├── analysis/                   # Verification and evaluation scripts
+├── results/                    # Saved machine-readable evidence
+├── report.pdf                  # Course report
+├── session.json                # Native AI session audit
+└── readme.md
+```
+
+**Dataset reference:** Harper & Konstan, [*The MovieLens Datasets: History and Context*](https://doi.org/10.1145/2827872), ACM TiiS, 2015.
