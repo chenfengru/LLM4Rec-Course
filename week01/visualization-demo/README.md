@@ -1,38 +1,35 @@
-# Week 01 — Visualization Demo
+# Week 01 — Visualization Demo (Scaffold)
 
-## Demo idea
+**Status: Planning scaffold only — not a completed or reproducible visualization.**
 
-Use a small, sanitized version of an existing local experiment to demonstrate an
-AI-assisted visualization workflow.
+This directory was reserved for an optional demonstration of an AI-assisted visualization workflow. It currently contains this README and `.gitkeep` placeholders; **no dataset, plotting script, generated chart, or verified demo result has been committed here**.
 
-Suggested flow:
+## Intended workflow
 
 **Inspect data → Generate visualization → Validate result → Explain evidence**
 
-## Intended files
+A completed future demo could:
+
+1. Inspect the schema of a small, sanitized, course-safe dataset.
+2. Generate a figure using a reproducible Python script.
+3. Run that script and save the generated image.
+4. Validate plotted numbers against the source rows.
+5. Explain one limitation and a concrete improvement.
+
+## Planned (not yet implemented) structure
 
 ```text
 visualization-demo/
 ├── data/
-│   └── results.csv
+│   └── results.csv                 # Not committed
 ├── charts/
 │   ├── scripts/
-│   │   └── latency_comparison.py
+│   │   └── latency_comparison.py   # Not committed
 │   └── output/
-│       └── latency_comparison.png
+│       └── latency_comparison.png  # Not committed
 └── README.md
 ```
 
-## Demo talking points
+**Repository hygiene:** use only sanitized examples. Do not upload proprietary workplace code, datasets, internal paths, model weights, or private experiment artifacts.
 
-1. Show the project structure.
-2. Explain how the dataset schema was inspected.
-3. Run or show the plotting script.
-4. Show the final figure.
-5. Explain how the output was validated.
-6. Mention one challenge and one next improvement.
-
-## Important
-
-Only add sanitized, course-safe data.
-Do not upload confidential company code, internal paths, or proprietary artifacts.
+The completed Week 1 homework application is a **different project**: [Random Lunch Generator](../random-lunch-generator/README.md).
