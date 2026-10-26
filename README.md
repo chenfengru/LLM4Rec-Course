@@ -8,11 +8,11 @@ This repository is organized week by week so that coursework, experiments, repor
 
 | Week | Topic | Status |
 |---|---|---|
-| 01 | Random Lunch Generator / RecSys Fundamentals | ✅ Completed |
-| 02 | Content-Based Filtering | ✅ Completed |
-| 03 | Collaborative Filtering | ✅ Completed |
-| 04 | Association Rules | Not started |
-| 05 | Matrix Factorization | Not started |
+| 01 | [Random Lunch Generator / RecSys Fundamentals](week01/random-lunch-generator/README.md) | ✅ App implemented; PDF not tracked |
+| 02 | [Content-Based Filtering](week02/content-based-movie-recommender/README.md) | ✅ Completed |
+| 03 | [Collaborative Filtering](week03/collaborative-filtering-movie-recommender/readme.md) | ✅ Completed |
+| 04 | Association Rules | Placeholder directory only |
+| 05 | Matrix Factorization | Placeholder directory only |
 | 06 | [Personalized PageRank / Graph Recommendation](week6/readme.md) | ✅ Completed |
 | 07 | Recommender Systems with Deep Learning | Not started |
 | 08 | Context Encoder | Not started |
@@ -21,22 +21,22 @@ This repository is organized week by week so that coursework, experiments, repor
 | 11 | Personalized Context | Not started |
 | 12 | Capstone Project / Seminar | Not started |
 
-## Week 01 — Random Lunch Generator
+## Week 01 — [Random Lunch Generator](week01/random-lunch-generator/README.md)
 
 ### Completed
 
 - [x] Run and inspect the provided Random Lunch Generator baseline
-- [x] Deploy the application with GitHub Pages
+- [x] Build a static-site-compatible HTML application (a live GitHub Pages URL is not recorded here)
 - [x] Reproduce the missing-icon issue for Ramen, Pasta, and Soup
 - [x] Identify the root cause in Font Awesome Free 6.4.0
 - [x] Replace invalid icon classes with verified alternatives
 - [x] Improve the prompt to require dependency/version verification
 - [x] Add a minimal recency-aware weighted-random extension
 - [x] Verify the repeat probability mathematically
-- [x] Run a seeded 100,000-draw simulation
+- [x] Record a seeded 100,000-draw simulation (historical result; reproduction script not tracked)
 - [x] Manually verify the final webpage behavior
 - [x] Preserve the tool-native Codex `session.json`
-- [x] Prepare the A01 report and 3–5 minute presentation
+- [x] Prepare the Week 1 report/presentation as course work (the PDF and presentation are not tracked in this repository)
 
 ### Main result
 
@@ -53,7 +53,7 @@ A 100,000-draw simulation produced:
 - Uniform random: `8.2941%`
 - Recency-aware random: `2.2480%`
 
-All 12 foods remained represented with approximately uniform long-run frequency.
+All 12 options were reported as represented in the earlier run. The simulation output and script are not separately committed, so these numerical observations are historical rather than freshly reproduced.
 
 ### Week 1 takeaway
 
@@ -61,7 +61,7 @@ AI suggestions should be treated as hypotheses rather than accepted automaticall
 The most useful parts of the workflow were checking the real dependency,
 verifying the mathematics, reproducing the result, and keeping code changes minimal.
 
-## Week 02 — Content-Based Filtering
+## Week 02 — [Content-Based Filtering](week02/content-based-movie-recommender/README.md)
 
 Status: ✅ Completed
 
@@ -72,20 +72,20 @@ Status: ✅ Completed
 - [x] Implement cosine item-to-item Top-5 recommendation
 - [x] Build a three-movie averaged user profile
 - [x] Implement profile-based Top-5 recommendation
-- [x] Exclude all previously rated movies from recommendation candidates
-- [x] Verify zero watched-item leakage after correction
+- [x] Exclude all previously rated movies in the **offline user-level evaluation** (the browser itself only excludes the selected query/profile movies)
+- [x] Verify zero watched-item leakage in corrected full-history evaluation
 - [x] Compare popularity, long-tail exposure, and catalog coverage
 - [x] Diagnose minority-taste dilution from profile averaging
 - [x] Test IDF-weighted genre features
 - [x] Run deterministic and paired-random tie diagnostics
-- [x] Preserve the final report and Codex session audit trail
+- [x] Preserve the final report and Codex session audit trail, plus corrected user-level audit files
 
 ### Main results
 
 - Jaccard to cosine changed only `1 / 1682` catalog Top-5 lists (`0.059%`).
 - Item-to-item vs profile retrieval changed the ordered Top-5 for
   `833 / 942` eligible users (`88.43%`).
-- The two methods shared only `0.926 / 5` recommendations on average.
+- The corrected full-history evaluation measured `0.92569 / 5` shared recommendations on average.
 - The original user-level evaluation leaked already-rated movies for
   `598 / 942` users; after full-history exclusion, leakage was `0`.
 - Item-to-item catalog coverage was `35.43%`, compared with `31.03%`
@@ -101,10 +101,13 @@ discriminability; they do not establish improved recommendation relevance.
 
 - `week02/teacher-baseline/` — original instructor baseline
 - `week02/content-based-movie-recommender/` — completed Week 2 implementation
-- `week02/content-based-movie-recommender/analysis/` — evaluation and audit scripts
+- [`week02/content-based-movie-recommender/analysis/`](week02/content-based-movie-recommender/analysis/) — evaluation and audits (use the full-history corrected summaries rather than superseded values)
 - `week02/content-based-movie-recommender/report.pdf` — final A02 report
 - `week02/content-based-movie-recommender/session.json` — Codex audit trail
-## Week 03 — Collaborative Filtering
+
+The browser compares selected movie/profile queries; full-history exclusion and associated catalog statistics belong to the offline audit, not an interactive per-user UI. Read the [corrected full-history evidence](week02/content-based-movie-recommender/analysis/all_watched_evaluation_summary.md) and [corrected IDF evidence](week02/content-based-movie-recommender/analysis/idf_all_watched_summary.md) before using these numbers.
+
+## Week 03 — [Collaborative Filtering](week03/collaborative-filtering-movie-recommender/readme.md)
 
 Status: ✅ Completed
 
@@ -161,6 +164,8 @@ quality improvement, so the final application retains raw co-rated cosine.
 - `week03/collaborative-filtering-movie-recommender/report.pdf` — final A03 report
 - `week03/collaborative-filtering-movie-recommender/session.json` — native Codex audit trail
 
+The [final Week 3 evidence](week03/collaborative-filtering-movie-recommender/analysis/week03_final_evidence.md) is the primary source for the cohort definitions, threshold-sensitivity tests and the Week 2 vs Week 3 comparison. The instructor's original scaffold remains preserved under `week03/teacher-baseline/`.
+
 ## Week 06 — Personalized PageRank (Graph-Based Recommendations)
 
 Status: ✅ Completed · [Implementation, usage, and full experiment details](week6/readme.md)
@@ -179,19 +184,24 @@ LLM4Rec-Course/
 ├── README.md
 ├── AGENTS.md
 ├── week01/
-│   └── random-lunch-generator/
+│   ├── random-lunch-generator/           # Implemented app + session
+│   └── visualization-demo/               # Scaffold only
 ├── week02/
+│   ├── teacher-baseline/                 # Original specification and code
+│   └── content-based-movie-recommender/  # App, audits, report, session
 ├── week03/
-├── ...
-├── week12/
+│   ├── teacher-baseline/                 # Original specification and code
+│   ├── starter-audit/                    # Initial code audit
+│   └── collaborative-filtering-movie-recommender/
+├── week04/, week05/, week06/              # Placeholder folders
+├── week6/                                # Actual completed Week 6 PPR app
+├── week07/ ... week12/                   # Future-week scaffolds
 ├── capstone/
-│   ├── idea/
-│   ├── experiments/
-│   ├── app/
-│   └── paper/
 ├── skills/
 └── assets/
 ```
+
+**Directory naming note:** the actual completed Personalized PageRank implementation lives at `week6/`, not the empty `week06/` placeholder. Both paths are retained as they exist in the repository; the roadmap deliberately links to the real implementation.
 
 ## Weekly working convention
 
