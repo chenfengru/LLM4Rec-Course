@@ -1,3 +1,20 @@
+> **Implementation status — Completed (2026-10-06).** This branch contains the finished Week 4 association-rule web app. The original instructor assignment specification is preserved below as reference, so its imperative wording / starter-test counts describe the **initial task**, not unfinished current work.
+>
+> **Branch:** [`week04-association-rules`](https://github.com/chenfengru/LLM4Rec-Course/tree/week04-association-rules/week4) · **Final commit:** [`2f1a363`](https://github.com/chenfengru/LLM4Rec-Course/commit/2f1a3636c6aabdf97de6999487328cdced279af2)
+>
+> **Verified work (recorded in the course conversation):**
+> - Completed the seven `TODO(hw4)` functions, including basket deduplication, itemset counting, support/confidence/lift, frequent-itemset mining, and bidirectional rule generation.
+> - Self-checks improved from **2 PASS / 0 FAIL / 9 PENDING** to **11 PASS / 0 FAIL / 0 PENDING**.
+> - Cleaned UCI Online Retail: **17,080 baskets**, **3,653 items**. Main rule thresholds: **1% minimum support**, **30% minimum confidence**.
+> - Illustrative rule: `82494L → 82482` with count(A∪B)=468, count(A)=809, count(B)=874; support **2.7400%**, confidence **57.8492%**, lift **11.3051**. Business utility requires causal/online validation rather than inferring sales uplift from lift alone.
+> - The report `FengruChen_A04_report.pdf` and byte-verified native session `FengruChen_A04_session.json` were prepared as course submission artifacts **outside this tracked branch**; they are not files in `week4/`.
+>
+> **Run:** from the repository root, open `week4/index.html` in a modern browser, keeping `transactions.js` in the same folder. No build/server required; press **Run tests** and **Run rules** to inspect the implementation.
+>
+> **Evidence boundary:** These results were recorded during the previous assignment workflow; this README update does **not** claim to have rerun browser tests. The code is on its independent branch and has **not been merged into `main`**.
+
+---
+
 # HW4 — Association Rules (Week 4)
 
 **Course**: LLM4Rec, HSE University
